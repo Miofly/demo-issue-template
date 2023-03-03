@@ -8,13 +8,43 @@ importers:
     dependencies:
       rimraf: registry.npmmirror.com/rimraf/4.2.0
 
-  play:
+  single:
     specifiers:
       lodash: '*'
     dependencies:
       lodash: registry.npmmirror.com/lodash/4.17.21
 
-  single:
+  single/child:
+    specifiers:
+      lodash: '*'
+    dependencies:
+      lodash: registry.npmmirror.com/lodash/4.17.21
+
+  single/child/childs:
+    specifiers:
+      lodash: '*'
+    dependencies:
+      lodash: registry.npmmirror.com/lodash/4.17.21
+
+  single/child/childs/son:
+    specifiers:
+      lodash: '*'
+    dependencies:
+      lodash: registry.npmmirror.com/lodash/4.17.21
+
+  single/child/childs/son/childs:
+    specifiers:
+      lodash: '*'
+    dependencies:
+      lodash: registry.npmmirror.com/lodash/4.17.21
+
+  single/son:
+    specifiers:
+      lodash: '*'
+    dependencies:
+      lodash: registry.npmmirror.com/lodash/4.17.21
+
+  single/son/childs:
     specifiers:
       lodash: '*'
     dependencies:

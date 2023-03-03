@@ -2,8 +2,12 @@
 	"name": "demo-issue-template",
 	"version": "1.0.0",
 	"scripts": {
-		"clean": "pnpm run -r clean && pnpm run clean:modules",
-		"clean:modules": "rimraf node_modules"
+		"clean": "pnpm run -r --parallel clean && pnpm run clean:modules",
+		"clean:modules": "rimraf node_modules",
+		"test": "echo 执行",
+		"test:new": "echo 执行new",
+		"test:old": "echo 执行old",
+		"pnpm:C": "pnpm -C play run clean"
 	},
 	"dependencies": {
 		"rimraf": "^4.1.3"
