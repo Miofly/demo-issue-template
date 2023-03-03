@@ -2,7 +2,8 @@
 	"name": "demo-issue-template",
 	"version": "1.0.0",
 	"scripts": {
-		"clean": "rimraf node_modules"
+		"clean": "pnpm run -r clean && pnpm run clean:modules",
+		"clean:modules": "rimraf node_modules"
 	},
 	"dependencies": {
 		"rimraf": "^4.1.3"
