@@ -10,6 +10,7 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@vft/pkg": "^0.0.1",
     "@vue/shared": "^3.2.47",
     "dayjs": "^1.11.7",
     "pinia": "^2.0.32",

@@ -1,72 +1,31 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
- 	<vft-divider>1</vft-divider>
+	<div class="text-center">
+		<span>普通分割线</span>
+		<vft-divider borderColor="red" />
+		<vft-divider marginY="5px" border-style="dashed" />
+		<vft-divider border-style="dotted" />
+		<vft-divider border-style="double" />
+		<span>普通分割线</span>
+
+		<vft-divider content-position="left">Rabindranath Tagore</vft-divider>
+		<vft-divider>*</vft-divider>
+		<vft-divider content-position="right">$</vft-divider>
+
+		<span>垂直</span>
+		<vft-divider direction="vertical" />
+		<span>分割</span>
+		<vft-divider direction="vertical" border-style="dashed" />
+		<span>线</span>
+
+		<div>
+			<span>垂直</span>
+			<vft-divider marginX="0" direction="vertical" />
+			<span>分割</span>
+			<vft-divider marginX="0" direction="vertical" border-style="dashed" />
+			<span>线</span>
+		</div>
+
+		<vft-icon>11</vft-icon>
+		<vft-avatar src="https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg" />
+	</div>
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
-}
-</style>
