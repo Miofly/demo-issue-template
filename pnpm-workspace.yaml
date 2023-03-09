@@ -1,0 +1,7 @@
+packages:
+  - packages/*
+  - scripts/*
+  - common/*
+  - configs/*
+  - play
+  - test
