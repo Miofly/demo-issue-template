@@ -1,12 +1,14 @@
 {
 	"dependencies": {
+		"@types/node": "^18.14.2",
 		"@vft/constants": "workspace:*",
 		"@vue/tsconfig": "^0.1.3",
+		"fast-glob": "^3.2.12",
 		"unbuild": "^1.1.2"
 	},
 	"scripts": {
-		"stub": "pnpm run -r --parallel stub",
-		"dev": "cd play && pnpm dev",
-		"postinstall": "pnpm stub"
+		"fs-extra": "^11.1.0",
+		"tsup": "^6.6.3",
+		"dev": "cd play && pnpm dev"
 	}
 }

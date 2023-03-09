@@ -1,0 +1,40 @@
+{
+  "name": "@vft/utils",
+  "version": "0.0.12",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.cjs",
+      "import": "./dist/es/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsup",
+    "stub": "unbuild --stub && pnpm -F @vft/scripts stub-helper",
+    "dev": "pnpm run stub",
+    "clean": "pnpm /^clean:/",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "pub": "pnpm clean:dist && pnpm build && tsx ../../scripts/src/publish.ts --pkg packages/utils -b"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "dayjs": "^1.11.7"
+  },
+  "devDependencies": {
+    "type-fest": "^3.6.1"
+  },
+  "peerDependencies": {
+    "vue": ">=3.2.0",
+    "@vue/shared": ">=3.2.0",
+    "@vueuse/core": ">=9.0.0",
+    "@vueuse/shared": ">=9.0.0",
+    "lodash": ">=4.17.0",
+    "@vft/constants": "workspace:*"
+  }
+}
