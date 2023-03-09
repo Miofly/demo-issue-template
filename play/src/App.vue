@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
+import { UPDATE_MODEL_EVENT } from '@vft/constants';
 </script>
 
 <template>
   <div>
 		主页
+		{{ UPDATE_MODEL_EVENT }}
 	</div>
 
   <RouterView />

@@ -1,0 +1,25 @@
+{
+  "name": "@vft/constants",
+  "version": "0.0.35",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "scripts": {
+    "stub": "unbuild --stub && pnpm -F @vft/build-common stub-helper",
+    "dev": "pnpm run stub",
+    "clean": "pnpm /^clean:/",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "build": "vite build",
+    "pub": "pnpm clean:dist && pnpm build && tsx ../../scripts/build-common/src/publish.ts --pkg common/constants -b"
+  },
+  "files": [
+    "dist"
+  ]
+}

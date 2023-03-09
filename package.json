@@ -1,0 +1,10 @@
+{
+	"dependencies": {
+		"unbuild": "^1.1.2",
+		"@vft/constants": "workspace:*"
+	},
+	"scripts": {
+		"stub": "pnpm run -r --parallel stub",
+		"postinstall": "pnpm stub"
+	}
+}
