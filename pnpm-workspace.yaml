@@ -1,0 +1,8 @@
+packages:
+  - 'packages/*'
+  - 'scripts/*'
+  - 'common/*'
+  - 'configs/*'
+  - '!configs/pkg'
+  - 'play'
+  - 'test'

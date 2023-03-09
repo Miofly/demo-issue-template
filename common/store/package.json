@@ -1,0 +1,38 @@
+{
+  "name": "@vft/store",
+  "version": "0.0.6",
+  "main": "src/index.ts",
+  "module": "src/index.ts",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "stub_unbuild": "unbuild --stub && pnpm -F @vft/build-common stub-helper",
+    "stub_tsup": "tsup --config ../../scripts/build/src/tsup.config.ts",
+    "stub": "vite build --watch",
+    "dev": "pnpm run stub",
+    "clean": "pnpm /^clean:/",
+    "clean:dist": "rimraf dist",
+    "clean:node_modules": "rimraf node_modules",
+    "build": "vite build",
+    "pub": "pnpm clean:dist && pnpm build && tsx ../../scripts/src/publish.ts --pkg packages/store -b"
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "pinia": "^2.0.33",
+    "pinia-plugin-persistedstate": "3.1.0",
+    "pubsub-js": "^1.9.4"
+  },
+  "devDependencies": {
+    "@types/pubsub-js": "^1.8.3"
+  },
+  "peerDependencies": {
+    "@vft/router": "workspace:*",
+    "@vft/utils": "workspace:*",
+    "pinia": ">=2.0.0",
+    "lodash": ">=4.17.0",
+    "pinia-plugin-persistedstate": ">=3.0.0",
+    "vue": ">=3.2.0",
+    "vue-router": ">=4.0.0"
+  }
+}

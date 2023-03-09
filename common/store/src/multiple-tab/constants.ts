@@ -1,0 +1,10 @@
+export enum TableActionEnum {
+  REFRESH,
+  CLOSE_ALL,
+  CLOSE_LEFT,
+  CLOSE_RIGHT,
+  CLOSE_OTHER,
+  CLOSE_CURRENT,
+  CLOSE,
+  NEW_WIN_TAB
+}
