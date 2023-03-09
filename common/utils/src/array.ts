@@ -34,7 +34,7 @@ export function arrSort<T>(arr: T[], attr: string | Array<Numberish>, isAsc = tr
 
     return function (a, b) {
       if (!isArray(attr)) {
-        attr = [attr];
+        attr = [attr as Numberish];
       }
       for (const item of attr) {
         a = a[item] || Number.MAX_VALUE;

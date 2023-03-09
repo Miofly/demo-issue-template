@@ -23,6 +23,7 @@ export default defineConfig(() => {
   
   return {
     entry: ['./src/index.ts'],
+    external: ['@vue/shared', '@vueuse/core', 'vue', 'lodash'],
     format: ['cjs', 'esm'],
     watch: true,
     outDir: 'dist',

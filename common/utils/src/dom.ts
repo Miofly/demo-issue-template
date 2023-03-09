@@ -417,7 +417,7 @@ export const setStyle = (element: HTMLElement, styleName: CssPropertiesType, val
   if (isObject(styleName)) {
     Object.entries(styleName).forEach(([prop, value]) => setStyle(element, prop as CssPropertiesType, value));
   } else {
-    element.style.setProperty(styleName, value as any);
+    element.style.setProperty(styleName as any, value as any);
   }
 };
 

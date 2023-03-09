@@ -207,6 +207,7 @@ export function singleAttrToObj(params?: string | Record<string, any>, attribute
  */
 export function recursion<T extends Record<string, any>>(data: T, callback: (item: T) => void, key?: string): T;
 export function recursion<T extends Record<string, any>>(data: T[], callback: (item: T) => void, key?: string): T[];
+// @ts-ignore
 export function recursion<T extends Record<string, any>>(data: T | T[], callback: (item: T) => T, childrenKey = 'children'): T[] | T {
   const _r = (data: T): T => {
     callback(data);
@@ -222,6 +223,7 @@ export function recursion<T extends Record<string, any>>(data: T | T[], callback
   if (isArray(data)) {
     return data.map((row) => _r(row));
   }
+  // @ts-ignore
   return _r(data);
 }
 
@@ -306,6 +308,7 @@ export const createObjByPath = (path, value) => {
     const key = keyPath.shift();
     if (key) {
       if (isNumber(key)) {
+        // @ts-ignore
         const object = new Array(key + 1);
         object[key] = createObjByPath(keyPath, value);
         return object;

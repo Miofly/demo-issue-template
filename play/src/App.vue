@@ -1,12 +1,14 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import { UPDATE_MODEL_EVENT } from '@vft/constants';
+import { phoneAddBlank } from '@vft/utils';
 </script>
 
 <template>
   <div>
 		主页
 		{{ UPDATE_MODEL_EVENT }}
+		{{ phoneAddBlank('17862983627')}}
 	</div>
 
   <RouterView />

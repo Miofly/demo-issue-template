@@ -2,13 +2,15 @@
 	"dependencies": {
 		"@types/node": "^18.14.2",
 		"@vft/constants": "workspace:*",
+		"@vft/utils": "workspace:*",
 		"@vue/tsconfig": "^0.1.3",
 		"fast-glob": "^3.2.12",
+		"fs-extra": "^11.1.0",
+		"lodash": "^4.17.21",
+		"tsup": "^6.6.3",
 		"unbuild": "^1.1.2"
 	},
 	"scripts": {
-		"fs-extra": "^11.1.0",
-		"tsup": "^6.6.3",
 		"dev": "cd play && pnpm dev"
 	}
 }

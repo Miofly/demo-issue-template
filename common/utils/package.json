@@ -23,18 +23,22 @@
     "dist"
   ],
   "dependencies": {
+    "@vue/shared": "^3.2.47",
+    "@vueuse/core": "^9.13.0",
     "crypto-js": "^4.1.1",
-    "dayjs": "^1.11.7"
+    "dayjs": "^1.11.7",
+    "lodash": "^4.17.21",
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "type-fest": "^3.6.1"
   },
   "peerDependencies": {
-    "vue": ">=3.2.0",
+    "@vft/constants": "workspace:*",
     "@vue/shared": ">=3.2.0",
     "@vueuse/core": ">=9.0.0",
     "@vueuse/shared": ">=9.0.0",
     "lodash": ">=4.17.0",
-    "@vft/constants": "workspace:*"
+    "vue": ">=3.2.0"
   }
 }
