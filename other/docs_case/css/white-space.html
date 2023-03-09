@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div style="display: flex;justify-content: space-around;flex-wrap: wrap">
+	<p style="width: 200px;border: 1px solid red">
+		未设置 white-space 属性
+		这是一些文本。
+		这是一些文本。
+		这是一些文本。
+		这是一些文本。
+		这是一些文本。
+		end
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: normal">
+		white-space: normal
+		连续的空白符会被合并，
+		换行符会被当作空白符来处理。
+		换行在填充「行框盒子(line boxes)」时是必要。
+		end
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: nowrap">
+		white-space: nowrap
+		和 normal 一样，
+		连续的空白符会被合并。
+		但文本内的换行无效。
+		end
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: pre">
+		white-space: pre
+		连续的空白符会被保留。
+		在遇到换行符或者<br>元素时才会换行。
+		end
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: pre;color: red">
+white-space: pre
+连续的空白符会被保留。
+在遇到换行符或者<br>元素时才会换行。
+这里把前面的空白符都删除了
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: pre-wrap">
+		white-space: pre-wrap
+		连续的                                    空白符会被保留。在遇到换行符或者<br>元素，
+		或者需要为了填充「行框盒子(line boxes)」时才会换行。
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: break-spaces">
+		white-space: break-spaces
+		与 pre-wrap 的行为相同，除了：
+		在行尾如果有空白符会保留空白符空白符会导致换行，pre-wrap 行尾有空白符不会换行
+		每个保留的空格字符                                                后都存在换行机会，包括空格字符之间。
+		字符之间有空白符会换行，并且在新行会保留空白符，pre-wrap 在新行会忽略上一级的空白符
+	</p>
+	<p style="width: 200px;border: 1px solid red;white-space: pre-line">
+		white-space: pre-line
+		连续的空白符会被合并。在遇到换行符或者<br>元素，
+		或者需要为了填充
+		「行框盒子(line boxes)」时会换行。
+	</p>
+</div>
+
+</body>
+</html>

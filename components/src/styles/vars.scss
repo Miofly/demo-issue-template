@@ -1,0 +1,500 @@
+$layout-header: () !default;
+$layout-header: map-merge(
+    (
+      height: 64px,
+      top-height: 40px,
+      bg-color: white,
+      color: black,
+      z-index: 2001,
+      border-bottom: 1px solid rgb(231, 231, 231)
+    ),
+    $layout-header
+);
+
+$layout-footer: () !default;
+$layout-footer: map-merge(
+    (
+      'bg-color': #f7f8fa,
+      'border-top': '1px solid #f7f8fa',
+      'left': getCssVar('menu-width'),
+      'height': '30px',
+      'left-min-width': 'auto',
+      'right-min-width': 'auto'
+    ),
+    $layout-footer
+);
+
+$name: side-menu;
+$side-menu: () !default;
+$side-menu: map-merge(
+    (
+      'border': getCssVar('menu-border-right'),
+      'width': 200px,
+      'collapse-width': 200px,
+      'scroll-mr': 0
+    ),
+    $side-menu
+);
+
+$iframe-page: () !default;
+$iframe-page: map-merge(
+    (
+      'text-color': white
+    ),
+    $iframe-page
+);
+
+$icon: () !default;
+$icon: map-merge(
+    (
+      'text-color': black
+    ),
+    $icon
+);
+
+$message: () !default;
+$message: map-merge(
+    (
+      'border-radius': 2px,
+      'border-width': 2px,
+      'border-color': red,
+      'padding': 15px 19px,
+      'bg-color': getCssVar('color', 'info', 'light-9')
+    ),
+    $message
+);
+
+$divider: () !default;
+$divider: map-merge(
+    (
+      'margin-y': '24px',
+      'margin-x': '8px',
+      'border-color': #dcdfe6,
+      'border-style': 'solid'
+    ),
+    $divider
+);
+
+$tabs: () !default;
+$tabs: map-merge(
+    (
+      'padding': 0,
+      'font-size': 14px,
+      'font-weight': 400,
+      'font-weight-active': 500,
+      'header-height': 40px,
+      'border-bottom': 1px solid #eee,
+      'nav-color': #eee,
+      'header-margin': 0 0 15px,
+      'header-padding': 0,
+      'header-border-bottom': none,
+      'item-padding': 0 20px,
+      'item-max-width': 100%,
+      'item-bg-color': white,
+      'item-bg-color-active': #15b4f1,
+      'item-bg-color-hover': #15b4f1,
+      'item-color': black,
+      'item-color-active': white,
+      'item-color-hover': white,
+      'item-border': 1px solid #eee,
+      'item-border-active': 0 solid transparent,
+      'item-border-hover': 0 solid transparent,
+      'item-distance': 10px,
+      'item-border-radius': 2px 2px 0 0,
+      'close-icon-left': 5px,
+      'close-icon-hover-color': white,
+      'close-icon-hover-bg-color': #a8abb2,
+      'add-icon-right': 30px,
+      'add-icon-padding-left': 20px,
+      'scroll-padding': 0 60px 0 20px,
+      'active-distance': 14px,
+      'show-border-bottom': block
+    ),
+    $tabs
+);
+
+$multiple-tabs: () !default;
+$multiple-tabs: map-merge(
+    (
+      'bg-color': #f8f8f8,
+      'height': 31px
+    ),
+    $multiple-tabs
+);
+
+$menu: () !default;
+$menu: map-merge(
+    (
+      'bg-color': getCssVar('theme-color'),
+      'sub-menu-bg-color': getCssVar('theme-color'),
+      'active-color': getCssVar('primary-color'),
+      'text-color': getCssVar('text-primary-color'),
+      'hover-text-color': getCssVar('primary-color'),
+      'hover-bg-color': getCssVar('primary-color-light-9'),
+      'focus-text-color': getCssVar('primary-color'),
+      'focus-bg-color': getCssVar('primary-color-light-9'),
+      'item-height': 56px,
+      'sub-item-height': calc(#{getCssVar('menu-item-height')} - 6px),
+      'horizontal-sub-item-height': 36px,
+      'item-font-size': getCssVar('font-size-base'),
+      'item-hover-fill': getCssVar('primary-color-light-9'),
+      'border-color': #dcdfe6,
+      'border-bottom': getCssVar('border'),
+      'base-level-padding': 20px,
+      'level-padding': 20px,
+      'icon-mr': 8px,
+      'border': 0 solid transparent,
+      'border-right': 1px solid #dcdfe6,
+      'item-min-width': 200px,
+      'popup-border-radius': getCssVar('border-radius')
+    ),
+    $menu
+);
+
+$logo: () !default;
+$logo: map-merge(
+    (
+      img-width: 30px,
+      img-height: 30px,
+      title-color: black,
+      title-font-size: 16px,
+      title-font-weight: 400,
+      cursor: pointer
+    ),
+    $logo
+);
+
+$loading: () !default;
+$loading: map-merge(
+    (
+      'mask-color': rgba(255, 255, 255, 0.9),
+      'spinner-size': 20px,
+      'fullscreen-spinner-size': 50px,
+      'rotate-animation': loading-rotate 2s linear infinite,
+      'color': #409eff,
+      'text-size': 14px,
+      'margin': 3px 0
+    ),
+    $loading
+);
+
+$full-screen: () !default;
+$full-screen: map-merge(
+    (
+      'color': #434343,
+      'hover-color': #0171f6,
+      'font-size': 12px
+    ),
+    $full-screen
+);
+
+// Select
+$select: () !default;
+$select: map-merge(
+    (
+      'border-color-hover': getCssVar('border-color-hover'),
+      'disabled-border': getCssVar('disabled-border-color'),
+      'font-size': getCssVar('font-size-base'),
+      'close-hover-color': getCssVar('text-secondary-color'),
+      'input-color': getCssVar('text-placeholder-color'),
+      'multiple-input-color': getCssVar('text-regular-color'),
+      'input-focus-border-color': getCssVar('primary-color'),
+      'input-font-size': 14px
+    ),
+    $select
+);
+
+$select-option: () !default;
+$select-option: map-merge(
+    (
+      'text-color': getCssVar('text-regular-color'),
+      'disabled-color': getCssVar('text-placeholder-color'),
+      'height': 34px,
+      'hover-background': getCssVar('fill-color', 'light'),
+      'selected-text-color': getCssVar('primary-color')
+    ),
+    $select-option
+);
+
+$select-group: () !default;
+$select-group: map-merge(
+    (
+      'text-color': getCssVar('info-color'),
+      'height': 30px,
+      'font-size': 12px
+    ),
+    $select-group
+);
+
+$select-dropdown: () !default;
+$select-dropdown: map-merge(
+    (
+      'bg-color': getCssVar('bg-color', 'overlay'),
+      'shadow': getCssVar('box-shadow-light'),
+      'empty-color': getCssVar('text-secondary-color'),
+      'max-height': 274px,
+      'padding': 6px 0,
+      'empty-padding': 10px 0,
+      'border': 1px solid getCssVar('border-color-light')
+    ),
+    $select-dropdown
+);
+
+$select-tags-prefix-padding: () !default;
+$select-tags-prefix-padding: map-merge(
+    (
+      'large': 8px,
+      'default': 6px,
+      'small': 4px
+    ),
+    $select-tags-prefix-padding
+);
+
+$input: () !default;
+$input: map-merge(
+    (
+      'width': '100%',
+      'text-color': getCssVar('text-regular-color'),
+      'border': getCssVar('border'),
+      'hover-border': getCssVar('border-color-hover'),
+      'focus-border': getCssVar('primary-color'),
+      'transparent-border': 0 0 0 1px transparent inset,
+      'border-color': getCssVar('border-color'),
+      'border-radius': getCssVar('border-radius-base'),
+      'bg-color': getCssVar('fill-color', 'blank'),
+      'icon-color': getCssVar('text-placeholder-color'),
+      'placeholder-color': getCssVar('text-placeholder-color'),
+      'hover-border-color': getCssVar('border-color-hover'),
+      'clear-hover-color': getCssVar('text-secondary-color'),
+      'focus-border-color': getCssVar('primary-color')
+    ),
+    $input
+);
+
+$input-disabled: () !default;
+$input-disabled: map-merge(
+    (
+      'fill': getCssVar('disabled-bg-color'),
+      'border': getCssVar('disabled-border-color'),
+      'text-color': getCssVar('disabled-text-color'),
+      'placeholder-color': getCssVar('text-placeholder-color')
+    ),
+    $input-disabled
+);
+
+$input-font-size: () !default;
+$input-font-size: map-merge(
+    (
+      'large': 14px,
+      'default': 14px,
+      'small': 12px
+    ),
+    $input-font-size
+);
+
+$input-height: () !default;
+$input-height: map-merge($common-component-size, $input-height);
+
+$input-line-height: () !default;
+$input-line-height: map-merge($common-component-size, $input-line-height);
+
+$input-number-width: () !default;
+$input-number-width: map-merge(
+    (
+      'large': 180px,
+      'default': 150px,
+      'small': 120px
+    ),
+    $input-number-width
+);
+
+$input-padding-horizontal: () !default;
+$input-padding-horizontal: map-merge(
+    (
+      'large': 16px,
+      'default': 12px,
+      'small': 8px
+    ),
+    $input-padding-horizontal
+);
+
+$cascader: () !default;
+$cascader: map-merge(
+    (
+      'menu-text-color': getCssVar('text-regular-color'),
+      'menu-selected-text-color': getCssVar('primary-color'),
+      'menu-fill': getCssVar('bg-color', 'overlay'),
+      'menu-font-size': getCssVar('font-size-base'),
+      'menu-radius': getCssVar('border-radius-base'),
+      'menu-border': solid 1px getCssVar('border-color-light'),
+      'menu-shadow': getCssVar('box-shadow-light'),
+      'node-background-hover': getCssVar('fill-color', 'light'),
+      'node-color-disabled': getCssVar('text-placeholder-color'),
+      'color-empty': getCssVar('text-placeholder-color'),
+      'tag-background': getCssVar('fill-color')
+    ),
+    $cascader
+);
+
+$scrollbar: () !default;
+$scrollbar: map-merge(
+    (
+      'opacity': 0.3,
+      'bg-color': getCssVar('text-secondary-color'),
+      'hover-opacity': 0.5,
+      'hover-bg-color': getCssVar('text-secondary-color')
+    ),
+    $scrollbar
+);
+
+$popover: () !default;
+$popover: map-merge(
+    (
+      'bg-color': getCssVar('bg-color', 'overlay'),
+      'font-size': getCssVar('font-size-base'),
+      'border-color': getCssVar('border-color-lighter'),
+      'padding': 12px,
+      'padding-large': 18px 20px,
+      'title-font-size': 16px,
+      'title-text-color': getCssVar('text-primary-color'),
+      'border-radius': 4px
+    ),
+    $popover
+);
+
+$avatar: () !default;
+$avatar: map-merge(
+    (
+      'text-color': getCssVar('color-white'),
+      'bg-color': getCssVar('text-color', 'disabled'),
+      'text-size': 14px,
+      'icon-size': 18px,
+      'border-radius': getCssVar('border-radius-base')
+    ),
+    $avatar
+);
+
+$avatar-size: () !default;
+$avatar-size: map-merge(
+    (
+      'large': 56px,
+      'default': 40px,
+      'small': 24px
+    ),
+    $avatar-size
+);
+
+$descriptions: () !default;
+$descriptions: map-merge(
+    (
+      'table-border': 1px solid getCssVar('border-color-lighter'),
+      'item-bordered-label-background': getCssVar('fill-color', 'light')
+    ),
+    $descriptions
+);
+
+$md: () !default;
+$md: map-merge(
+    (
+      'primary-color': $primary-color,
+      'content-max-width': 800px,
+      'code-bg-color': #fff5f5,
+      'line-numbers-width': '2.5rem',
+      'icon-copy':
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2'/%3E%3C/svg%3E"),
+      'icon-copied':
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' height='20' width='20' stroke='rgba(128,128,128,1)' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2M9 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M9 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m-6 9 2 2 4-4'/%3E%3C/svg%3E"),
+      // info
+      info-title-color: #193c47,
+      info-bg-color: #eef9fd,
+      info-border-color: #4cb3d4,
+      info-code-bg-color: rgb(76 179 212 / 10%),
+      // note
+      note-title-color: #474748,
+      note-bg-color: #fdfdfe,
+      note-border-color: #ccc,
+      note-code-bg-color: rgb(212 213 216 / 20%),
+      // tip
+      tip-title-color: #003100,
+      tip-bg-color: #e6f6e6,
+      tip-border-color: #009400,
+      tip-code-bg-color: rgb(0 148 0 / 15%),
+      // warning
+      warning-title-color: #4d3800,
+      warning-bg-color: #fff8e6,
+      warning-border-color: #e6a700,
+      warning-code-bg-color: rgb(230 167 0 / 15%),
+      // danger
+      danger-title-color: #4b1113,
+      danger-bg-color: #ffebec,
+      danger-border-color: #e13238,
+      danger-code-bg-color: rgb(225 50 56 / 15%),
+      // detail
+      detail-bg-color: #eee,
+      detail-text-color: inherit,
+      detail-code-bg-color: rgb(127 127 127 / 15%)
+    ),
+    $md
+);
+
+$pagination: () !default;
+$pagination: map-merge(
+    (
+      'font-size': 14px,
+      'bg-color': getCssVar('fill-color', 'blank'),
+      'text-color': getCssVar('text-primary-color'),
+      'border-radius': 2px,
+      'button-color': getCssVar('text-primary-color'),
+      'button-width': 32px,
+      'button-height': 32px,
+      'button-disabled-color': getCssVar('text-placeholder-color'),
+      'button-disabled-bg-color': getCssVar('fill-color', 'blank'),
+      'button-bg-color': getCssVar('fill-color'),
+      'hover-color': getCssVar('primary-color'),
+      'font-size-small': 12px,
+      'button-width-small': 24px,
+      'button-height-small': 24px,
+      'item-gap': 16px
+    ),
+    $pagination
+);
+
+$tag: () !default;
+$tag: map-merge((
+  'font-size': 12px,
+  'border-radius': 4px,
+  'border-radius-rounded': 9999px,
+  'content-line-clamp-num': 1,
+  'content-max-width': 100%
+), $tag);
+
+
+$tag-height: () !default;
+$tag-height: map-merge(
+    (
+      'large': 32px,
+      'default': 24px,
+      'small': 20px,
+    ),
+    $tag-height
+);
+
+$tag-padding: () !default;
+$tag-padding: map-merge(
+    (
+      'large': 12px,
+      'default': 10px,
+      'small': 8px,
+    ),
+    $tag-padding
+);
+
+$tag-icon-size: () !default;
+$tag-icon-size: map-merge(
+    (
+      'large': 16px,
+      'default': 14px,
+      'small': 12px,
+    ),
+    $tag-icon-size
+);

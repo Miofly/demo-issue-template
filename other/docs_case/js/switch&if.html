@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	/*
+	 相对而言，下面情况更事宜选用 switch 语句。
+	 枚举表达式的值。这种枚举是可以期望的、平行的逻辑关系。
+	 表达式的值具有离散性，是不具有线性的非连续的区间值。
+	 表达式的值是固定的，不会动态变化。
+	 表达式的值是有限的，不是无限的，一般应该比较少。
+	 表达式的值一般为整数、字符串等简单的值。
+
+	 下面情况更事宜用 if 语句。
+	 具有复杂的逻辑关系。
+	 表达式的值具有线性特征，去对连续的区间值进行判断。
+	 表达式的值是动态的。
+	 测试任意类型的数据。
+	*/
+	const score = 30
+
+	if (score < 60) {
+		console.log("不及格");
+	} else if (score < 75) {
+		console.log("合格");
+	} else if (score < 85) {
+		console.log("良好");
+	} else {
+		console.log("优秀");
+	}
+
+	const sex = 5
+
+	function testSwitch () {
+		console.time('sw')
+		switch (sex) {  //离散值判断
+		case 1 :
+			console.log("女士");
+			break;
+		case 2 :
+			console.log("男士");
+			break;
+		case 3 :
+			console.log("男士");
+			break;
+		case 4 :
+			console.log("男士");
+			break;
+		case 5 :
+			console.log("男士");
+			break;
+		default :
+			console.log("请选择性别");
+		}
+		console.timeEnd('sw')
+	}
+
+	function testIf () {
+		console.time('if')
+		if (sex === 1) {
+			console.log("女士");
+		} else if (sex === 2) {
+			console.log("男士");
+		} else if (sex === 3) {
+			console.log("男士");
+		} else if (sex === 4) {
+			console.log("男士");
+		} else if (sex === 5) {
+			console.log("男士");
+		} else {
+			console.log("请选择性别");
+		}
+		console.timeEnd('if')
+	}
+	// testSwitch()
+	// testIf()
+
+
+	const COLOR_RED = "red";
+	const COLOR_YELLOW = "yellow";
+	const COLOR_BLUE = "blue";
+	const MY_BLUE = "blue";
+
+
+	console.log(testReturn('blue'))
+	console.log(testBreak('blue'))
+
+	function testReturn (color) {
+		switch (color) {
+		case COLOR_RED :
+			return "COLOR_RED";
+		case COLOR_YELLOW :
+			return "COLOR_YELLOW ";
+		case COLOR_BLUE:
+			return "COLOR_BLUE";
+		case MY_BLUE:
+			return "MY_BLUE";
+		default:
+			console.log(1)
+		}
+	}
+
+	function testBreak (color) {
+		switch (color) {
+		case COLOR_RED :
+			console.log(1)
+			return "COLOR_RED";
+		case COLOR_YELLOW :
+			console.log(2)
+			return "COLOR_YELLOW ";
+		case COLOR_BLUE:
+			console.log(3)
+			return "COLOR_BLUE";
+		case MY_BLUE:
+			console.log(4)
+			return "MY_BLUE";
+		default:
+			console.log(5)
+		}
+	}
+
+</script>
+</body>
+</html>

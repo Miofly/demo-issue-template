@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+这是 checkbox：<input type="checkbox" id="id-checkbox"/>
+<br>
+这是 a 标签：<a id="custormUrlOne" onclick="" href="http://www.baidu.com">跳转百度</a>
+<br>
+这是 a 标签：<a id="custormUrlTwo" onclick="" href="http://www.baidu.com">跳转百度</a>
+
+<div id="output-box"></div>
+<script>
+	document.querySelector("#id-checkbox").addEventListener("click", function(event) {
+		document.getElementById("output-box").innerHTML += "Sorry! <code>preventDefault()</code> won't let you check this!<br>";
+		event.preventDefault();
+	}, false);
+	
+	document.querySelector("#custormUrlOne").addEventListener("click", function(event) {
+		console.log('点击了 a 标签');
+		event.preventDefault();
+	}, { passive: false });
+	
+	document.querySelector("#custormUrlTwo").addEventListener("click", function(event) {
+		console.log('点击了 a 标签');
+		event.preventDefault();
+	}, { passive: true });
+</script>
+</body>
+</html>

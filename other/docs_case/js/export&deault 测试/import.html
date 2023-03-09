@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script type="module">
+	import { test, test2s, test2 as test2ss, test2 } from './export.js'
+	// 使用整体加载，即用星号（*）指定一个对象，所有输出值都加载在这个对象上面。
+	import * as mytest from './export.js'
+	console.log('mytest.test2:', mytest.test2);
+	console.log('test2:', test2);
+	
+	// import 命令输入的变量都是只读的
+	test = 2
+</script>
+</body>
+</html>

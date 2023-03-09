@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+  <metadata>
+    Created by FontForge 20191125 at Tue Feb 24 10:22:52 2009
+  </metadata>
+  <defs>
+    <font id="icommon" horiz-adv-x="1024">
+      <font-face
+        units-per-em="1024"
+        ascent="96"
+        descent="-64"
+      />
+      <missing-glyph horiz-adv-x="1024"/>
+      <glyph glyph-name="uni9884" unicode="&#x9884;"
+             d="M170 1239l100 88q72 -64 138 -128l212 258h-564v140h748v-140l-296 -358q34 -36 66 -70l-80 -70h364v-134q-32 -154 -100 -356q-62 22 -138 46q50 126 88 304h-200v-842q0 -228 -224 -228h-212q-10 72 -28 162q100 -12 202 -12q112 0 112 128v792h-322v140h394
+q-130 156 -260 280zM950 1189h338l50 274h-460v140h1136v-140h-514l-58 -274h480v-984h-146v846h-680v-846h-146v984zM1358 969h148v-298q0 -234 -60 -402q314 -210 572 -410l-110 -130q-244 208 -524 408q-20 -30 -40 -58q-162 -206 -508 -366q-64 82 -112 132
+q358 148 502 338q132 172 132 498v288z"/>
+    </font>
+  </defs>
+</svg>

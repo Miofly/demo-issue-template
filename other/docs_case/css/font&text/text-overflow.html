@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<style>
+	p {
+		width: 200px;
+		border: 1px solid;
+		padding: 2px 5px;
+		white-space: nowrap;
+		overflow: hidden;
+	}
+</style>
+<body>
+<p style="white-space: normal;" class="overflow-visible">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p style="text-overflow: clip; " class="overflow-clip">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p style="text-overflow: ellipsis;  " class="overflow-ellipsis">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+<p style="text-overflow: '这是被剪断的文本内容';" class="overflow-string">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+</body>
+</html>

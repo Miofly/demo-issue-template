@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script src="https://miofly.gitee.io/res/demo/js/testError.js"></script>
+
+<script>
+	const x = Error('I was constructed via the "new" keyword!');
+	const y = new Error('I was constructed via the "new" keyword!');
+	
+	// object
+	console.log('typeof x:', typeof x);
+	// object
+	console.log('typeof y:', typeof y);
+	
+	console.log('message:', y.message);
+	console.log('name:', y.name);
+	console.log('fileName:', y.fileName);
+	console.log('stack:', y.stack);
+	console.log('columnNumber:', y.columnNumber);
+	console.log('lineNumber:', y.lineNumber);
+</script>
+</body>
+</html>

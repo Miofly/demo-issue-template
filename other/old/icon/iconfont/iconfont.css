@@ -1,0 +1,334 @@
+@font-face {
+  font-family: "vicon"; /* Project id 2250128 */
+  src: url('//at.alicdn.com/t/c/font_2250128_z5kfrf8moz7.woff2?t=1675775733770') format('woff2'),
+  url('//at.alicdn.com/t/c/font_2250128_z5kfrf8moz7.woff?t=1675775733770') format('woff'),
+  url('//at.alicdn.com/t/c/font_2250128_z5kfrf8moz7.ttf?t=1675775733770') format('truetype');
+}
+
+.vicon {
+  font-family: "vicon" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.vi-category:before {
+  content: "\e615";
+}
+
+.vi-tag:before {
+  content: "\e631";
+}
+
+.vi-arrow-downs:before {
+  content: "\e609";
+}
+
+.vi-more:before {
+  content: "\e63b";
+}
+
+.vi-arrow-lefts:before {
+  content: "\e6c6";
+}
+
+.vi-arrow-rights:before {
+  content: "\e6c9";
+}
+
+.vi-date:before {
+  content: "\e697";
+}
+
+.vi-user-fill:before {
+  content: "\e63c";
+}
+
+.vi-link:before {
+  content: "\e61a";
+}
+
+.vi-exit:before {
+  content: "\e7cb";
+}
+
+.vi-search:before {
+  content: "\e623";
+}
+
+.vi-star:before {
+  content: "\e63e";
+}
+
+.vi-vip:before {
+  content: "\e70c";
+}
+
+.vi-new:before {
+  content: "\e70d";
+}
+
+.vi-hot:before {
+  content: "\e70e";
+}
+
+.vi-reset:before {
+  content: "\e710";
+}
+
+.vi-tip:before {
+  content: "\e714";
+}
+
+.vi-full-screen:before {
+  content: "\e690";
+}
+
+.vi-exit-screen:before {
+  content: "\e695";
+}
+
+.vi-desktop:before {
+  content: "\e6be";
+}
+
+.vi-sort:before {
+  content: "\e741";
+}
+
+.vi-sorts:before {
+  content: "\e742";
+}
+
+.vi-phone:before {
+  content: "\e748";
+}
+
+.vi-mini-program:before {
+  content: "\e749";
+}
+
+.vi-shrink:before {
+  content: "\e74c";
+}
+
+.vi-enlarge:before {
+  content: "\e74d";
+}
+
+.vi-txt:before {
+  content: "\e75b";
+}
+
+.vi-file:before {
+  content: "\e75d";
+}
+
+.vi-html:before {
+  content: "\e75c";
+}
+
+.vi-zip:before {
+  content: "\e75f";
+}
+
+.vi-exc:before {
+  content: "\e760";
+}
+
+.vi-pdf:before {
+  content: "\e761";
+}
+
+.vi-ppt:before {
+  content: "\e762";
+}
+
+.vi-word:before {
+  content: "\e763";
+}
+
+.vi-weixin:before {
+  content: "\e76a";
+}
+
+.vi-app:before {
+  content: "\e771";
+}
+
+.vi-safe:before {
+  content: "\e727";
+}
+
+.vi-view:before {
+  content: "\e747";
+}
+
+.vi-no-view:before {
+  content: "\e75a";
+}
+
+.vi-close-full:before {
+  content: "\e75e";
+}
+
+.vi-back-top:before {
+  content: "\aa";
+}
+
+.vi-arrow-up:before {
+  content: "\e746";
+}
+
+.vi-arrow-down:before {
+  content: "\e7b2";
+}
+
+.vi-fill-error:before {
+  content: "\e65f";
+}
+
+.vi-fill-warning:before {
+  content: "\e6eb";
+}
+
+.vi-fill-success:before {
+  content: "\e73b";
+}
+
+.vi-new-page:before {
+  content: "\e7ab";
+}
+
+.vi-close-left:before {
+  content: "\e9dc";
+}
+
+.vi-close-right:before {
+  content: "\e9db";
+}
+
+.vi-refresh:before {
+  content: "\e628";
+}
+
+.vi-close-all:before {
+  content: "\e612";
+}
+
+.vi-close-other:before {
+  content: "\e68c";
+}
+
+.vi-arrow-right:before {
+  content: "\e743";
+}
+
+.vi-arrow-left:before {
+  content: "\e745";
+}
+
+.vi-copy:before {
+  content: "\e744";
+}
+
+.vi-setting-web:before {
+  content: "\e608";
+}
+
+.vi-loading1:before {
+  content: "\e69d";
+}
+
+.vi-success:before {
+  content: "\e80f";
+}
+
+.vi-fail:before {
+  content: "\e652";
+}
+
+.vi-delete:before {
+  content: "\e810";
+}
+
+.vi--shijian:before {
+  content: "\e614";
+}
+
+.vi--award:before {
+  content: "\e627";
+}
+
+.vi-book:before {
+  content: "\e607";
+}
+
+.vi--loading:before {
+  content: "\e962";
+}
+
+.vi-fangda:before {
+  content: "\e621";
+}
+
+.vi-add:before {
+  content: "\e678";
+}
+
+.vi-sangedian:before {
+  content: "\e64f";
+}
+
+.vi-guanbiquanping:before {
+  content: "\e64b";
+}
+
+.vi-quanping:before {
+  content: "\e637";
+}
+
+.vi-collapse:before {
+  content: "\e603";
+}
+
+.vi-item:before {
+  content: "\e67f";
+}
+
+.vi-home:before {
+  content: "\e60c";
+}
+
+.vi-quanxian:before {
+  content: "\e635";
+}
+
+.vi-weibiaoti-:before {
+  content: "\e616";
+}
+
+.vi-admin:before {
+  content: "\e600";
+}
+
+.vi-xiaochengxu:before {
+  content: "\e602";
+}
+
+.vi-user:before {
+  content: "\e851";
+}
+
+.vi-lock:before {
+  content: "\e605";
+}
+
+.vi-laba:before {
+  content: "\e60b";
+}
+
+.vi-close:before {
+  content: "\e6ab";
+}

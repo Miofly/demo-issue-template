@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<div style="display: flex;width: 1500px;outline: 1px red solid;">
+	<div class="flexItem" style="flex-shrink: 2;flex-basis: 300px;margin: 0 10px;box-sizing: content-box;" title="300 - (550*600/2770) ≈ 180.866">1</div>
+	<div class="flexItem" style="flex-shrink: 2;flex-basis: 300px;padding: 0 20px;border: 5px #ccc solid;box-sizing: content-box;" title="300 - (550*600/2770) ≈ 180.866">2</div>
+	<div class="flexItem" style="flex-shrink: 2;flex-basis: 300px;padding: 0 20px;border: 5px #ccc solid;box-sizing: border-box;" title="300 - (550*500/2770) ≈ 200.722 - 20*2 - 10*2 = 150.722">3</div>
+	<div class="flexItem" style="flex-shrink: 1;flex-basis: 200px;padding: 0 10px;box-sizing: content-box;" title="200 - (550*200/2770) ≈ 160.288">4</div>
+	<div class="flexItem" style="flex-shrink: 1;flex-basis: 200px;border: 5px #ccc solid;margin: 0 10px;box-sizing: content-box;" title="200 - (550*200/2770) ≈ 160.288">5</div>
+	<div class="flexItem" style="flex-shrink: 1;flex-basis: 200px;border: 5px #ccc solid;margin: 0 10px;box-sizing: border-box;" title="200 - (550*190/2770) ≈ 162.274 - 5*2 = 152.274">6</div>
+	<div class="flexItem" style="flex-shrink: 2;flex-basis: 100px;border: 5px #ccc solid;box-sizing: content-box;" title="100 - (550*200/2770) ≈ 60.288">7</div>
+	<div class="flexItem" style="flex-shrink: 2;flex-basis: 100px;padding: 0 30px;margin: 0 10px;box-sizing: content-box;" title="100 - (550*200/2770) ≈ 60.288">8</div>
+	<div class="flexItem" style="flex-shrink: 2;flex-basis: 100px;padding: 0 30px;margin: 0 10px;box-sizing: border-box;" title="100 - (550*80/2770) ≈ 84.115 - 30*2 = 24.115">9</div>
+</div>
+<script>
+	const flexItems = document.getElementsByClassName('flexItem')
+	for (var i = 0; i < flexItems.length; i++) {
+		console.log(flexItems[i].getBoundingClientRect())
+		flexItems[i].innerText = flexItems[i].offsetWidth
+	}
+</script>
+</html>

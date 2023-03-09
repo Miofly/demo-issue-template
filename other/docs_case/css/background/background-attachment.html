@@ -1,0 +1,19 @@
+<html>
+	<div class="div1" style="padding: 30px;border: 10px solid red;color: #ff0000;margin-top:10px;
+background: #fff url(https://miofly.gitee.io/res/img/test/small.png) no-repeat fixed 0 0;;float: left">
+	</div>
+	<div class="div1" style="padding: 30px;border: 10px solid red;color: #ff0000;margin-top:10px;
+background: #fff url(https://miofly.gitee.io/res/img/test/small.png) no-repeat scroll 0 0;float: left">
+	</div>
+	<div class="div1"  style="padding: 30px;border: 10px solid red;color: #ff0000;margin-top:10px;
+background: #fff url(https://miofly.gitee.io/res/img/test/small.png) no-repeat local 0 0;float: left">
+	</div>
+<script>
+	const div1 = document.getElementsByClassName('div1')
+	for (let i = 0; i < 100; i++) {
+		div1[0].innerHTML = div1[0].innerHTML + '测试代码<br>'
+		div1[1].innerHTML = div1[1].innerHTML + '测试代码<br>'
+		div1[2].innerHTML = div1[2].innerHTML + '测试代码<br>'
+	}
+</script>
+</html>

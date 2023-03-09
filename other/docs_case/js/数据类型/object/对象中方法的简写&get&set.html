@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<script>
+	const obj = {
+		a: '我是 a 初始的值，稍后我将改变',
+		fnn () {
+			return 'fn-->fnn';
+		},
+		testOne: function () {
+			return 'fn-->testOne';
+		},
+		testTwo: () => {
+			return 'fn-->testTwo';
+		},
+		async fnns () {
+			return 'fn-->fnns';
+		},
+		testOnes: async function () {
+			return 'fn-->testOnes';
+		},
+		testTwos: async () => {
+			return 'fn-->testTwos';
+		},
+		['test' + 'three'] () {
+			return `fn-->${['test' + 'three']}`;
+		},
+		// 相当于一个普通函数
+		get () {
+			console.log('调用了此对象的 get 方法');
+			return 'get'
+		},
+		// 相当于一个普通函数
+		getA () {
+			return this.a
+		},
+		// getter 绑定了 test 属性
+		get testGetter () {
+			return this.a
+		},
+		set testGetter (name) {
+			this.log.push(name);
+		},
+	};
+
+	console.log('我是 obj 对象', obj);
+
+	console.log('第一次获取 testGetter：', obj.testGetter);
+	obj.a = '第一次获取 testGetter 后 a 的值变成此文字'
+
+	console.log('fnn:', obj.fnn());
+	console.log('testOne:', obj.testOne());
+	console.log('testTwo:', obj.testTwo());
+	console.log('fnns:', obj.fnns());
+	console.log('testOnes:', obj.testOnes());
+	console.log('testTwos:', obj.testTwos());
+	console.log('getA:', obj.getA());
+	console.log('test' + 'three', obj['test' + 'three']());
+	console.log('test' + 'three', obj.testthree());
+
+	console.log('第二次获取 testGetter：', obj.testGetter);
+
+</script>
+</body>
+</html>

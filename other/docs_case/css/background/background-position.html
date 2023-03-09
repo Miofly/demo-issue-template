@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		html, body {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+
+<div style="display: flex;justify-content: space-around;background: lightcyan;flex-wrap: wrap ">
+	<div style="background: black url(https://miofly.gitee.io/res/img/test/small.png) 0 0 no-repeat;
+	height: 100px;width: 100px;margin-right: 10px;color: #ff0000;margin-top:10px">
+		background-position:0 0
+	</div>
+	<div style="background: black url(https://miofly.gitee.io/res/img/test/small.png) 0 no-repeat;
+	height: 100px;width: 100px;margin-right: 10px;color: #ff0000;margin-top:10px">
+		background-position:0
+	</div>
+	<div style="background: black url(https://miofly.gitee.io/res/img/test/small.png) top no-repeat;
+	height: 100px;width: 100px;margin-right: 10px;color: #ff0000;margin-top:10px">
+		background-position:top
+	</div>
+	<div style="background: black url(https://miofly.gitee.io/res/img/test/small.png) left no-repeat;
+	height: 100px;width: 100px;margin-right: 10px;color: #ff0000;margin-top:10px">
+		background-position:left
+	</div>
+	<div style="background: black url(https://miofly.gitee.io/res/img/test/small.png) center no-repeat;
+	height: 100px;width: 100px;margin-right: 10px;color: #ff0000;margin-top:10px">
+		background-position:center
+	</div>
+	<div style="background: black url(https://miofly.gitee.io/res/img/test/small.png) 10px 50% no-repeat;
+	height: 100px;width: 100px;margin-right: 10px;color: #ff0000;margin-top:10px">
+		background-position:10px 50%
+	</div>
+</div>
+
+<!--<div style="display: flex;justify-content: space-around;background: lightcyan ">-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) center/cover no-repeat;height: 150px;width: 150px">这是一段测试文字</div>-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) center/contain no-repeat;height: 150px;width: 150px">这是一段测试文字</div>-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) center/100px no-repeat;height: 150px;width: 150px">这是一段测试文字</div>-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) center/100px 50px no-repeat;height: 150px;width: 150px">这是一段测试文字</div>-->
+<!--</div>-->
+
+<!--<div style="display: flex;justify-content: space-around;background: lightcyan;height: 550px;width: 100%;color: #ff0000;margin-top:10px">-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px repeat-x;height: 150px;width: 100%">repeat-x</div>-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px repeat-y;height: 100px;width: 100%">repeat-y</div>-->
+<!--	<div style="background: url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px repeat;height: 100px;width: 100%">repeat</div>-->
+<!--</div>-->
+
+<!--<div style="padding: 30px;border: 10px solid red;height: 150px;width: 100%;color: #ff0000;margin-top:10px;-->
+<!--background: #fff url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px no-repeat padding-box;">-->
+<!--	background-origin：padding-box:原点位于 padding 区域（含 padding 左上角）-->
+<!--</div>-->
+<!--<div style="padding: 30px;border: 10px solid lightgoldenrodyellow;height: 150px;width: 100%;color: #ff0000;margin-top:10px;-->
+<!--background: #fff url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px no-repeat border-box;">-->
+<!--	background-origin：border-box:原点位于 border 区域（含 border 左上角）-->
+<!--</div>-->
+<!--<div style="padding: 30px;border: 10px solid lightpink;height: 150px;width: 100%;color: #ff0000;margin-top:10px;-->
+<!--background: #fff url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px no-repeat content-box;">-->
+<!--	background-origin：content-box:原点位于 content 区域左上角-->
+<!--</div>-->
+
+<!--<br>-->
+
+<!--<div style="padding: 30px;border: 10px solid red;height: 150px;width: 100%;color: #ff0000;margin-top:10px;-->
+<!--background: #fff url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px no-repeat padding-box content-box;">-->
+<!--	background-clip：padding-box:原点位于 padding 区域（含 padding 左上角）-->
+<!--</div>-->
+<!--<div style="padding: 30px;border: 10px solid lightgoldenrodyellow;height: 150px;width: 100%;color: #ff0000;margin-top:10px;-->
+<!--background: #fff url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px no-repeat border-box content-box;">-->
+<!--	background-clip：border-box:原点位于 border 区域（含 border 左上角）-->
+<!--</div>-->
+<!--<div style="padding: 30px;border: 10px solid lightpink;height: 150px;width: 100%;color: #ff0000;margin-top:10px;-->
+<!--background: #fff url(https://miofly.gitee.io/res/img/glnz/1.jpg) 0 0 /100px 100px no-repeat content-box content-box;">-->
+<!--	background-clip：content-box:原点位于 content 区域左上角-->
+<!--</div>-->
+
+
+</body>
+</html>

@@ -1,0 +1,2 @@
+// const globalName = 'wfly'
+export {}

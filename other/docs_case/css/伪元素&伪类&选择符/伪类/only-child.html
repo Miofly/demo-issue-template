@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<!--
+匹配没有任何兄弟元素的元素.
+等效的选择器还可以写成 :first-child:last-child 或者 :nth-child(1):nth-last-child(1),
+-->
+<ol id="onlyChild">
+	<li>First
+		<ul>
+			<li>This list has just one element.</li>
+		</ul>
+	</li>
+	<li>Second
+		<ul>
+			<li class="li-test1">This list has three elements.<span style="display: block;width: 50px">1</span></li>
+			<li class="li-test2">This list has three elements.</li>
+			<li class="li-test3">This list has three elements.</li>
+		</ul>
+	</li>
+</ol>
+<style>
+	#onlyChild li li {
+		list-style-type: disc;
+	}
+	#onlyChild li:only-child {
+		color: red;
+		list-style-type: square;
+	}
+	.li-test1 :only-child {
+		background: red;
+	}
+</style>
+</body>
+</html>

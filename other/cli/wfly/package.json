@@ -1,0 +1,49 @@
+{
+  "name": "wfly",
+  "version": "0.0.10",
+  "type": "module",
+  "main": "lib/index.cjs",
+  "author": "wfly <953212389@qq.com>",
+  "license": "MIT",
+  "bin": {
+    "wfly": "./lib/index.cjs"
+  },
+  "files": [
+    "lib/index.cjs",
+    "template"
+  ],
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "scripts": {
+    "dev": "node --experimental-specifier-resolution=node --loader ts-node/esm index.ts",
+    "build": "zx ./script/build.mjs",
+    "pub": "npm version patch && pnpm build && npm publish"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/gradient-string": "^1.1.2",
+    "@types/prompts": "^2.4.1",
+    "@vri/cjs-utils": "workspace:*",
+
+    "axios": "^1.1.2",
+    "chalk": "^5.1.2",
+    "commander": "^9.4.1",
+    "ejs": "^3.1.8",
+    "fs-extra": "^10.1.0",
+    "kolorist": "^1.6.0",
+    "minimist": "^1.2.7",
+    "ora": "^6.1.2",
+    "prompts": "^2.4.2",
+    "zx": "^7.1.1"
+  },
+  "dependencies": {
+    "execa": "^6.1.0",
+    "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.2"
+  }
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+<img style="width: 100px;height: 100px" src="">
+<script>
+	/**
+	 * 为捕获状态时（第三个参数为true）能捕获到js执行错误，也能捕获带有src的标签元素的加载错误。
+		 为冒泡状态时（第三个参数为false）能捕获到js执行错误，不能捕获带有src的标签元素的加载错误。
+		 参数对应1个值，异常事件，错误信息都在里面
+		 函数体内用preventDefault可以不让异常信息输出到控制台
+	 */
+	window.addEventListener('error', function(event) {
+		console.log(event);
+		// 当前 DOM 节点
+		console.log(event.target);
+	}, true)
+</script>
+</body>
+</html>

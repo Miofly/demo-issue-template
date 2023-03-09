@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "isolatedModules": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "noImplicitAny": false,
+    "moduleResolution": "node"
+  },
+  "include": ["**/*"]
+  //  "exclude": ["src/*.ts"]
+}

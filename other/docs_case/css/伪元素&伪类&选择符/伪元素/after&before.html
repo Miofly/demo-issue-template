@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	#pseudoElement .test1[data-descr] {
+		position: relative;
+		cursor: help;
+	}
+
+	#pseudoElement .test1[data-descr]:hover::before {
+		content: attr(data-descr);
+		position: absolute;
+		left: 0;
+		top: 24px;
+		min-width: 200px;
+		border: 1px #aaaaaa solid;
+		border-radius: 10px;
+		background-color: #ffffcc;
+		padding: 12px;
+		color: #000000;
+		font-size: 14px;
+		z-index: 1;
+	}
+
+	#pseudoElement .test2 {
+		position: relative;
+	}
+
+	#pseudoElement .test2::before{
+		content: '';
+		position: absolute;
+		left: 0;
+		background-image: url(https://miofly.gitee.io/res/img/small/奖杯.png);
+		background-size:cover;
+		width: 20px;
+		height: 20px;
+	}
+
+	#pseudoElement .test3::before{
+		content: url(https://miofly.gitee.io/res/img/small/猫咪.png) '无法控制图片大小 ';
+	}
+
+	#pseudoElement li {
+		list-style-type: none;
+		position: relative;
+		margin: 2px;
+		padding: 0.5em 0.5em 0.5em 2em;
+		background: lightgrey;
+		font-family: sans-serif;
+	}
+
+	#pseudoElement li.done {
+		background: #CCFF99;
+	}
+
+	#pseudoElement li.done::before {
+		content: '';
+		position: absolute;
+		border-color: #009933;
+		border-style: solid;
+		border-width: 0 0.3em 0.25em 0;
+		height: 1em;
+		top: 1.3em;
+		left: 0.6em;
+		margin-top: -1em;
+		transform: rotate(45deg);
+		width: 0.5em;
+	}
+
+	#pseudoElement .test::after {
+		content: " class=(" attr(class) ")";
+	}
+</style>
+<body>
+<ul id="pseudoElement">
+	<li class="test test1" data-descr="collection of words and punctuation">Buy milk</li>
+	<li class="test test2">Take the dog for a walk</li>
+	<li class="test test3">Exercise</li>
+	<li class="test test4">Write code</li>
+</ul>
+<script>
+	var list = document.querySelector('#pseudoElement');
+	list.addEventListener('click', function(ev) {
+		if( ev.target.tagName === 'LI') {
+			ev.target.classList.toggle('done');
+		}
+	}, false);
+</script>
+</body>
+</html>

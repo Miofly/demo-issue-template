@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div>
+	<p class="p1"></p>
+	<p class="p1"></p>
+	<p class="p1"></p>
+	<p class="p1"></p>
+
+	<button onclick="cutPrev()">--前置</button>
+	<button onclick="cutAfter()">后置--</button>
+	<button onclick="addPrev()">++前置</button>
+	<button onclick="addAfter()">后置++</button>
+</div>
+<script>
+	const p1 = document.getElementsByClassName('p1')
+	const h1 = document.getElementsByTagName('h1')
+
+	let a = 3, b = 3, c = 3, d=3;
+	p1[0].innerText = 'a:' + a
+	p1[1].innerText = 'b:' + b
+	p1[2].innerText = 'c:' + c
+	p1[3].innerText = 'd:' + d
+	function cutPrev() {
+		p1[0].innerText = 'a:' + --a
+		console.log('a:', a)
+	}
+	function cutAfter() {
+		p1[1].innerText = 'b:' + b--
+		console.log('b:', b)
+	}
+	function addPrev() {
+		p1[2].innerText = 'c:' + ++c
+		console.log('c:', c)
+	}
+	function addAfter() {
+		p1[3].innerText = d--
+		console.log('d:', d)
+	}
+</script>
+</body>
+</html>

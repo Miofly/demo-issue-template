@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div id="par-con-one" style="display: flex;align-items: center;justify-content: flex-start;transition: 1s;"></div>
+<br>
+<div id="par-con-two" style="display: flex;align-items: center;justify-content: flex-start;transition: 1s"></div>
+<button onclick="prev()">上一个</button>
+<button onclick="next()">下一个</button>
+<script>
+	const parConOne = document.getElementById('par-con-one')
+	const parConTwo = document.getElementById('par-con-two')
+
+	for (let i = 0; i < 17; i++) {
+		parConOne.innerHTML += `<div style="width: 300px;height: 150px;background: lightblue;margin-right: 6px;flex-shrink: 0">${i + 1}</div>`
+		parConTwo.innerHTML += `<div style="width: 300px;height: 150px;background: lightcoral;margin-right: 6px;">${i + 1}</div>`
+	}
+
+	const pageNum = Math.floor(parConOne.scrollWidth / parConOne.clientWidth)
+	let turnPageNum = Math.floor(parConOne.scrollWidth / parConOne.clientWidth)
+	let nowOffset = 0
+
+	function prev () {
+		if (turnPageNum < pageNum) {
+			++turnPageNum
+			nowOffset = nowOffset + parConOne.clientWidth
+			parConOne.style.transform = `translate(${nowOffset}px, 0)`
+		} else {
+			nowOffset = 0
+			parConOne.style.transform = `translate(${nowOffset}px, 0)`
+		}
+	}
+
+	function next () {
+		// 当 turnPageNum === 1 说明只需翻滚一次
+		if (turnPageNum === 1) {
+			nowOffset = -(parConOne.scrollWidth - parConOne.clientWidth)
+			parConOne.style.transform = `translate(${nowOffset}px, 0)`
+		} else {
+			turnPageNum--
+			nowOffset = nowOffset - parConOne.clientWidth
+			parConOne.style.transform = `translate(${nowOffset}px, 0)`
+		}
+	}
+</script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{
+  "extends": "@vft/tsconfig/tsconfig.web.json",
+  "include": ["src", "index.ts"]
+}

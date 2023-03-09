@@ -1,0 +1,31 @@
+{
+  "name": "@vri/cjs-utils",
+  "version": "0.0.2",
+  "type": "module",
+  "files": [
+    "lib"
+  ],
+  "main": "lib/index.js",
+  "devDependencies": {
+    "@types/fs-extra": "^9.0.13",
+    "@types/gradient-string": "^1.1.2",
+    "@types/prompts": "^2.4.1"
+  },
+  "dependencies": {
+    "axios": "^1.1.2",
+    "fast-glob": "^3.2.12",
+    "fs-extra": "^10.1.0",
+    "gradient-string": "^2.0.2",
+    "kolorist": "^1.6.0"
+  },
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "rimraf ./lib && tsc",
+    "release": "pnpm build & release-it",
+    "pub": "npm version patch && pnpm build && npm publish"
+  },
+  "author": "Wfly <953212389@qq.com>",
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	function test () {
+		const obj = {
+			name: 'wfly',
+			age: '13',
+			attr: {
+				money: 1000,
+				status: true
+			}
+		}
+
+		const money = 100
+
+		function innerTest () {
+			console.log(obj, '我是函数内的方法');
+			obj.attr.status = false
+		}
+
+		return { obj, money, innerTest }
+	}
+
+	const { obj, money, innerTest } = test()
+
+	console.log(obj, money);
+	innerTest()
+
+	obj.name = 'fnn'
+	obj.attr.money = '888'
+
+	console.log(obj, money);
+	innerTest()
+</script>
+</body>
+</html>

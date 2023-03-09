@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	const obj = {
+		a: 'a',
+		b: 'a',
+		c: 'b',
+		[Symbol('a')]: '我是 symbol',
+	}
+
+	Object.defineProperty(obj, 'enumerableTrue', {
+		value: 'enumerableTrue',
+		enumerable: false
+	})
+
+	Object.defineProperty(obj, 'notEnumerableTrue', {
+		value: 'not-enumerableTrue',
+		enumerable: true
+	})
+
+	for (let key in obj) {
+		console.log('obj.' + key + ' = 我是' + obj[key])
+	}
+
+	console.log('==========');
+
+	function TestProtoType () {
+		this.name = 'wfly'
+	}
+
+	TestProtoType.prototype = obj
+
+	const testProtoTypeObj = new TestProtoType();
+
+	for (let key in testProtoTypeObj) {
+		if (testProtoTypeObj.hasOwnProperty(key)) {
+			console.log('testProtoTypeObj.' + key + ' = 我是' + testProtoTypeObj[key])
+		}
+	}
+
+	console.log('============');
+
+	// 遍历数组
+	const arr = [{name: 'wfly'}, {name: 'fnn'}]
+	for (let key in arr) {
+		console.log('obj.' + key + ' = 我是' + JSON.stringify(arr[key]))
+	}
+
+	console.log('=============');
+
+	// 循环中断
+	for (let key in obj) {
+		if (key === 'c') {
+			break
+		}
+		console.log('obj.' + key + ' = 我是' + obj[key])
+	}
+
+	console.log('=============');
+
+	for (let key in obj) {
+		if (key === 'c') {
+			continue
+		}
+		console.log('obj.' + key + ' = 我是' + obj[key])
+	}
+
+	console.log('=============');
+
+	for (let key in obj) {
+		if (key === 'c') {
+			return
+		}
+		console.log('obj.' + key + ' = 我是' + obj[key])
+	}
+
+</script>
+</body>
+</html>

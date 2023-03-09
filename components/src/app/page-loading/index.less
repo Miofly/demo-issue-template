@@ -1,0 +1,10 @@
+@prefix-cls: ~'@{pro-namespace}-page-loading';
+@prefix-var: ~'--@{prefix-cls}';
+
+body {
+  @{prefix-var}-height: 100vh;
+}
+
+.@{prefix-cls} {
+  height: var(~'@{prefix-var}-height');
+}

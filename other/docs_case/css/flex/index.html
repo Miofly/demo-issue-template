@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<div class="box">
+	<div class="item1">
+		<p>111</p>
+		<span>1</span>
+	</div>
+	<div class="item2">
+		<p>222</p>
+		<span>2</span>
+	</div>
+	<div class="item3">
+		<p>333</p>
+		<span>3</span>
+	</div>
+	<div class="item4">
+		<p>444</p>
+		<span>4</span>
+	</div>
+</div>
+<style>
+	.box {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.box div {
+		/*flex-grow: 1;*/
+		border: 1px solid red;
+		flex: 1;
+	}
+
+	.box .item1 {
+		order: 5;
+		/*flex-grow: 2;*/
+	}
+
+	.box .item2 {
+		order: 3;
+		flex: 1 500px;
+		/*flex-basis: 500px*/
+	}
+</style>
+<div>
+	<h1>中间定宽</h1>
+	<div style="display: flex;width: 100%">
+		<div style="flex-grow: 1;height: 30px;background: lightblue"></div>
+		<div style="flex-grow: 3;height: 30px;background: lightcoral"></div>
+		<div style="flex-grow: 3;height: 30px;background: lightpink"></div>
+	</div>
+</div>
+</body>
+
+</html>

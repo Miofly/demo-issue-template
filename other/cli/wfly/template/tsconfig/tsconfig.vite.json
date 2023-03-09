@@ -1,0 +1,4 @@
+{
+  "extends": "@vft/tsconfig/tsconfig.vite.json",
+  "include": ["src"]
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	/*谷歌浏览器暂时无法还原link效果，原因未知*/
+	.external:link{background:yellow;}
+	.external:visited{background:lightblue;}
+	.external:hover{background:lightcoral;}
+	.external:active{background:lightseagreen;}
+</style>
+<body>
+<ul>
+	<li><a href="" class="external" style="color: white">外部链接</a></li>
+</ul>
+
+<!--
+匹配没有任何兄弟元素的元素.
+等效的选择器还可以写成 :first-child:last-child 或者 :nth-child(1):nth-last-child(1),
+-->
+<ol id="onlyChild">
+	<li>First
+		<ul>
+			<li>This list has just one element.</li>
+		</ul>
+	</li>
+	<li>Second
+		<ul>
+			<li class="li-test1">This list has three elements.<span style="display: block;width: 50px">1</span></li>
+			<li class="li-test2">This list has three elements.</li>
+			<li class="li-test3">This list has three elements.</li>
+		</ul>
+	</li>
+</ol>
+<style>
+	#onlyChild li li {
+		list-style-type: disc;
+	}
+	#onlyChild li:only-child {
+		color: red;
+		list-style-type: square;
+	}
+	.li-test1 :only-child {
+		background: red;
+	}
+</style>
+
+<div id="checked">
+	<input type="radio" name="my-input" id="yes">
+	<input type="checkbox" name="my-checkbox" id="opt-in">
+
+	<select name="my-select" id="fruit">
+		<option value="opt1">Apples</option>
+	</select>
+</div>
+
+
+<style>
+	#checked input:checked + label {
+		color: red;
+	}
+
+	#checked input[type="radio"]:checked {
+		box-shadow: 0 0 0 3px orange;
+	}
+
+	#checked input[type="checkbox"]:checked {
+		box-shadow: 0 0 0 3px hotpink;
+	}
+
+	#checked option:checked {
+		box-shadow: 0 0 0 3px lime;
+		color: red;
+	}
+</style>
+</body>
+</html>

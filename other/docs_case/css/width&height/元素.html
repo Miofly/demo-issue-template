@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<style>
+	p {
+		margin: 0;
+	}
+</style>
+<body>
+<div id="ele-property"></div>
+<div id="ele-con-test" style="width: 100px;height: 200px;border: 10px solid red;padding: 15px;margin: 20px;overflow: scroll"></div>
+
+<div id="ele-property-ie" style="box-sizing: border-box"></div>
+<div id="ele-con-test-ie" style="box-sizing: border-box;width: 100px;height: 200px;border: 10px solid red;padding: 15px;margin: 20px;overflow: scroll"></div>
+</body>
+<script>
+	const eleProperty = document.getElementById('ele-property')
+	for (let i = 0; i < 12; i++) {
+		eleProperty.innerHTML += '<p class="p-ele-test"></p>'
+	}
+	const pEleTest = eleProperty.getElementsByClassName('p-ele-test')
+	const eleConTest = document.getElementById('ele-con-test')
+	for (let i = 0; i < 30; i++) {
+		eleConTest.innerHTML += `<li>${i + 1}</li>`
+	}
+	function getEleConTestWh() {
+		pEleTest[0].innerText = 'width + 左右padding eleConTest.clientWidth:' + eleConTest.clientWidth;
+		pEleTest[1].innerText = 'width + 左右padding + 左右boder eleConTest.offsetWidth:' + eleConTest.offsetWidth;
+		pEleTest[2].innerText = '获取指定标签内容层的真实宽度（可视区域宽度+被隐藏区域宽度） eleConTest.scrollWidth:' + eleConTest.scrollWidth;
+		pEleTest[3].innerText = 'boder.top(上边框的宽度) eleConTest.clientTop:' + eleConTest.clientTop;
+		pEleTest[4].innerText = 'boder.left(上边框的宽度) eleConTest.clientLeft:' + eleConTest.clientLeft;
+		pEleTest[5].innerText = '当前元素 上/左边框 外边缘 到 最近的已定位父级（offsetParent） 上/左边框内边缘的距离。' +
+			'如果父级都没有定位，则分别是到body 顶部 和左边的距离 eleConTest.offsetTop:' + eleConTest.offsetTop;
+		pEleTest[6].innerText = '当前元素 上/左边框 外边缘 到 最近的已定位父级（offsetParent） 上/左边框内边缘的距离。' +
+			'如果父级都没有定位，则分别是到body 顶部 和左边的距离 eleConTest.offsetLeft:' + eleConTest.offsetLeft;
+		pEleTest[7].innerText = '内容层顶部 到 可视区域顶部的距离 eleConTest.scrollTop:' + eleConTest.scrollTop;
+		pEleTest[8].innerText = '内容层左端 到 可视区域左端的距离. eleConTest.scrollLeft:' + eleConTest.scrollLeft;
+		pEleTest[9].innerText = '内容层左端 到 可视区域左端的距离. eleConTest.style.width:' + eleConTest.style.width;
+		pEleTest[10].innerText = '内容层左端 到 可视区域左端的距离. eleConTest.style.height:' + eleConTest.style.height;
+		pEleTest[11].innerText = 'eleConTest.getBoundingClientRect():' + JSON.stringify(eleConTest.getBoundingClientRect());
+	}
+	getEleConTestWh();
+
+	const elePropertyIe = document.getElementById('ele-property-ie')
+	for (let i = 0; i < 11; i++) {
+		elePropertyIe.innerHTML += '<p class="p-ele-test-ie"></p>'
+	}
+	const pEleTestIe = elePropertyIe.getElementsByClassName('p-ele-test-ie')
+	const eleConTestIe = document.getElementById('ele-con-test-ie')
+	for (let i = 0; i < 30; i++) {
+		eleConTestIe.innerHTML += `<li>${i + 1}</li>`
+	}
+	function geteleConTestIeWh() {
+		pEleTestIe[0].innerText = 'width + 左右padding eleConTestIe.clientWidth:' + eleConTestIe.clientWidth;
+		pEleTestIe[1].innerText = 'width + 左右padding + 左右boder eleConTestIe.offsetWidth:' + eleConTestIe.offsetWidth;
+		pEleTestIe[2].innerText = '获取指定标签内容层的真实宽度（可视区域宽度+被隐藏区域宽度） eleConTestIe.scrollWidth:' + eleConTestIe.scrollWidth;
+		pEleTestIe[3].innerText = 'boder.top(上边框的宽度) eleConTestIe.clientTop:' + eleConTestIe.clientTop;
+		pEleTestIe[4].innerText = 'boder.left(上边框的宽度) eleConTestIe.clientLeft:' + eleConTestIe.clientLeft;
+		pEleTestIe[5].innerText = '当前元素 上/左边框 外边缘 到 最近的已定位父级（offsetParent） 上/左边框内边缘的距离。' +
+			'如果父级都没有定位，则分别是到body 顶部 和左边的距离 eleConTestIe.offsetTop:' + eleConTestIe.offsetTop;
+		pEleTestIe[6].innerText = '当前元素 上/左边框 外边缘 到 最近的已定位父级（offsetParent） 上/左边框内边缘的距离。' +
+			'如果父级都没有定位，则分别是到body 顶部 和左边的距离 eleConTestIe.offsetLeft:' + eleConTestIe.offsetLeft;
+		pEleTestIe[7].innerText = '内容层顶部 到 可视区域顶部的距离 eleConTestIe.scrollTop:' + eleConTestIe.scrollTop;
+		pEleTestIe[8].innerText = '内容层左端 到 可视区域左端的距离. eleConTestIe.scrollLeft:' + eleConTestIe.scrollLeft;
+		pEleTestIe[9].innerText = '内容层左端 到 可视区域左端的距离. eleConTestIe.style.width:' + eleConTestIe.style.width;
+		pEleTestIe[10].innerText = '内容层左端 到 可视区域左端的距离. eleConTestIe.style.height:' + eleConTestIe.style.height;
+	}
+	geteleConTestIeWh();
+
+	window.addEventListener('resize', () => {
+		getEleConTestWh();
+		geteleConTestIeWh();
+	})
+</script>
+</html>

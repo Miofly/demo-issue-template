@@ -1,0 +1,14 @@
+{
+  "extends": "@vft/tsconfig/tsconfig.node.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir": "./lib"
+  },
+  "include": [
+    "src/**/*",
+    "index.ts"
+  ],
+  "ts-node": {
+    "esm": true
+  }
+}

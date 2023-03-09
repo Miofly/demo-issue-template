@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<style>
+		a[class]{color:#f00;}
+		a[class="external"]{color:green;}
+		a[class~="external"]{color:blue;}
+		a[class^="text"]{color:purple;}
+		a[class$="o"]{color:lightseagreen;}
+		a[class*="w"]{color:olive;}
+		a[class|="texts"]{color:#025CDC;}
+	</style>
+</head>
+<body>
+<ul>
+	<li><a href="?" class="">class="" a[class]{color:#f00;}</a></li>
+	<li><a href="?" class="external">class="external" a[class="external"]{color:green;}</a></li>
+	<li><a href="?" class="external text">class="external text" a[class~="external"]{color:blue;}</a></li>
+	<li><a href="?" class="text external">class="text external" a[class^="text"]{color:purple;}</a></li>
+	<li><a href="?" class="texts mio">class="texts mio" a[class$="o"]{color:lightseagreen;}</a></li>
+	<li><a href="?" class="texts mio new">class="texts mio" a[class$="o"]{color:lightseagreen;}</a></li>
+	<li><a href="?" class="texts-mio">class="texts mio" a[class$="o"]{color:lightseagreen;}</a></li>
+</ul>
+</body>
+</html>

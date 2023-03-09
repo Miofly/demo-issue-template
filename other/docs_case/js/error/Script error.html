@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script src="https://miofly.gitee.io/res/demo/js/testError.js"></script>
+
+<script>
+	window.onerror = function(message, source, lineno, colno, error) {
+		console.log('============');
+		console.log(`%cmessage:`, 'color: white; background: rgba(255, 0, 0, 0.5); padding: 5px 10px', message);
+		console.log(`%csource:`, 'color: white; background: rgba(255, 0, 0, 0.5); padding: 5px 10px', source);
+		console.log(`%clineno:`, 'color: white; background: rgba(255, 0, 0, 0.5); padding: 5px 10px', lineno);
+		console.log(`%ccolno:`, 'color: white; background: rgba(255, 0, 0, 0.5); padding: 5px 10px', colno);
+		console.log(`%cerror:`, 'color: white; background: rgba(255, 0, 0, 0.5); padding: 5px 10px', error);
+		console.log(`%cerror.stack:`, 'color: white; background: rgba(255, 0, 0, 0.5); padding: 5px 10px', error.stack);
+	}
+	
+	test2(); // 调用app.js中定义的foo方法。
+</script>
+</body>
+</html>

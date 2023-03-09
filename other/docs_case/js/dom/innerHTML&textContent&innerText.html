@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
+<body>
+<div id="test">
+	<div id="son_one" style="visibility: hidden">son_one</div>
+	<!--测试-->
+	<div class="my_test" style="display: none" id="son_two"><p id="son_two_p">son_two</p></div>
+	<div class="my_test" style="color: blue!important;z-index: -1">son_three</div>
+	<div class="my_test" style="opacity: 0" id="son_four"><p id="son_four_p">son_four</p></div>
+	<div class="my_test" style="opacity: 1">son_five</div>
+	<script>
+		var test = '这是测试'
+	</script>
+	<style>
+		*{margin: 0;padding: 0}
+	</style>
+</div>
+<script>
+	// var byId = document.getElementById('test').normalize()
+	var byId = document.getElementById('test')
+	//  textContent 属性表示一个节点及其后代的文本内容
+	console.log('textContent:', byId.textContent)
+	console.log('document.textContent:', document.textContent)
+	// 获取整个文档的文本
+	// console.log('document.textContent:', document.documentElement.textContent)
+	console.log('innerText:', byId.innerText)
+	console.log('innerHTML:', byId.innerHTML)
+
+	// byId.innerHTML += `<div>11</div>`
+	byId.insertAdjacentHTML('beforeend', `<div>11</div>`)
+	byId.insertAdjacentText('beforeend', `<div>22</div>`)
+</script>
+</body>
+</html>

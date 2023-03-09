@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+
+<div>
+	<div id="img-loading"></div>
+	<img id="imgResource" style="width: 200px;height: 200px" alt="errorImg" src="">
+	<div id="img-error">点击重新加载</div>
+</div>
+<script>
+	const imgResource = document.getElementById('imgResource')
+	const imgLoading = document.getElementById('img-loading')
+	const imgError = document.getElementById('img-error')
+	let timer = 0
+	let isLoading = true
+	let isError = false
+
+	function loadingStyle () {
+		imgLoading.innerHTML = '正在加载' + timer
+		imgLoading.style.display = isLoading ? 'block' : 'none'
+		imgError.style.display = isError ? 'block' : 'none'
+		imgResource.style.display = isError || isLoading ? 'none' : 'block'
+	}
+
+	loadingStyle()
+
+	window.onload = function () {
+		function loadImage (src) {
+			isLoading = false
+			loadingStyle()
+			return src
+		}
+
+		function timerAdd () {
+			timer++
+		}
+
+		timerAdd()
+		loadingStyle()
+		setInterval(() => {
+			timerAdd()
+			loadingStyle()
+		}, 500)
+
+		setTimeout(() => {
+			imgResource.setAttribute('src', loadImage('https://miofly.gitee.io/res/img/person/glnz/1.jpg1	'))
+		}, 1500)
+
+		imgResource.onerror = function () {
+			isError = true
+		}
+	}
+</script>
+</body>
+</html>

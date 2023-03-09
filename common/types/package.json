@@ -1,0 +1,13 @@
+{
+  "name": "@vri/types",
+  "version": "0.0.4",
+  "license": "MIT",
+  "scripts": {
+    "clean": "pnpm rimraf node_modules && pnpm rimraf dist && pnpm rimraf .turbo",
+    "pub": "pnpm version patch && pnpm publish"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

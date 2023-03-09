@@ -1,0 +1,31 @@
+{
+  "name": "@vft/tsconfig",
+  "version": "0.0.9",
+  "description": "A base TSConfig for working with Vue.js",
+  "main": "tsconfig.json",
+  "scripts": {
+    "pub": "pnpm version patch && pnpm publish"
+  },
+  "keywords": [
+    "vue",
+    "tsconfig"
+  ],
+  "files": [
+    "*"
+  ],
+  "author": "Wfly <953212389@qq.com>",
+  "homepage": "https://github.com/Miofly/tsconfig#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Miofly/tsconfig"
+  },
+  "bugs": {
+    "email": "953212389@qq.com",
+    "url": "https://github.com/Miofly/tsconfig/issues"
+  },
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}

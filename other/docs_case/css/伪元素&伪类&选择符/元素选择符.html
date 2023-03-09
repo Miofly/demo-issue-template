@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	/* 包含选择符(E F) */
+	ul li {
+		color: lightpink;
+	}
+
+	/* 子选择符(E>F) */
+	ul > li {
+		color: blue;
+	}
+
+	/* 兄弟选择符(E~F) */
+	li ~ li {
+		color: greenyellow;
+	}
+
+	/* 兄弟选择符(E~F) */
+	span ~ span {
+		color: purple;
+	}
+
+	/* 相邻选择符(E+F) */
+	li + li {
+		color: red;
+	}
+</style>
+<body>
+<ul class="demo">
+	<li>1</li>
+	<li>2</li>
+	<div>
+		<li>2.1</li>
+		<li>2.2</li>
+		<li>2.3</li>
+	</div>
+	<li>3</li>
+	<span>4</span>
+	<li>5</li>
+	<span>6</span>
+	<li>7</li>
+	<li>8</li>
+</ul>
+</body>
+</html>

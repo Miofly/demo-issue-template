@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+<script>
+  class Person {
+    name = ''
+  
+    constructor (_name) {
+      this.name = _name;
+    }
+    
+    getName () {
+      console.log(this, this.name);
+      return function () {
+        console.log(this.name);
+      };
+    }
+  }
+  
+  new Person('小明').getName().call({ name: '小红' });
+</script>
+</body>
+</html>

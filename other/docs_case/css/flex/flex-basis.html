@@ -1,0 +1,23 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div
+		style="display: flex;margin: 100px auto;width: 500px;height: 200px;background: black;;color: red">
+	<div class="inner" style="width: 200px;height: 100px;flex-basis: 300px;background: pink;">
+	</div>
+	<div class="inner1" style="height: 100px;flex-basis: 200px;background: lightcyan;">
+		inner1
+	</div>
+</div>
+<script>
+	const inner = document.getElementsByClassName('inner')[0]
+	inner.innerText = 'inner:' + inner.offsetWidth
+	const inner1 = document.getElementsByClassName('inner1')[0]
+	inner1.innerText = 'inner1:' + inner1.offsetWidth
+</script>
+</body>
+</html>
+

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<div id="test" style="color: red"></div>
+</body>
+<script>
+	window.onload = function () {
+		document.getElementById('test').innerHTML = window.innerWidth
+		window.onresize=function(){
+		  document.getElementById('test').innerHTML = window.innerWidth
+		};
+	}
+</script>
+<style>
+	body {
+		background: #eee;
+	}
+	/*低于600时*/
+	@media screen and (max-width: 599px) {
+		body {
+			background-color: #991818;
+		}
+	}
+
+	/*超过600时*/
+	@media screen and (min-width: 601px) {
+		body {
+			background-color:green;
+		}
+	}
+
+	/*在600-700之间 会覆盖上述定义的超过 600 时的样式，如果上述样式放到下面则会覆盖此条规则*/
+	@media screen and (min-width: 600px) and (max-width: 700px) {
+		body {
+			background-color:lightcyan;
+		}
+	}
+
+	/*宽度等于600时的颜色*/
+	@media screen and (width: 600px) {
+		body {
+			background-color:lightpink;
+		}
+	}
+</style>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<ul id="sumOfTwoNumbers"></ul>
+<script>
+	twoSum([5, 17, 11, 15], 9)
+	twoSum([9, 7, 11, 15], 22)
+	twoSum([13, 7, 11, 15, 0], 26)
+	twoSum([12, 7, 11, 15, 12], 18)
+
+	const sumOfTwoNumbers = document.getElementById('sumOfTwoNumbers');
+	for (let i = 0; i < 4; i++) {
+		sumOfTwoNumbers.innerHTML += `<li class='sumOfTwoNumbersLi'></li>`
+	}
+
+	const sumOfTwoNumbersLi = document.getElementsByClassName('sumOfTwoNumbersLi');
+	sumOfTwoNumbersLi[0].innerHTML = `twoSum([5, 17, 11, 15], 9)的结果：<span>${twoSum([5, 17, 11, 15], 9)}</span>`
+	sumOfTwoNumbersLi[1].innerHTML = `twoSum([9, 7, 11, 15], 22)的结果：<span>${twoSum([9, 7, 11, 15], 22)}</span>`
+	sumOfTwoNumbersLi[2].innerHTML = `twoSum([13, 7, 11, 15, 0], 26)的结果：<span>${twoSum([13, 7, 11, 15, 0], 26)}</span>`
+	sumOfTwoNumbersLi[3].innerHTML = `twoSum([12, 7, 11, 15, 12], 18)的结果：<span>${twoSum([12, 7, 11, 15, 12], 18)}</span>`
+
+	function twoSum (nums, target) {
+		let map = {}
+		for (let i = 0; i < nums.length; ++i) {
+			/**
+			 * 获取了当前的目标值 减去 当前的数组元素的值，
+			 * 如果获取到的值在 map 这个对象中不存在，则将当前元素的值作为 map 对象中一个属性的 键，其对应的值则为当前元素的索引值。
+			 * 如果获取到的值在 map 这个对象中存在，说明有符合条件的值，则返回当前循环的索引以及，当前 map 对象对应的索引值。
+			 */
+			const rest = target - nums[i]
+			if (map[rest] !== undefined) {
+				// 注意这里map里面的是下标比较小的值。
+				return [map[rest], i]
+			}
+			map[nums[i]] = i
+		}
+		//
+		return []
+	}
+
+	function twoSum_one (nums, target) {
+		let map = {}
+		for (let i = 0; i < nums.length; ++i) {
+			const rest = target - nums[i]
+			if (rest in map) {
+				return [i, map[rest]]
+			} else {
+				map[rest] = i
+			}
+		}
+		//
+		return []
+	}
+</script>
+<style>
+	.sumOfTwoNumbersLi span {
+		background: lightblue
+	}
+</style>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	::-webkit-scrollbar {
+		width: 30px;
+		height: 10px;
+		background: transparent;
+	}
+	::-webkit-scrollbar-thumb {
+		background: rebeccapurple;
+	}
+	::-webkit-scrollbar-track {
+		background: #F68338;
+	}
+</style>
+<body>
+<div style="display: flex;justify-content: space-around;">
+	<div class="div-par" style="height: 200px;width: 100px;background: lightblue;overflow: scroll">
+
+	</div>
+</div>
+<script>
+	const divPar = document.getElementsByClassName('div-par')[0]
+	for (let i = 0; i < 15; i++) {
+		console.log(1)
+		divPar.innerHTML += `<span>${i}</span><br>`
+	}
+</script>
+</body>
+</html>

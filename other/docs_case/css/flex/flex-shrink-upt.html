@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>flex-shrink demo</title>
+	<style>
+		.box {
+			display: flex;
+			width: 400px;
+			outline: 1px red solid;
+		}
+
+		.item1 {
+			background-color: #32d6d6;
+		}
+
+		.item2 {
+			background-color: #e2a83e;
+		}
+
+		.item3 {
+			background-color: #b85ad0;
+		}
+
+		.item-2-1 {
+			background-color: #32d6d6;
+			background-clip: content-box;
+		}
+		.item-2-2 {
+			background-color: #b85ad0;
+			background-clip: content-box;
+		}
+
+		.demo-3 {
+			display: flex;
+			align-items: center;
+		}
+		.demo-3-1 {
+			background-color: #32d6d6;
+			background-clip: content-box;
+		}
+		.demo-3-2 {
+			background-color: #b85ad0;
+			background-clip: content-box;
+		}
+	</style>
+</head>
+
+<body>
+<!--
+总宽度：300 + 200 + 100 = 600
+超出：600 - 400 = 200
+计算公式分母：2 * 300 + 1 * 200 + 2 * 100 = 1000
+-->
+<div class="box">
+	<!-- (2 * 300) / 1000 = 0.6 ||| 300 - 200 * 0.6 = 180 -->
+	<div class="item1" style="flex: 0 2 300px;">1</div>
+	<!-- (1 * 200) / 1000 = 0.2 ||| 200 - 200 * 0.2 = 160 -->
+	<div class="item2" style="flex: 0 1 200px;">2</div>
+	<!-- (2 * 100) / 1000 = 0.2 ||| 100 - 200 * 0.2 = 60 -->
+	<div class="item3" style="flex: 0 2 100px;">3</div>
+</div>
+<br />
+
+<!--
+可用空间 400 - 50 * 2 - 20 * 2 = 260
+flex-base 为 0，flex-grow 为 1
+各占 1/2 => 260 * 1/2 = 130
+-->
+<div class="box">
+	<!-- 130 + 50 * 2 = 230 -->
+	<div class="item-2-1" style="flex: 1 1;padding: 50px;border: 1px solid red">1</div>
+	<!-- 130 + 20 * 2 = 170 -->
+	<div class="item-2-2" style="flex: 1 1;padding: 20px;border: 1px solid lawngreen">2</div>
+</div>
+<br />
+
+<!--
+可用空间 400
+flex-base 为 0，flex-grow 为 1
+各占 1/2 => 400 * 1/2 = 200
+-->
+<div class="box">
+	<div class="demo-3" style="flex: 1 1;border: 1px solid red">
+		<div class="demo-3-1" style="flex: 1 1;padding: 50px;">
+			1
+		</div>
+	</div>
+	<div class="demo-3" style="flex: 1 1;border: 1px solid lawngreen">
+		<div class="demo-3-2" style="flex: 1 1;padding: 20px;">
+			2
+		</div>
+	</div>
+</div>
+<br />
+
+<!--
+计算子元素 flex-base 所代表的实际值 => 400px
+那两个就是 800px，父元素 400px，主轴长度不够，flex-shrink 开始生效。但第二步却不是 flex-shrink * flex-base 得出真正的比例系数，我们需要先得到“真正的” flex base size，其实之前我们提及过
+事实上，真正的 flex base size 并非单纯的是 flex-base。更准确的说，子元素 flex-base 设置后带来的 content width。比如这里 flex base size = box width 400 - padding 20*2 - border 0 = 360，以及两外一个 400-50*2=300。
+计算比例系数 360*1=360，300*1=300。所有其比例系数分别是 300/660、360/660。
+计算需要分配的负空间 400*2-400 = 400px
+计算分别需要缩减的部分 400*(300/660)≈181.8181、400*(360/660)≈218.1818
+实际宽度 400-181.8181≈218.18 400-21≈181.81
+-->
+<div class="box">
+	<div class="item-2-1" style="flex: 1 1;padding: 50px;flex-basis: 100%;box-sizing: border-box;border: 1px solid red">1</div>
+	<div class="item-2-2" style="flex: 1 1;padding: 20px;flex-basis: 100%;box-sizing: border-box;border: 1px solid lawngreen">2</div>
+</div>
+<br />
+
+<div style="display: flex;width: 1500px;outline: 1px red solid;">
+	<div class="flexItem-1" style="flex-shrink: 2;flex-basis: 300px;margin: 0 10px;" title="300 - (550*600/2770) ≈ 180.866">1</div>
+	<div class="flexItem-2" style="flex-shrink: 2;flex-basis: 300px;padding: 0 20px;border: 5px #ccc solid;box-sizing: content-box;" title="300 - (550*600/2770) ≈ 180.866">2</div>
+	<div class="flexItem-3" style="flex-shrink: 2;flex-basis: 300px;padding: 0 20px;border: 5px #ccc solid;box-sizing: border-box;" title="300 - (550*500/2770) ≈ 200.722 - 20*2 - 10*2 = 150.722">3</div>
+	<div class="flexItem-4" style="flex-shrink: 1;flex-basis: 200px;padding: 0 10px;" title="200 - (550*200/2770) ≈ 160.288">4</div>
+	<div class="flexItem-5" style="flex-shrink: 1;flex-basis: 200px;border: 5px #ccc solid;margin: 0 10px;box-sizing: content-box;" title="200 - (550*200/2770) ≈ 160.288">5</div>
+	<div class="flexItem-6" style="flex-shrink: 1;flex-basis: 200px;border: 5px #ccc solid;margin: 0 10px;box-sizing: border-box;" title="200 - (550*190/2770) ≈ 162.274 - 5*2 = 152.274">6</div>
+	<div class="flexItem-7" style="flex-shrink: 2;flex-basis: 100px;border: 5px #ccc solid;" title="100 - (550*200/2770) ≈ 60.288">7</div>
+	<div class="flexItem-8" style="flex-shrink: 2;flex-basis: 100px;padding: 0 30px;margin: 0 10px;box-sizing: content-box;" title="100 - (550*200/2770) ≈ 60.288">8</div>
+	<div class="flexItem-9" style="flex-shrink: 2;flex-basis: 100px;padding: 0 30px;margin: 0 10px;box-sizing: border-box;" title="100 - (550*80/2770) ≈ 84.115 - 30*2 = 24.115">9</div>
+</div>
+<!--
+flex_container_available_length = 1500
+flex_items_length = (300+10*2) + (300+20*2+5*2) + (300) + (200+10*2) + (200+10*2+5*2) + (200+10*2) + (100+5*2) + (100+10*2+30*2) + (100+10*2)
+									= 2050
+shrink_factor = 2770
+		300*2  600
+		300*2  600
+		(300-20*2-5*2)*2  500
+
+		200*1 200
+		200*1 200
+		(200-5*2)*1 190
+
+		100*2  200
+		100*2  200
+		(100-30*2)*2  80
+
+will_allocate_length = 1500 - 2050 = -550
+
+flex_item_width
+		300 - 550*(600/2770) = 180.866
+		300 - 550*(600/2770) = 180.866
+		300 - 550*(500/2770) = 200.722 - 20*2 - 10*2 = 150.722
+
+		200 - 550*(200/2770) = 160.288
+		200 - 550*(200/2770) = 160.288
+		200 - 550*(190/2770) = 162.274 - 5*2 = 152.274
+
+		100 - 550*(200/2770) = 60.288
+		100 - 550*(200/2770) = 60.288
+		100 - 550*(80/2770) = 84.115 - 30*2 = 24.115
+-->
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
+<body>
+<div id="test">
+	ceshi
+</div>
+<script>
+	var byId = document.getElementById('test')
+
+	var sp1 = document.createElement("p");
+	// 添加一个id属性,值为'newSpan'
+	sp1.setAttribute("id", "newSpan")
+	// 创建一个文本节点
+	var sp1_content = document.createTextNode("新的span元素的内容.")
+	sp1.appendChild(sp1_content) // 将文本节点插入到span元素中
+	// byId.appendChild(sp1)
+	byId.append('<div>111</div>')
+	var childTwo = document.createElement('span')
+	childTwo.innerText = 'childTwo'
+	byId.append(sp1, childTwo)
+
+	var newChild = document.createElement('span')
+	newChild.innerText = '33'
+	// byId.insertBefore(newChild, sp1)
+	byId.insertBefore(newChild, null)
+
+	var childThree = document.createElement('span')
+	childThree.innerText = 'childThree'
+	// 等价于 appendChild
+	byId.insertAdjacentElement('beforeend', childThree)
+</script>
+</body>
+</html>

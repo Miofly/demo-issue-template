@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+</head>
+<style>
+  p {
+    font-style: italic;
+    font-weight: bold;
+  }
+  
+  div,
+  label {
+    display: block;
+    letter-spacing: .5px;
+    margin-bottom: 1rem;
+  }
+  
+  div:focus {
+    font-weight: bold;
+    color: red;
+  }
+</style>
+<body>
+input<input type="text">
+<div tabindex="0">由于我加了 tabindex 按 tab 时可以聚焦</div>
+<div>默认不可以聚焦</div>
+<div tabindex="666">tabindex=666</div>
+<div tabindex="-1">tabindex= -1</div>
+<div tabindex="1">tabindex=1</div>
+<div tabindex="2">tabindex=2</div>
+<div tabindex="0">tabindex=0</div>
+<div tabindex="-10">tabindex=-1</div>
+<div tabindex="-1">tabindex=-1</div>
+<div tabindex="10">tabindex=10</div>
+<div tabindex="0">tabindex=0</div>
+<div tabindex="888">tabindex=888</div>
+</body>
+</html>

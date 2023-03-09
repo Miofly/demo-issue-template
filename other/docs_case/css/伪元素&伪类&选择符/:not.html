@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<div id="parent"></div>
+<script>
+	const parEle = document.getElementById('parent')
+	for (let i = 0; i < 10; i++) {
+		parEle.innerHTML += `<p>${i + 1}</p>`
+	}
+</script>
+<style>
+	#parent p:not(:first-child):not(:last-child):not(:nth-child(2n)) {
+		color: red;
+	}
+</style>
+</body>
+</html>

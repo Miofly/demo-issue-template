@@ -1,0 +1,40 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<div style="display: flex;justify-content: space-around">
+	<div style="display: flex;width: 300px;height: 100px;background: black;color: red;">
+		<div class="inner" style="width: 100px;height: 100px;flex-basis: 50px;background: pink;"></div>
+		<div class="inner1" style="height: 100px;flex-basis: 100px;background: lightcyan;"></div>
+	</div>
+
+	<div style="display: flex;width: 300px;height: 100px;background: black;color: red">
+		<div class="inner" style="width: 100px;height: 100px;flex-basis: 50px;background: pink;flex-grow: 0"></div>
+		<div class="inner1" style="height: 100px;flex-basis: 100px;background: lightcyan;flex-grow: 0"></div>
+	</div>
+
+	<div style="display: flex;width: 300px;height: 100px;background: black;color: red">
+		<div class="inner" style="width: 100px;height: 100px;flex-basis: 50px;background: pink;flex-grow: 1"></div>
+		<div class="inner1" style="height: 100px;flex-basis: 100px;background: lightcyan;flex-grow: 0"></div>
+	</div>
+
+	<div style="display: flex;width: 300px;height: 100px;background: black;color: red">
+		<div class="inner" style="width: 100px;height: 100px;flex-basis: 50px;background: pink;flex-grow: 1"></div>
+		<div class="inner1" style="height: 100px;flex-basis: 100px;background: lightcyan;flex-grow: 1"></div>
+	</div>
+</div>
+<script>
+	const inner = document.getElementsByClassName('inner')
+	for (let i = 0; i < inner.length; i++) {
+		inner[i].innerText = 'inner:' + inner[i].offsetWidth
+	}
+	const inner1 = document.getElementsByClassName('inner1')
+	for (let i = 0; i < inner1.length; i++) {
+		inner1[i].innerText = 'inner1:' + inner1[i].offsetWidth
+	}
+</script>
+</body>
+</html>
+

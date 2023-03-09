@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script type="module">
+	import customName from './export-default.js'
+	// import { default } from './export-default.js'
+	import { default as mytest } from './export-default.js'
+	customName();
+	mytest();
+</script>
+</body>
+</html>

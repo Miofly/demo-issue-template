@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<div style="display: flex;justify-content: space-around">
+	<div style="width: 100px;height: 100px;color: white;
+		animation: example1 4s linear 0s 1 alternate forwards;">
+		div
+	</div>
+	<div style="width: 100px;height: 100px;color: white;
+		animation: example2 4s linear 0s 1 alternate forwards;">
+		这是div1
+	</div>
+	<div style="width: 100px;height: 100px;color: white;
+		animation: example2 4s ease-in-out -2s 1 alternate forwards;">
+		这是div2
+	</div>
+</div>
+<style>
+	/* 动画代码 */
+	@keyframes example1 {
+		from {
+			background-color: red;
+		}
+		to {
+			background-color: black;
+		}
+	}
+
+	@keyframes example2 {
+		0% {
+			background-color: red;
+		}
+		25% {
+			background-color: yellow;
+		}
+		50% {
+			background-color: blue;
+		}
+		100% {
+			background-color: green;
+		}
+	}
+</style>
+</body>
+</html>

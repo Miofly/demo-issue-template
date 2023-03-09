@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	#pseudoElement1 li {
+		width: 200px;
+		list-style-type: none;
+		position: relative;
+		margin: 2px;
+		padding: 0.5em 0.5em 0.5em 2em;
+		background: lightgrey;
+		font-family: sans-serif;
+	}
+
+	.test1::first-letter {
+		color: red;
+	}
+
+	.test2 {
+		display: inline;
+	}
+
+	.test2::first-letter {
+		color: red;
+	}
+
+	.test3::first-line {
+		background: lightcyan;
+
+	}
+</style>
+<body>
+<ul id="pseudoElement1">
+	<li class="test test1" data-descr="collection of words and punctuation">Buy milk</li>
+	<li class="test test2">Take the dog for a walk</li>
+	<li class="test test3">这是一段很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的文字</li>
+	<li class="test test4">Write code</li>
+</ul>
+</body>
+</html>

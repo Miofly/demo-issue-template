@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	if (true) {
+		var a = 3
+	}
+
+	if (false) {
+		var b = 3
+	}
+	// 3
+	console.log(a);
+	// undefined
+	console.log(b);
+
+	if (true) {
+		let c = 3
+	}
+	// Uncaught ReferenceError: c is not defined
+	console.log(c);
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<style>
+	#test-child span:first-child {
+		color: red;
+	}
+	#test-child span:last-child {
+		color: blue;
+	}
+	#test-child span:nth-child(odd) {
+		background: lightcyan;
+	}
+	#test-child span:nth-child(even) {
+		background: lightpink;
+	}
+	#test-child span:nth-child(0n + 3) {
+		background: red;
+	}
+	#test-child span:nth-child(2n + 3) {
+		background: lightseagreen;
+	}
+	#test-child span:nth-child(-n + 2) {
+		font-size: 20px;
+	}
+	#test-child span:nth-last-child(-n + 2) {
+		font-size: 30px;
+	}
+	#test-child:first-child {
+		background: red;
+	}
+</style>
+<p id="test-child">
+	<span>第一个测试元素</span>
+	<span>第二个测试元素</span>
+	<span>第三个测试元素</span>
+	<span>第四个测试元素</span>
+	<span>第五个测试元素</span>
+	<span>第六个测试元素</span>
+	<span>第七个测试元素</span>
+	<span>第八个测试元素</span>
+</p>
+<p>1</p>
+</body>
+</html>

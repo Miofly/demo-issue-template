@@ -1,0 +1,31 @@
+@use './iconfont/iconfont.css';
+
+$name: icon;
+
+@include set-root-css-vars($name, $icon);
+
+@function getCompCssVar($value) {
+  @return getCssVar($name, $value);
+}
+
+@include b($name) {
+  position: relative;
+  display: inline-block;
+  font: normal normal normal 14px/1 iconfont;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  transition: all 0.2s ease;
+  color: getCompCssVar('text-color');
+
+  &::before {
+    display: inline-block;
+  }
+
+  &__image {
+    display: block;
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+  }
+}

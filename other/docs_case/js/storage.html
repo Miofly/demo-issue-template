@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<a href="./storage.html">利用 a 标签在当前tab跳转</a>
+<br>
+<a href="./storage.html" target="_blank">利用 a 标签打开一个新 tab</a>
+<br>
+<a href="./storage.html" target="_blank" rel="opener">a 标签添加rel=opener跳转</a>
+<br>
+<span onclick="window.open('./storage.html')">window.open跳转</span>
+<br>
+<span onclick="window.location.href = './storage.html'">window.location.href</span>
+<br>
+<span onclick="sessionStorage.setItem('lastname', Math.random());">更改 storage</span>
+<script>
+	// sessionStorage.setItem("lastname", "Smith");
+	setInterval(() => {
+		console.log(sessionStorage.getItem("lastname"))
+	}, 1000)
+
+	localStorage.setItem('test', 111)
+</script>
+</body>
+</html>

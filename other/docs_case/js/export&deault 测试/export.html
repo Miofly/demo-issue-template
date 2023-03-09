@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script type="module">
+	import { test, test2s, test2 as test2ss, test2 } from './export.js'
+	// 触发 export.js 的 test 事件
+	test()
+	// 输出三个 这是 export.js 的 test2 变量
+	console.log(test2s, test2ss, test2);
+</script>
+</body>
+</html>

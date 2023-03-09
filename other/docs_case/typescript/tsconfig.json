@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+	  "baseUrl": ".",
+	  "target": "es5",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "ScriptHost"
+    ],
+    "allowJs": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+	  "isolatedModules": true
+  },
+	"include": [
+    ".",
+    "./module.d.ts"
+  ]
+}

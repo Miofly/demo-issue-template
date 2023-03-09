@@ -1,0 +1,8 @@
+{
+  "extends": "@vft/tsconfig/tsconfig.web.json",
+  "compilerOptions": {
+    "typeRoots": ["node_modules/@types", "types"],
+    "types": ["vite/client", "node", "unplugin-vue-macros/macros-global"]
+  },
+  "include": ["src", "types", "node_modules/@vri/types"]
+}

@@ -1,0 +1,1 @@
+import { getName } from './fileManager';

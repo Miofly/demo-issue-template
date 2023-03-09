@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<button onClick="window.scroll({ top: 0, left: 100, behavior: 'smooth'});">滚动至 top: 10 left: 100 像素</button>
+<button onClick="window.scrollBy({ top: 10, left: 100, behavior: 'smooth'});">向右滚动 10 像素 向下滚动 100 像素</button>
+<button onClick="testScrollIntoView1()">test1 将会滚动到最上面</button>
+<button onClick="testScrollIntoView2()">test1 将会滚动到最下面</button>
+<button onClick="testScrollIntoView3()">test1 将会滚动到最中间</button>
+<button onClick="testScrollIntoView4()">test1 将会滚动到nearest</button>
+<div id="test"></div>
+<div id="test1" style="white-space: nowrap"></div>
+<div id="test2"></div>
+
+<script>
+	const test = document.getElementById('test');
+	const test1 = document.getElementById('test1');
+	const test2 = document.getElementById('test2');
+	for (let i = 0; i < 50; i++) {
+		test.innerHTML += `<div>${i}</div>`
+		test2.innerHTML += `<div>${i}</div>`
+	}
+	test1.innerHTML = '点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素点击以向下滚动 100 像素'
+
+	function testScrollIntoView1() {
+		test1.scrollIntoView({block: "start", inline: "nearest", behavior: 'smooth'})
+	}
+	function testScrollIntoView2() {
+		test1.scrollIntoView({block: "end", inline: "nearest", behavior: 'smooth'})
+	}
+	function testScrollIntoView3() {
+		test1.scrollIntoView({block: "center", inline: "nearest", behavior: 'smooth'})
+	}
+	function testScrollIntoView4() {
+		test1.scrollIntoView({block: "nearest", inline: "nearest", behavior: 'smooth'})
+	}
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "isolatedModules": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "strict": false,
+    "noImplicitAny": false,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false,
+    "noImplicitThis": true,
+    "alwaysStrict": false,
+    "moduleResolution": "node",
+    "noEmitOnError": false,
+    "forceConsistentCasingInFileNames": false,
+    "useDefineForClassFields": false,
+    "strictNullChecks": false,
+    "noEmit": false,
+    "typeRoots": ["node_modules/@types"],
+    "importsNotUsedAsValues": "error",
+    "esModuleInterop": true,
+    "module": "ES6",
+    //    "noUnusedParameters": true,
+    //    "noUnusedLocals": true
+
+    //    需测试
+    "allowSyntheticDefaultImports": true,
+    "removeComments": false,
+    "rootDir": ".",
+    "baseUrl": ".",
+    "sourceMap": false
+  },
+  "include": ["src/**/*", "test/**/*"]
+  //  "exclude": ["src/*.ts"]
+}

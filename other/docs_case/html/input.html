@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<div id=inputChange>
+	<input id="input">
+	<div style="margin-top: 50px">当前输入框中的值：<span id="inputVal"></span></div>
+</div>
+
+<script>
+	const inputContainer = document.getElementById('inputChange')
+	const input = inputContainer.querySelector('#input')
+	const inputVal = inputContainer.querySelector('#inputVal')
+
+	input.addEventListener('input', (e) => {
+		inputVal.innerHTML = event.target.value
+	})
+
+	input.addEventListener('compositionstart', (e) => {
+		console.log('compositionstart:', e)
+	})
+
+	input.addEventListener('compositionupdate', (e) => {
+		console.log('compositionupdate:', e)
+	})
+
+	input.addEventListener('compositionend', (e) => {
+		console.log('compositionend 触发：最终获取到的值：', inputVal.innerHTML);
+	})
+</script>
+</body>
+</html>

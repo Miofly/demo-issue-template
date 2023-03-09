@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	const TYPE_AUDIO = Symbol()
+	const TYPE_VIDEO = Symbol()
+	const TYPE_IMAGE = Symbol()
+
+	function handleFileResource(resource) {
+		switch(resource.type) {
+		case TYPE_AUDIO:
+			console.log(1)
+			break
+		case TYPE_VIDEO:
+			console.log(2)
+			break
+		case TYPE_IMAGE:
+			console.log(3)
+			break
+		default:
+			throw new Error('Unknown type of resource')
+		}
+	}
+
+	handleFileResource({type: TYPE_IMAGE})
+</script>
+</body>
+</html>

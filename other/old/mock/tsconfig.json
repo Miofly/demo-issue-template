@@ -1,0 +1,6 @@
+{
+  "extends": "@vft/tsconfig/tsconfig.node.json",
+  "compilerOptions": {
+    "noImplicitAny": false
+  }
+}

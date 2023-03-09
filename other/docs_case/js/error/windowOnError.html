@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	/**
+	 * 能捕获到js执行错误，不能捕获带有src的标签元素的加载错误。
+     参数对应5个值（错误信息，所在文件，行，列，错误信息）
+     函数体内用return true可以不让异常信息输出到控制台
+	 * @param message 发生错误的描述信息。可用于HTML onerror=""处理程序中的event。
+	 * @param source 发生错误的脚本URL（字符串）
+	 * @param lineno 发生错误的行号（数字）
+	 * @param colno 发生错误的列号（数字）
+	 * @param error Error对象
+	 * @returns {boolean}
+	 */
+	window.onerror = function(message, source, lineno, colno, error) {
+		console.log('message:', message);
+		console.log('source:', source);
+		console.log('lineno:', lineno);
+		console.log('colno:', colno);
+		console.log('error:', error);
+		return true
+	}
+
+	a.slice(1)
+
+</script>
+</body>
+</html>

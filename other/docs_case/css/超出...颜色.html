@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<button id="test-btn1">更改 span 节点为块级元素</button>
+<button id="test-btn2">更改 text-sub-par 节点为块级元素</button>
+<div class="text-par container" id="css-spot" style="color: red">
+	<div class="text-sub-par container" style="color: white;display: inline">
+		<span class="text container" style="color: blue;">这是一段很长很长很长很长的长文本</span>
+	</div>
+</div>
+</body>
+<script>
+	const textPar = document.getElementById('css-spot')
+	const textNode = textPar.getElementsByClassName('text')[0]
+	const textSubParNode = textPar.getElementsByClassName('text-sub-par')[0]
+	const testBtn1 = document.getElementById('test-btn1')
+	const testBtn2 = document.getElementById('test-btn2')
+	testBtn1.onclick = changeTextNodeBlock
+	testBtn2.onclick = changeTextSubParNodeBlock
+
+	function changeTextNodeBlock () {
+		textNode.style.display = 'block'
+	}
+
+	function changeTextSubParNodeBlock () {
+		textNode.style.display = 'inline'
+		textSubParNode.style.display = 'block'
+	}
+</script>
+<style>
+	.container {
+		width: 120px;
+		background: lightgray;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+</style>
+</html>

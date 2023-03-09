@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	// 将 Array 的元素转换为字符串。结果字符串由逗号分隔，且连接起来。
+	var arr = new Array(1, 'mio', '88')
+	// 数组测试： 1,mio,88
+	console.log('数组测试：', arr.toString())
+
+	// 如果 Boolean 值是 true，则返回 “true”。否则，返回 “false”。
+	var boolean = new Boolean(false)
+	// 布尔测试："false"
+	console.log('布尔测试：', boolean.toString())
+
+	// 返回日期的文字表示法。
+	var date = new Date('2020-01-01 20:30:30')
+	// Date测试： Wed Jan 01 2020 20:30:30 GMT+0800 (中国标准时间)
+	console.log('Date测试：', date.toString())
+
+	// 返回如下格式的字符串，其中 functionname 是被调用 toString 方法函数的名称：function functionname( ) { [native code] }
+	var fun = new Function()
+	console.log('函数测试:', fun.toString())
+
+	// 数字值。
+	var number = new Number(3.14)
+	// 数字测试： 3.14
+	console.log('数字测试：', number.toString())
+
+	// 对象本身
+	var obj = new Object({  })
+	// 对象测试： [object Object]
+	console.log('对象测试：', obj.toString())
+
+	// 字符串值
+	var str = new String('3.1415')
+	// 字符串测试： 3.1415
+	console.log('字符串测试：', str.toString())
+	// true
+	console.log(str.toString() === str.valueOf())
+</script>
+</body>
+</html>

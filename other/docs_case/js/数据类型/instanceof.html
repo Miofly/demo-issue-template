@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	// 定义构造函数
+	function C () {}
+
+	function D () {}
+
+	var o = new C()
+	console.log(o instanceof C, o.__proto__ === C.prototype) // true，true C.prototype 在 o 的原型链上
+	console.log(o instanceof D, o.__proto__ === D.prototype) // false，false D.prototype 不在 o 的原型链上
+	console.log(o instanceof Object, o.__proto__.__proto__ === Object.prototype) // true true
+	C.prototype = {}
+	var o2 = new C()
+	console.log(o2 instanceof C) // true
+	console.log(o instanceof C) // false，C.prototype 指向了一个空对象,这个空对象不在 o 的原型链上.
+	D.prototype = new C() // 继承
+	var o3 = new D()
+	console.log(o3 instanceof D) // true
+	console.log(o3 instanceof C) // true 因为 C.prototype 现在在 o3 的原型链上
+
+</script>
+</body>
+</html>

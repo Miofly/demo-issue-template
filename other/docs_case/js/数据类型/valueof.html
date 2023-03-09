@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+	// 返回数组对象本身。
+	var arr = new Array(1, 'mio', '88')
+	// 数组测试： [1, 'mio', '88']
+	console.log('数组测试：', arr.valueOf())
+	// true
+	console.log(arr === arr.valueOf())
+
+	// Boolean 值。
+	var boolean = new Boolean(false)
+	// 布尔测试：false
+	console.log('布尔测试：', boolean.valueOf())
+	// true
+	console.log(boolean == boolean.valueOf())
+	// false
+	console.log(boolean === boolean.valueOf())
+
+	// 存储的时间是从 1970 年 1 月 1 日午夜开始计的毫秒数 UTC。
+	var date = new Date('2020-01-01 20:30:30')
+	// Date测试： 1577881830000
+	console.log('Date测试：', date.valueOf())
+
+	// 函数本身。
+	var fun = new Function()
+	console.log('函数测试:', fun.valueOf())
+	// true
+	console.log(fun === fun.valueOf())
+
+	// 数字值。
+	var number = new Number(3.14)
+	// 数字测试： 3.14
+	console.log('数字测试：', number.valueOf())
+	// true
+	console.log(number == number.valueOf())
+	// false
+	console.log(number === number.valueOf())
+
+	// 对象本身
+	var obj = new Object({  })
+	// 对象测试： [1, 'mio', '88']
+	console.log('对象测试：', obj.valueOf())
+	// true
+	console.log(obj === obj.valueOf())
+
+	// 字符串值
+	var str = new String('3.1415')
+	// 字符串测试： 3.1415
+	console.log('字符串测试：', str.valueOf())
+	// true
+	console.log(str == str.valueOf())
+	// false
+	console.log(str === str.valueOf())
+</script>
+</body>
+</html>

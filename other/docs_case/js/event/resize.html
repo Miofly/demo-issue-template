@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<button onclick="triggerWindowResize()">主动触发 resize 事件</button>
+<script>
+	window.onresize = changeBgColor;
+	
+	function changeBgColor () {
+		document.body.style.background  = 'lightblue'
+	}
+
+	function triggerWindowResize() {
+		var ev = new Event("resize", {"bubbles":true, "cancelable":false});
+		document.dispatchEvent(ev);
+	}
+</script>
+</body>
+</html>

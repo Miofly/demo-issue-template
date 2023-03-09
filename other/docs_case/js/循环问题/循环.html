@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<script type="text/javascript" src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+</head>
+<body>
+<ul>
+	<li>li(1)</li>
+	<li>li(2)</li>
+	<li>li(3)</li>
+</ul>
+<script>
+	const obj = {
+		a: 1,
+		b: 2,
+		c: 3,
+		d: 4,
+		e: 5,
+		f: 6,
+	}
+	const arr = [
+		{ name: 'fx', sex: 'girl', age: 18 },
+		{ name: 'wfd', sex: 'boy', age: 18 },
+		{ name: 'wfd1', sex: 'boy', age: 18 },
+		{ name: 'wfd2', sex: 'boy', age: 18 },
+		{ name: 'wfd3', sex: 'boy', age: 18 }
+	]
+	console.table(arr)
+
+	console.log('%c普通for循环：', 'color: white; background: red; padding: 5px 10px')
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i].name === 'wfd') {
+			console.log('break;会中断循环')
+			// break
+		}
+		console.log(i + '. ' + '姓名：' + arr[i].name + ' 性别：' + arr[i].sex + ' 年龄：' + arr[i].age);
+	}
+
+	for (var i = 0; i < arr.length; i++) {
+		if (arr[i].name === 'wfd') {
+			console.log('continue;不会中断循环，中断然后开始新的循环')
+			continue;
+		}
+		console.log(i + '. ' + '姓名：' + arr[i].name + ' 性别：' + arr[i].sex + ' 年龄：' + arr[i].age);
+	}
+
+	console.log('%cforeach：', 'color: white; background: red; padding: 5px 10px')
+	arr.forEach(function (item, index, arr) {
+		if (item.name === 'wfd') {
+			console.log('不会中断循环')
+			return false
+		}
+		console.log(index + '. ' + '姓名：' + item.name + ' 性别：' + item.sex + ' 年龄：' + item.age);
+	})
+
+	console.log('foreach 不会返回新数组')
+
+	console.log('%cfor of：', 'color: white; background: red; padding: 5px 10px')
+	for (const item of arr) {
+		if (item.name === 'wfd') {
+			console.log('会中断循环')
+			break
+		}
+		console.log('姓名：' + item.name + ' 性别：' + item.sex + ' 年龄：' + item.age);
+	}
+
+	console.log('%cmap：', 'color: white; background: red; padding: 5px 10px')
+	const arrMap = arr.map((item, index, arr) => {
+		if (item.name === 'wfd') {
+			console.log('不会中断循环')
+			return false
+		}
+		console.log(index + '. ' + '姓名：' + item.name + ' 性别：' + item.sex + ' 年龄：' + item.age);
+		return { name: index + item.age }
+	})
+	console.log('arrMap 返回新数组', arrMap)
+
+
+	console.log('%c jq each方法一遍历DOM：', 'color: white; background: red; padding: 5px 10px')
+	$('li').each(function (i, item) {
+		if ($(this).text() === 'li(2)') {
+			console.log('不会中断循环')
+			return false
+		}
+		console.log($(this).text());
+	})
+
+	console.log('%c jq each方法二遍历数组：', 'color: white; background: red; padding: 5px 10px')
+	$.each(arr, function (i, item) {
+		if (item.name === 'wfd') {
+			console.log('不会中断循环')
+			return false
+		}
+		console.log(i + '. ' + '姓名：' + item.name + ' 性别：' + item.sex + ' 年龄：' + item.age);
+	})
+
+	console.log(`%cfor in`, 'color: white; background: red; padding: 5px 10px')
+	for (key in obj) {
+		if (key === 'b') {
+			console.log('会中断循环')
+			break
+		}
+		console.log(key, ':', obj[key])
+	}
+</script>
+</body>
+</html>

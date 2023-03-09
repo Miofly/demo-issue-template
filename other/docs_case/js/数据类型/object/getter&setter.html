@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<body>
+<script>
+	const obj = {
+		a: '我是 a 初始的值，稍后我将改变',
+		// 相当于一个普通函数
+		get () {
+			console.log('调用了此对象的 get 方法');
+			return 'get'
+		},
+		// getter 绑定了 test 属性
+		get testGetter () {
+			return this.a
+		},
+		set testGetter (name) {
+			this.a = '我改变了 a 的值'
+		},
+	};
+
+	console.log('第一次获取 testGetter：', obj.testGetter);
+	obj.a = '第一次获取 testGetter 后 a 的值变成此文字'
+	console.log('第二次获取 testGetter：', obj.testGetter);
+	obj.testGetter = '这是一个新值'
+	console.log('第三次获取 testGetter：', obj.testGetter);
+</script>
+</body>
+</html>

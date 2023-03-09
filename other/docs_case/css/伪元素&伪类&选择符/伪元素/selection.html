@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+</head>
+<style>
+	/* 选中的文本是红色背景，金黄色的字体 */
+	#selection-test::selection {
+		color: gold;
+		background-color: red;
+	}
+
+	/*选中的是蓝色背景，白色的字体的段落*/
+	#selection-test p::selection {
+		color: white;
+		background-color: blue;
+	}
+</style>
+<body>
+<div id="selection-test">
+	This text has special styles when you highlight it.
+	<p>Also try selecting text in this paragraph.</p>
+</div>
+</body>
+</html>
