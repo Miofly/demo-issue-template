@@ -1,6 +1,7 @@
 {
   "name": "@vft/constants",
   "version": "0.0.35",
+  "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -11,7 +12,7 @@
     }
   },
   "scripts": {
-    "stub": "unbuild --stub && pnpm -F @vft/build-common stub-helper",
+    "stub": "unbuild --stub",
     "dev": "pnpm run stub",
     "clean": "pnpm /^clean:/",
     "clean:dist": "rimraf dist",
