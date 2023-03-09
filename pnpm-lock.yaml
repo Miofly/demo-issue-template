@@ -5,9 +5,11 @@ importers:
   .:
     specifiers:
       '@vft/constants': workspace:*
+      '@vue/tsconfig': ^0.1.3
       unbuild: ^1.1.2
     dependencies:
       '@vft/constants': link:common/constants
+      '@vue/tsconfig': 0.1.3
       unbuild: 1.1.2
 
   common/constants:
@@ -1043,6 +1045,15 @@ packages:
 
   /@vue/shared/3.2.47:
     resolution: {integrity: sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==}
+
+  /@vue/tsconfig/0.1.3:
+    resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
+    peerDependencies:
+      '@types/node': '*'
+    peerDependenciesMeta:
+      '@types/node':
+        optional: true
+    dev: false
 
   /@vue/tsconfig/0.1.3_@types+node@18.14.6:
     resolution: {integrity: sha512-kQVsh8yyWPvHpb8gIc9l/HIDiiVUy1amynLNpCy8p+FoCiZXCo6fQos5/097MmnNZc9AtseDsCrfkhqCrJ8Olg==}
