@@ -7,5 +7,6 @@ import { RouterLink, RouterView } from 'vue-router'
 		主页
 	</div>
 
+
   <RouterView />
 </template>
