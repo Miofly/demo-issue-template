@@ -16,6 +16,7 @@
     "unplugin-vue-components": "^0.24.1",
     "unplugin-vue-macros": "^1.10.0",
     "vexip-ui": "^2.1.7",
+    "vft": "^0.0.26",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
     "wfly": "^0.1.3"

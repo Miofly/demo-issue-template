@@ -13,6 +13,7 @@ specifiers:
   unplugin-vue-components: ^0.24.1
   unplugin-vue-macros: ^1.10.0
   vexip-ui: ^2.1.7
+  vft: ^0.0.26
   vite: ^4.1.4
   vue: ^3.2.47
   vue-router: ^4.1.6
@@ -26,6 +27,7 @@ dependencies:
   unplugin-vue-components: 0.24.1_vue@3.2.47
   unplugin-vue-macros: 1.10.0_vite@4.1.4+vue@3.2.47
   vexip-ui: 2.1.7_vue@3.2.47
+  vft: 0.0.26_e3t3re5gryfzqb3r4suyd5ltwu
   vue: 3.2.47
   vue-router: 4.1.6_vue@3.2.47
   wfly: 0.1.3_3berzkjdz3twgoc2xn6plq4sim
@@ -2351,6 +2353,27 @@ packages:
       '@vexip-ui/icons': 1.1.0_vue@3.2.47
       '@vexip-ui/utils': 1.10.0
       vue: 3.2.47
+    dev: false
+
+  /vft/0.0.26_e3t3re5gryfzqb3r4suyd5ltwu:
+    resolution: {integrity: sha512-4nTx88uwi061uUAcvknTb/KMc44ePlmQWPUm0FY/yLUL61h1mlShyb7A9dT6p52sFdKDiu1VQgYi+AjQSwbjBQ==}
+    peerDependencies:
+      pinia: '>=2.0.0'
+      vue: '>=3.2.0'
+      vue-router: '>=4.0.16'
+    dependencies:
+      '@floating-ui/dom': 1.2.4
+      '@popperjs/core': /@sxzz/popperjs-es/2.11.7
+      '@types/lodash': 4.14.191
+      '@vueuse/core': 9.13.0_vue@3.2.47
+      dayjs: 1.11.7
+      lodash: 4.17.21
+      pinia: 2.0.33_7h6e7cvei2rsgyre2mq4fyhehq
+      sortablejs: 1.15.0
+      vue: 3.2.47
+      vue-router: 4.1.6_vue@3.2.47
+    transitivePeerDependencies:
+      - '@vue/composition-api'
     dev: false
 
   /vite/4.1.4_x7dzuadbe27hczg4caescy3qve:

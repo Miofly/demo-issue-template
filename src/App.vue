@@ -1,11 +1,10 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
-</script>
-
 <template>
   <div>
 		主页
-	</div>
 
-  <RouterView />
+		<wfly-divider direction="horizontal"></wfly-divider>
+		<el-affix>
+			11
+		</el-affix>
+	</div>
 </template>
