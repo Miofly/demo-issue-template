@@ -3,8 +3,5 @@
 	"version": "1.0.0",
 	"scripts": {
 		"clean": "rimraf node_modules"
-	},
-	"dependencies": {
-		"rimraf": "^4.1.3"
 	}
 }
