@@ -10,14 +10,20 @@
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
+    "@types/pubsub-js": "^1.8.3",
     "lodash": "^4.17.21",
     "pinia": "^2.0.32",
+    "pubsub-js": "^1.9.4",
     "sass": "^1.59.2",
     "unplugin-vue-components": "^0.24.1",
     "unplugin-vue-macros": "^1.10.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
-    "wfly": "^0.1.10"
+    "wfly": "^0.1.10",
+    "workbox-core": "^6.5.4",
+    "workbox-expiration": "^6.5.4",
+    "workbox-routing": "^6.5.4",
+    "workbox-strategies": "^6.5.4"
   },
   "devDependencies": {
     "@types/node": "^18.14.2",
