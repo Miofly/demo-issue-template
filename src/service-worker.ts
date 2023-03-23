@@ -8,7 +8,7 @@
 // You can also remove this file if you'd prefer not to use a
 // service worker, and the Workbox build step will be skipped.
 
-import  { clientsClaim } from 'workbox-core';
+import { clientsClaim } from 'workbox-core';
 import { ExpirationPlugin } from 'workbox-expiration';
 import { registerRoute } from 'workbox-routing';
 import { NetworkOnly, StaleWhileRevalidate } from 'workbox-strategies';
@@ -92,6 +92,7 @@ self.addEventListener('message', (event) => {
   }
 });
 
+// 通知相关
 self.addEventListener('notificationclick', (e) => {
   const notification = e.notification;
 

@@ -1,22 +1,35 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts",
-    "public/service-worker.js",
-    "src/**/*", "src/**/*.vue",
-    "./node_modules/wfly/comp-resolver.ts"],
-  "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@/*": ["./src/*"]
-    },
-    "types": [
-      "node"
-    ]
-  },
-
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
-  ]
+	"extends": "@vue/tsconfig/tsconfig.web.json",
+	"include": [
+		"env.d.ts",
+		"public/service-worker.js",
+		"src/**/*",
+		"src/**/*.vue",
+		"./node_modules/wfly/comp-resolver.ts"
+	],
+	"compilerOptions": {
+		"baseUrl": ".",
+		"lib": [
+			"es6",
+			"dom",
+			"es2017",
+			"esnext.intl",
+			"es2017.intl",
+			"es2018.intl",
+			"ScriptHost"
+		],
+		"paths": {
+			"@/*": [
+				"./src/*"
+			]
+		},
+		"types": [
+			"node"
+		]
+	},
+	"references": [
+		{
+			"path": "./tsconfig.node.json"
+		}
+	]
 }

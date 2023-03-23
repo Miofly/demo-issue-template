@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div>
-		主页
+		主页11122
 	</div>
 
 

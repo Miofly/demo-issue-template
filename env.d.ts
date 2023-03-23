@@ -9,3 +9,8 @@ interface BeforeInstallPromptEvent extends Event {
 	
 	prompt (): Promise<void>;
 }
+
+declare var BlobBuilder: any;
+declare var MozBlobBuilder: any;
+declare var WebKitBlobBuilder: any;
+declare var MSBlobBuilder: any;

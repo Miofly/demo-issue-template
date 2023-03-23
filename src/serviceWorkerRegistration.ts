@@ -34,8 +34,6 @@ export function register(config?: Config) {
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
-    
-    console.log('');
 
     window.addEventListener('load', () => {
       const swUrl = `/service-worker.js`;
@@ -52,11 +50,7 @@ export function register(config?: Config) {
             'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://cra.link/PWA',
           );
-        }).catch(err => {
-          console.log(333);
         });
-        
-        
       } else {
         // Is not localhost. Just register service worker
         registerValidSW(swUrl, config);
@@ -69,13 +63,10 @@ function registerValidSW(swUrl: string, config?: Config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
-      console.log(registration, '====', config);
       if (config && config.onReady) {
-        console.log(111);
         config.onReady(registration);
       }
       if (registration.waiting) {
-        console.log(22);
         config?.onUpdate?.(registration);
       }
       registration.onupdatefound = () => {
@@ -135,13 +126,11 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
           });
         });
       } else {
-        console.log('执行到这里了');
         // Service worker found. Proceed as normal.
         registerValidSW(swUrl, config);
       }
     })
     .catch(() => {
-      console.log(1234);
       // eslint-disable-next-line no-console
     });
 }
