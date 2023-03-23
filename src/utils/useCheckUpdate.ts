@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { useDocumentVisibility, useMemoizedFn } from 'ahooks';
+import { useDocumentVisibility } from '@vueuse/core';
 import dayjs from 'dayjs';
 import * as ls from 'local-storage';
 import { isObject, isUndefined } from 'lodash';
