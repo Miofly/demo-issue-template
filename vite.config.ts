@@ -17,11 +17,15 @@ export default defineConfig({
       vueJsx: vueJsx(),
     },
   }),
+    
     Components({
       resolvers: CompResolver({ importStyle: 'sass' }),
       dts: false,
     })
   ],
+  server: {
+    port: 7786
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))

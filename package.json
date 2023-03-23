@@ -7,6 +7,8 @@
     "build": "run-p type-check build-only",
     "preview": "vite preview",
     "build-only": "vite build",
+    "postinstall": "pnpm stub",
+    "stub": "tsup",
     "type-check": "vue-tsc --noEmit"
   },
   "dependencies": {
@@ -15,6 +17,8 @@
     "pinia": "^2.0.32",
     "pubsub-js": "^1.9.4",
     "sass": "^1.59.2",
+    "tsup": "^6.7.0",
+    "unbuild": "1.1.2",
     "unplugin-vue-components": "^0.24.1",
     "unplugin-vue-macros": "^1.10.0",
     "vue": "^3.2.47",
