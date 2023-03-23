@@ -27,16 +27,18 @@ type Config = {
 export function register(config?: Config) {
   if ('serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
-    const publicUrl = new URL('http://127.0.0.1:5173', window.location.href);
+    const publicUrl = new URL('/', window.location.href);
     if (publicUrl.origin !== window.location.origin) {
       // Our service worker won't work if PUBLIC_URL is on a different origin
       // from what our page is served on. This might happen if a CDN is used to
       // serve assets; see https://github.com/facebook/create-react-app/issues/2374
       return;
     }
+    
+    console.log('');
 
     window.addEventListener('load', () => {
-      const swUrl = `http://127.0.0.1:5173/src/service-worker.js`;
+      const swUrl = `/service-worker.js`;
 
       if (isLocalhost) {
         // This is running on localhost. Let's check if a service worker still exists or not.
@@ -50,7 +52,11 @@ export function register(config?: Config) {
             'This web app is being served cache-first by a service ' +
               'worker. To learn more, visit https://cra.link/PWA',
           );
+        }).catch(err => {
+          console.log(333);
         });
+        
+        
       } else {
         // Is not localhost. Just register service worker
         registerValidSW(swUrl, config);
@@ -63,10 +69,13 @@ function registerValidSW(swUrl: string, config?: Config) {
   navigator.serviceWorker
     .register(swUrl)
     .then((registration) => {
+      console.log(registration, '====', config);
       if (config && config.onReady) {
+        console.log(111);
         config.onReady(registration);
       }
       if (registration.waiting) {
+        console.log(22);
         config?.onUpdate?.(registration);
       }
       registration.onupdatefound = () => {
@@ -126,11 +135,13 @@ function checkValidServiceWorker(swUrl: string, config?: Config) {
           });
         });
       } else {
+        console.log('执行到这里了');
         // Service worker found. Proceed as normal.
         registerValidSW(swUrl, config);
       }
     })
     .catch(() => {
+      console.log(1234);
       // eslint-disable-next-line no-console
     });
 }

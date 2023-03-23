@@ -69,6 +69,7 @@ class Pwa {
       onReady: (reg) => {
         this.reg = reg;
         this.ready = true;
+        
         this.emit(PWA_REGISTERED_READY, reg);
       },
     });

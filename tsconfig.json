@@ -1,6 +1,8 @@
 {
   "extends": "@vue/tsconfig/tsconfig.web.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue",
+  "include": ["env.d.ts",
+    "public/service-worker.js",
+    "src/**/*", "src/**/*.vue",
     "./node_modules/wfly/comp-resolver.ts"],
   "compilerOptions": {
     "baseUrl": ".",

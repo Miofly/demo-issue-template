@@ -1,11 +1,16 @@
 import { resolve } from 'path';
 import { defineConfig } from 'tsup';
+import fs from 'fs-extra';
 
 export default defineConfig({
-  entry: ['src/service-worker.ts'],
-  format: ['cjs', 'esm'],
-  outDir: 'src',
-  tsconfig: resolve('./tsconfig.json'),
+  entry: [resolve('./src/service-worker.ts')],
+  format: ['iife'],
+  watch: true,
+  onSuccess: () => {
+    fs.copyFile('./dist/service-worker.global.js', './public/service-worker.js')
+  },
+  tsconfig: resolve('./tsconfig.node.json'),
   clean: true,
-  sourcemap: true
+  replaceNodeEnv: true,
+  // sourcemap: true
 });

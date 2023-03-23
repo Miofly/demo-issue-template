@@ -24,7 +24,11 @@ export default defineConfig({
     })
   ],
   server: {
-    port: 7786
+    port: 7786,
+    
+  },
+  define: {
+    'process.env': process.env
   },
   resolve: {
     alias: {
