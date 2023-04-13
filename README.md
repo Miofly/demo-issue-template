@@ -1,2 +1,0 @@
-# demo-issue-template
-test
