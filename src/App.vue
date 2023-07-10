@@ -1,11 +1,13 @@
 <script setup lang="ts">
 import IconText from '@/components/icon-text.vue';
+import IconTextJsx from '@/components/icon-text-jsx.vue';
 const test = ref('www111');
 </script>
 
 <template>
   <div>
     <icon-text color="red" text="ddd"/>
+    <icon-text-jsx color="white" text="ddd"/>
     <van-button>11</van-button>
     <van-tag type="primary">11</van-tag>
     <br>
