@@ -5,7 +5,7 @@ import 'vant/lib/button/style/index';
 
 <template>
   <div>
-      <Button>11</Button>
+    <Button>11</Button>
   </div>
 </template>
 
