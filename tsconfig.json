@@ -1,6 +1,7 @@
 {
   "extends": "@vft/tsconfig/tsconfig.web.json",
   "include": [
+    "./auto-imports.d.ts",
     "env.d.ts",
     "src/**/*",
     "src/**/*.vue"

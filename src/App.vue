@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { Button } from 'vant';
-import 'vant/lib/button/style/index';
+import IconText from '@/components/icon-text.vue';
+const test = ref('www111');
 </script>
 
 <template>
   <div>
-    <Button>11</Button>
+    <icon-text color="red" text="ddd"/>
+    <van-button>11</van-button>
+    <van-tag type="primary">11</van-tag>
+    <br>
+    <van-tag type="primary">{{ test }}</van-tag>
   </div>
 </template>
 

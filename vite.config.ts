@@ -8,6 +8,7 @@ import Components from 'unplugin-vue-components/vite'
 import {
   VantResolver,
 } from 'unplugin-vue-components/resolvers'
+import { autoImport } from './autoImport';
 
 
 // https://vitejs.dev/config/
@@ -23,7 +24,8 @@ export default defineConfig({
       resolvers: [
         VantResolver(),
       ],
-    })
+    }),
+    autoImport()
   ],
   resolve: {
     alias: {
