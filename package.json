@@ -1,34 +1,57 @@
 {
-  "name": "vue-project",
-  "version": "0.0.0",
+  "name": "apps-qyyjt-monorepo",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview --port 4173",
-    "type-check": "vue-tsc --noEmit"
+    "prepare": "husky install",
+    "bootstrap": "pnpm install",
+    "build": "cd apps && pnpm --filter ../scripts build",
+    "preinstall": "npx only-allow pnpm",
+    "postinstall": "pnpm run stub",
+    "format": "pnpm run lint:eslint & pnpm run lint:stylelint & pnpm run lint:prettier",
+    "lint:eslint": "eslint . --cache --max-warnings 0 --fix",
+    "lint:prettier": "prettier --write  \"{packages,apps,configs}/**/*.{js,json,ts,tsx,css,less,scss,vue,html,md}\"",
+    "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\"",
+    "clean": "pnpm /^clean:/",
+    "clean:dist": "rimraf dist",
+    "reinstall": "rimraf pnpm-lock.yaml && pnpm clean-all && pnpm i",
+    "clean:node_modules": "rimraf node_modules",
+    "clean-all": "pnpm /^clean-all:/ && pnpm clean",
+    "clean-all:dist": "pnpm run -r --parallel clean:dist",
+    "clean-all:node_modules": "pnpm run -r --parallel clean:node_modules",
+    "stub": "pnpm --filter ./configs/vite prepack",
+    "ncu": "ncu --deep --timeout 200000 -u"
   },
-  "dependencies": {
-    "@vueuse/core": "^10.2.1",
-    "pinia": "^2.1.4",
-    "pinia-plugin-persistedstate": "^3.1.0",
-    "vant": "^2.12.54",
-    "vue": "^2.7.14",
-    "vue-request": "^2.0.3",
-    "vue-router": "^3.6.5"
+  "resolutions": {
+    "bin-wrapper": "npm:bin-wrapper-china"
   },
   "devDependencies": {
-    "@types/node": "^20.4.1",
-    "@vft/tsconfig": "0.0.10",
-    "@vitejs/plugin-legacy": "^4.1.0",
-    "@vitejs/plugin-vue2": "^2.2.0",
-    "@vitejs/plugin-vue2-jsx": "^1.1.0",
-    "sass": "1.63.6",
-    "typescript": "5.1.6",
-    "unocss": "0.53.5",
-    "unplugin-auto-import": "0.16.6",
-    "unplugin-vue-components": "0.25.1",
-    "unplugin-vue-macros": "2.3.5",
-    "vite": "^4.4.2",
-    "vue-tsc": "^1.8.4"
-  }
+    "@changesets/cli": "^2.24.4",
+    "@types/fs-extra": "^9.0.13",
+    "@types/inquirer": "^9.0.1",
+    "@types/node": "18.8.0",
+    "@vc/config-lint": "workspace:*",
+    "@vc/config-tsconfig": "workspace:*",
+    "@vc/types": "workspace:*",
+    "cross-env": "^7.0.3",
+    "esno": "^0.16.3",
+    "fs-extra": "^10.1.0",
+    "husky": "^8.0.1",
+    "inquirer": "^9.1.2",
+    "jsdom": "^20.0.0",
+    "pathe": "^0.3.7",
+    "rimraf": "^3.0.2",
+    "rollup": "^2.79.0",
+    "tailwindcss": "^3.1.8",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.8.3",
+    "unbuild": "^0.8.11",
+    "vitest": "^0.23.4",
+    "@vft/tsconfig": "^0.0.9"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "packageManager": "pnpm@6.32.2",
+  "dependencies": {}
 }
