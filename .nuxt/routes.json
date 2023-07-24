@@ -1,0 +1,26 @@
+[
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\login.vue",
+    "chunkName": "pages/login"
+  },
+  {
+    "name": "my",
+    "path": "/my",
+    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\my.vue",
+    "chunkName": "pages/my"
+  },
+  {
+    "name": "reg",
+    "path": "/reg",
+    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\reg.vue",
+    "chunkName": "pages/reg"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

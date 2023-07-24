@@ -19,10 +19,7 @@
 <script lang="ts" setup>
 import {getToken, removeToken, setToken} from "~/utils/token";
 
-const  = ref();
-
 function set() {
-  import {defineComponent} from "vue";
   console.log('setToken');
   setToken('This_is_My_Token');
 }
