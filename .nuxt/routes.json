@@ -1,26 +1,16 @@
 [
   {
-    "name": "login",
-    "path": "/login",
-    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\login.vue",
-    "chunkName": "pages/login"
-  },
-  {
-    "name": "my",
-    "path": "/my",
-    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\my.vue",
-    "chunkName": "pages/my"
-  },
-  {
-    "name": "reg",
-    "path": "/reg",
-    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\reg.vue",
-    "chunkName": "pages/reg"
+    "name": "about",
+    "path": "/about",
+    "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\about.vue",
+    "chunkName": "pages/about",
+    "_name": "_82d5ba30"
   },
   {
     "name": "index",
     "path": "/",
     "component": "D:\\\\code\\\\me\\\\demo-issue-template\\\\pages\\\\index.vue",
-    "chunkName": "pages/index"
+    "chunkName": "pages/index",
+    "_name": "_436604a6"
   }
 ]

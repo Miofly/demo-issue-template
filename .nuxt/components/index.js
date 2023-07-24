@@ -1,3 +1,5 @@
+export { default as PiniaLogo } from '../..\\components\\PiniaLogo.vue'
+
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {
   if (!options || !options.functional) {

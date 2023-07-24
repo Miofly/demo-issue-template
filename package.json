@@ -1,33 +1,25 @@
 {
-  "name": "nuxt_demo",
+  "name": "pinia-example-nuxt",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "scripts": {
-    "dev": "cross-env NUXT_ENV_MODE=dev nuxt",
-    "build": "cross-env NUXT_ENV_MODE=prod nuxt build",
-    "start": "cross-env NUXT_ENV_MODE=prod nuxt start",
-    "generate": "cross-env NUXT_ENV_MODE=prod nuxt generate"
+    "dev": "nuxi dev",
+    "build": "nuxt generate",
+    "start": "node .output/server/index.mjs",
+    "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.0.0",
-    "@nuxtjs/axios": "^5.13.6",
-    "@nuxtjs/composition-api": "^0.33.1",
-    "@nuxtjs/pwa": "^3.3.5",
-    "@pinia/nuxt": "^0.2.1",
-    "cookies-ts": "^1.0.5",
-    "core-js": "^3.25.3",
-    "cross-env": "^7.0.3",
-    "nuxt": "^2.15.8",
-    "pinia": "^2.1.4",
-    "vue": "^2.7.10",
-    "vue-demi": "^0.14.5",
-    "vue-server-renderer": "^2.7.10",
-    "vue-template-compiler": "^2.7.10"
+    "@nuxt/ui-templates": "^1.2.0",
+    "@pinia/nuxt": "^0.4.11",
+    "@vueuse/core": "^10.2.1",
+    "nuxt": "^2.17.1",
+    "pinia": "^2.1.4"
   },
   "devDependencies": {
-    "@nuxt/types": "^2.15.8",
-    "@nuxt/typescript-build": "^2.1.0",
-    "@nuxtjs/tailwindcss": "^5.3.3",
-    "postcss": "^8.4.17"
+    "@exampledev/new.css": "^1.1.3",
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge",
+    "@nuxt/types": "^2.17.1",
+    "prettier": "^2.8.8"
   }
 }

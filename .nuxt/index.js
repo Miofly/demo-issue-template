@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import Vuex from 'vuex'
+
 import Meta from 'vue-meta'
 import ClientOnly from 'vue-client-only'
 import NoSsr from 'vue-no-ssr'
@@ -9,22 +9,18 @@ import NuxtError from './components/nuxt-error.vue'
 import Nuxt from './components/nuxt.js'
 import App from './App.js'
 import { setContext, getLocation, getRouteData, normalizeError } from './utils'
-import { createStore } from './store.js'
 
 /* Plugins */
 
 import nuxt_plugin_plugin_898c319c from 'nuxt_plugin_plugin_898c319c' // Source: .\\components\\plugin.js (mode: 'all')
-import nuxt_plugin_plugin_e51c8e80 from 'nuxt_plugin_plugin_e51c8e80' // Source: .\\composition-api\\plugin.mjs (mode: 'all')
-import nuxt_plugin_pluginclient_8fdf4230 from 'nuxt_plugin_pluginclient_8fdf4230' // Source: .\\content\\plugin.client.js (mode: 'client')
-import nuxt_plugin_pluginserver_1dc9d070 from 'nuxt_plugin_pluginserver_1dc9d070' // Source: .\\content\\plugin.server.js (mode: 'server')
-import nuxt_plugin_workbox_4e214a31 from 'nuxt_plugin_workbox_4e214a31' // Source: .\\workbox.js (mode: 'client')
-import nuxt_plugin_metaplugin_533b7db1 from 'nuxt_plugin_metaplugin_533b7db1' // Source: .\\pwa\\meta.plugin.js (mode: 'all')
-import nuxt_plugin_iconplugin_57e32325 from 'nuxt_plugin_iconplugin_57e32325' // Source: .\\pwa\\icon.plugin.js (mode: 'all')
-import nuxt_plugin_axios_b185d356 from 'nuxt_plugin_axios_b185d356' // Source: .\\axios.js (mode: 'all')
-import nuxt_plugin_distplugin4cd6371e_dcd91eb0 from 'nuxt_plugin_distplugin4cd6371e_dcd91eb0' // Source: .\\dist.plugin.4cd6371e.mjs (mode: 'all')
-import nuxt_plugin_axios_3566aa80 from 'nuxt_plugin_axios_3566aa80' // Source: ..\\plugins\\axios (mode: 'all')
-import nuxt_plugin_user_5e96bcf2 from 'nuxt_plugin_user_5e96bcf2' // Source: ..\\api\\user (mode: 'all')
-import nuxt_plugin_meta_51f0c3d2 from 'nuxt_plugin_meta_51f0c3d2' // Source: .\\composition-api\\meta.mjs (mode: 'all')
+import nuxt_plugin_middleware_6fc7f418 from 'nuxt_plugin_middleware_6fc7f418' // Source: .\\middleware.js (mode: 'all')
+import nuxt_plugin_appplugin_6b47ecc4 from 'nuxt_plugin_appplugin_6b47ecc4' // Source: ..\\node_modules\\.pnpm\\@nuxt+bridge-edge@3.0.0-28161214.90af848_@babel+core@7.22.9_rollup@3.26.3_vue@2.7.14_webpack@5.88.2\\node_modules\\@nuxt\\bridge-edge\\dist\\runtime\\app.plugin.mjs (mode: 'all')
+import nuxt_plugin_configplugin_61ba676a from 'nuxt_plugin_configplugin_61ba676a' // Source: ..\\node_modules\\.pnpm\\@nuxt+bridge-edge@3.0.0-28161214.90af848_@babel+core@7.22.9_rollup@3.26.3_vue@2.7.14_webpack@5.88.2\\node_modules\\@nuxt\\bridge-edge\\dist\\runtime\\config.plugin.mjs (mode: 'all')
+import nuxt_plugin_nitrobridgeserver_72dd7e0c from 'nuxt_plugin_nitrobridgeserver_72dd7e0c' // Source: .\\nitro-bridge.server.mjs (mode: 'server')
+import nuxt_plugin_nitrobridgeclient_2168be94 from 'nuxt_plugin_nitrobridgeclient_2168be94' // Source: .\\nitro-bridge.client.mjs (mode: 'client')
+import nuxt_plugin_plugin_e198aedc from 'nuxt_plugin_plugin_e198aedc' // Source: ..\\node_modules\\.pnpm\\@pinia+nuxt@0.4.11_rollup@3.26.3_typescript@5.1.6_vue@2.7.14\\node_modules\\@pinia\\nuxt\\dist\\runtime\\plugin.vue2 (mode: 'all')
+import nuxt_plugin_capiplugin_537c18e5 from 'nuxt_plugin_capiplugin_537c18e5' // Source: .\\capi.plugin.mjs (mode: 'all')
+import nuxt_plugin_errorpluginserver_0344a338 from 'nuxt_plugin_errorpluginserver_0344a338' // Source: ..\\node_modules\\.pnpm\\@nuxt+bridge-edge@3.0.0-28161214.90af848_@babel+core@7.22.9_rollup@3.26.3_vue@2.7.14_webpack@5.88.2\\node_modules\\@nuxt\\bridge-edge\\dist\\runtime\\error.plugin.server.mjs (mode: 'server')
 
 // Component: <ClientOnly>
 Vue.component(ClientOnly.name, ClientOnly)
@@ -66,35 +62,17 @@ Vue.use(Meta, {"keyName":"head","attribute":"data-n-head","ssrAttribute":"data-n
 
 const defaultTransition = {"name":"page","mode":"out-in","appear":false,"appearClass":"appear","appearActiveClass":"appear-active","appearToClass":"appear-to"}
 
-const originalRegisterModule = Vuex.Store.prototype.registerModule
-
-function registerModule (path, rawModule, options = {}) {
-  const preserveState = process.client && (
-    Array.isArray(path)
-      ? !!path.reduce((namespacedState, path) => namespacedState && namespacedState[path], this.state)
-      : path in this.state
-  )
-  return originalRegisterModule.call(this, path, rawModule, { preserveState, ...options })
-}
-
 async function createApp(ssrContext, config = {}) {
-  const store = createStore(ssrContext)
+  const store = null
   const router = await createRouter(ssrContext, config, { store })
-
-  // Add this.$router into store actions/mutations
-  store.$router = router
-
-  // Fix SSR caveat https://github.com/nuxt/nuxt.js/issues/3757#issuecomment-414689141
-  store.registerModule = registerModule
 
   // Create Root instance
 
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"Nuxt Demo Project","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""},{"name":"format-detection","content":"telephone=no"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"~\u002Fstatic\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"pinia-example-nuxt","htmlAttrs":{"lang":"en"},"meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":""}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
-    store,
     router,
     nuxt: {
       defaultTransition,
@@ -139,9 +117,6 @@ async function createApp(ssrContext, config = {}) {
     ...App
   }
 
-  // Make app available into store via this.app
-  store.app = app
-
   const next = ssrContext ? ssrContext.next : location => app.router.push(location)
   // Resolve route
   let route
@@ -154,7 +129,6 @@ async function createApp(ssrContext, config = {}) {
 
   // Set context to app.context
   await setContext(app, {
-    store,
     route,
     next,
     error: app.nuxt.error.bind(app),
@@ -182,9 +156,6 @@ async function createApp(ssrContext, config = {}) {
       app.context[key] = value
     }
 
-    // Add into store
-    store[key] = app[key]
-
     // Check if plugin not already installed
     const installKey = '__nuxt_' + key + '_installed__'
     if (Vue[installKey]) {
@@ -206,13 +177,6 @@ async function createApp(ssrContext, config = {}) {
   // Inject runtime config as $config
   inject('config', config)
 
-  if (process.client) {
-    // Replace store state before plugins execution
-    if (window.__NUXT__ && window.__NUXT__.state) {
-      store.replaceState(window.__NUXT__.state)
-    }
-  }
-
   // Add enablePreview(previewData = {}) in context for plugins
   if (process.static && process.client) {
     app.context.enablePreview = function (previewData = {}) {
@@ -226,48 +190,36 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_plugin_898c319c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_plugin_e51c8e80 === 'function') {
-    await nuxt_plugin_plugin_e51c8e80(app.context, inject)
+  if (typeof nuxt_plugin_middleware_6fc7f418 === 'function') {
+    await nuxt_plugin_middleware_6fc7f418(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_pluginclient_8fdf4230 === 'function') {
-    await nuxt_plugin_pluginclient_8fdf4230(app.context, inject)
+  if (typeof nuxt_plugin_appplugin_6b47ecc4 === 'function') {
+    await nuxt_plugin_appplugin_6b47ecc4(app.context, inject)
   }
 
-  if (process.server && typeof nuxt_plugin_pluginserver_1dc9d070 === 'function') {
-    await nuxt_plugin_pluginserver_1dc9d070(app.context, inject)
+  if (typeof nuxt_plugin_configplugin_61ba676a === 'function') {
+    await nuxt_plugin_configplugin_61ba676a(app.context, inject)
   }
 
-  if (process.client && typeof nuxt_plugin_workbox_4e214a31 === 'function') {
-    await nuxt_plugin_workbox_4e214a31(app.context, inject)
+  if (process.server && typeof nuxt_plugin_nitrobridgeserver_72dd7e0c === 'function') {
+    await nuxt_plugin_nitrobridgeserver_72dd7e0c(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_metaplugin_533b7db1 === 'function') {
-    await nuxt_plugin_metaplugin_533b7db1(app.context, inject)
+  if (process.client && typeof nuxt_plugin_nitrobridgeclient_2168be94 === 'function') {
+    await nuxt_plugin_nitrobridgeclient_2168be94(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_iconplugin_57e32325 === 'function') {
-    await nuxt_plugin_iconplugin_57e32325(app.context, inject)
+  if (typeof nuxt_plugin_plugin_e198aedc === 'function') {
+    await nuxt_plugin_plugin_e198aedc(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_axios_b185d356 === 'function') {
-    await nuxt_plugin_axios_b185d356(app.context, inject)
+  if (typeof nuxt_plugin_capiplugin_537c18e5 === 'function') {
+    await nuxt_plugin_capiplugin_537c18e5(app.context, inject)
   }
 
-  if (typeof nuxt_plugin_distplugin4cd6371e_dcd91eb0 === 'function') {
-    await nuxt_plugin_distplugin4cd6371e_dcd91eb0(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_axios_3566aa80 === 'function') {
-    await nuxt_plugin_axios_3566aa80(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_user_5e96bcf2 === 'function') {
-    await nuxt_plugin_user_5e96bcf2(app.context, inject)
-  }
-
-  if (typeof nuxt_plugin_meta_51f0c3d2 === 'function') {
-    await nuxt_plugin_meta_51f0c3d2(app.context, inject)
+  if (process.server && typeof nuxt_plugin_errorpluginserver_0344a338 === 'function') {
+    await nuxt_plugin_errorpluginserver_0344a338(app.context, inject)
   }
 
   // Lock enablePreview in context
@@ -306,7 +258,6 @@ async function createApp(ssrContext, config = {}) {
   })
 
   return {
-    store,
     app,
     router
   }

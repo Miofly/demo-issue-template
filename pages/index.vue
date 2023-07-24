@@ -1,42 +1,94 @@
 <template>
-  <div class="w-full h-screen" style="margin-top: 20px;">
-    <div class="flex justify-center items-center">
-      <h1>主页部分</h1>
+  <div>
+    <div style="margin: 1rem 0">
+      <PiniaLogo />
     </div>
-    <div class="flex justify-center items-center">
-      <button @click="set">Set Token</button>
-      <button @click="get">Get Token</button>
-      <button @click="remove">Remove Token</button>
-    </div>
-    <div class="flex justify-center items-center">
-      <nuxt-link to="/">主页</nuxt-link>
-      <nuxt-link to="/login">去登录</nuxt-link>
-      <nuxt-link to="/my">我的信息</nuxt-link>
-    </div>
+
+    <h2>Hello {{ user.name }}</h2>
+
+    <form @submit.prevent="addItemToCart" data-testid="add-items">
+      <input type="text" v-model="itemName" />
+      <button>Add</button>
+    </form>
+
+    <form @submit.prevent="buy">
+      <ul data-testid="items">
+        <li v-for="item in cart.items" :key="item.name">
+          {{ item.name }} ({{ item.amount }})
+          <button @click="cart.removeItem(item.name)" type="button">X</button>
+        </li>
+      </ul>
+
+      <button :disabled="!user.name">Buy</button>
+      <button
+        :disabled="!cart.items.length"
+        @click="clearCart"
+        type="button"
+        data-testid="clear"
+      >
+        Clear the cart
+      </button>
+    </form>
   </div>
 </template>
 
-<script lang="ts" setup>
-import {getToken, removeToken, setToken} from "~/utils/token";
+<script lang="ts">
+import PiniaLogo from '~/components/PiniaLogo.vue'
 
-function set() {
-  console.log('setToken');
-  setToken('This_is_My_Token');
-}
-function get() {
-  const token: string | null = getToken();
-  console.log('getToken ', token);
-}
-function remove() {
-  console.log('removeToken');
-  removeToken();
-}
+import { defineComponent, ref } from 'vue-demi'
+import { useUserStore } from '~/stores/user'
+import { useCartStore } from '~/stores/cart'
+
+export default defineComponent({
+  components: { PiniaLogo },
+
+  setup() {
+    const user = useUserStore()
+    const cart = useCartStore()
+
+    const itemName = ref('')
+
+    function addItemToCart() {
+      if (!itemName.value) return
+      cart.addItem(itemName.value)
+      itemName.value = ''
+    }
+
+    function clearCart() {
+      if (window.confirm('Are you sure you want to clear the cart?')) {
+        cart.rawItems = []
+      }
+    }
+
+    async function buy() {
+      const n = await cart.purchaseItems()
+
+      console.log(`Bought ${n} items`)
+
+      cart.rawItems = []
+    }
+
+    return {
+      itemName,
+      addItemToCart,
+      cart,
+
+      user,
+      buy,
+      clearCart,
+    }
+  },
+})
 </script>
 
 <style scoped>
-button {
-  border: 1px solid black;
-  width: 100px;
-  height: 50px;
+img {
+  width: 200px;
+}
+
+button,
+input {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 </style>
