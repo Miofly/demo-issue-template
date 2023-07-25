@@ -12,6 +12,7 @@
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix"
   },
   "dependencies": {
+    "@nuxt/ui-templates": "^1.2.0",
     "core-js": "^3.25.3",
     "nuxt": "2.17.1",
     "vue": "^2.7.14",
