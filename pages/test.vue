@@ -2,6 +2,4 @@
 	<div>测试路由</div>
 </template>
 
-<style scoped>
-
-</style>
+<style lang="less" scoped></style>
