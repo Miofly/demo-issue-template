@@ -2,6 +2,8 @@
 	<div>
 		<p>Hello!111</p>
 		<div>{{ test}}</div>
+		<icon-text></icon-text>
+		<icon></icon>
 	</div>
 </template>
 
