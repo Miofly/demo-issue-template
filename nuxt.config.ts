@@ -22,6 +22,9 @@ export default defineNuxtConfig({
       pathPrefix: false,
     }
   ],
+  bridge: {
+    vite: true,
+  },
   // imports: {
   //   dirs: [
   //     // Scan top-level modules
