@@ -1,9 +1,9 @@
 {
-  "name": "demo-nuxt-bridge",
+  "name": "@apps/demo",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "pnpm -F @apps/demo dev",
+    "dev": "nuxi dev",
     "build": "nuxi build",
     "start": "nuxi preview",
     "lint:js": "eslint --ext \".js,.ts,.vue\" --ignore-path .gitignore .",
@@ -14,5 +14,13 @@
     "clean": "pnpm /^clean:/",
     "clean:nuxt": "rimraf .nuxt",
     "clean:node_modules": "rimraf node_modules"
+  },
+  "devDependencies": {
+    "@nuxt/bridge": "npm:@nuxt/bridge-edge@3.0.0-28177393.984ce7c",
+    "@pinia/nuxt": "^0.4.11",
+    "@unocss/nuxt": "^0.53.5",
+    "@vueuse/nuxt": "^10.2.1",
+    "nuxt-edge": "latest",
+    "pinia": "^2.1.4"
   }
 }
