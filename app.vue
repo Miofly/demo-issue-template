@@ -1,5 +1,14 @@
+<script setup lang="ts">
+useHead({
+	title: 'appName',
+})
+</script>
+
 <template>
-	<NuxtLayout>
-		<NuxtPage />
-	</NuxtLayout>
+	<div>
+		我是app.vue
+		<NuxtLayout>
+			<NuxtPage />
+		</NuxtLayout>
+	</div>
 </template>
