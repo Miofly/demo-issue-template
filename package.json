@@ -10,9 +10,12 @@
     "lint:prettier": "prettier --check .",
     "lint": "npm run lint:js && npm run lint:prettier",
     "lintfix": "prettier --write --list-different . && npm run lint:js -- --fix",
-    "reinstall": "rimraf pnpm-lock.yaml && pnpm clean && pnpm i",
+    "reinstall": "rimraf pnpm-lock.yaml && pnpm clean-all && pnpm i",
     "clean": "pnpm /^clean:/",
-    "clean:nuxt": "rimraf .nuxt",
-    "clean:node_modules": "rimraf node_modules"
+    "clean:dist": "rimraf .nuxt",
+    "clean:node_modules": "rimraf node_modules",
+    "clean-all": "pnpm /^clean-all:/ && pnpm clean",
+    "clean-all:dist": "pnpm run -r --parallel clean:dist",
+    "clean-all:node_modules": "pnpm run -r --parallel clean:node_modules"
   }
 }
