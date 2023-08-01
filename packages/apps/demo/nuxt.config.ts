@@ -29,6 +29,9 @@ export default defineNuxtConfig({
     vite: true,
     meta: true
   },
+  devServer: {
+    port: 3333
+  }
   // imports: {
   //   dirs: [
   //     // Scan top-level modules
