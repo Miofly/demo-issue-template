@@ -6,55 +6,23 @@ settings:
 
 importers:
 
-  .: {}
+  .:
+    devDependencies:
+      vue:
+        specifier: 2.7.14
+        version: 2.7.14
+      vue-router:
+        specifier: 3.6.5
+        version: 3.6.5(vue@2.7.14)
 
   packages/apps/demo:
     dependencies:
       '@nuxt/bridge':
         specifier: npm:@nuxt/bridge-edge@3.0.0-28177393.984ce7c
         version: /@nuxt/bridge-edge@3.0.0-28177393.984ce7c(@babel/core@7.22.9)(rollup@3.27.0)(vue@2.7.14)(webpack@5.88.2)
-      '@nuxt/ui-templates':
-        specifier: 1.3.1
-        version: 1.3.1
-      '@unhead/vue':
-        specifier: 1.1.35
-        version: 1.1.35(vue@2.7.14)
-      defu:
-        specifier: ^6.1.2
-        version: 6.1.2
-      destr:
-        specifier: ^2.0.0
-        version: 2.0.0
       nuxt:
         specifier: 2.17.1
         version: 2.17.1(consola@3.2.3)(typescript@5.1.6)(vue@2.7.14)
-      ofetch:
-        specifier: ^1.1.1
-        version: 1.1.1
-      radix3:
-        specifier: 1.0.1
-        version: 1.0.1
-      ufo:
-        specifier: ^1.1.2
-        version: 1.1.2
-      uncrypto:
-        specifier: 0.1.3
-        version: 0.1.3
-      vue:
-        specifier: 2.7.14
-        version: 2.7.14
-      vue-client-only:
-        specifier: 2.1.0
-        version: 2.1.0
-      vue-meta:
-        specifier: 2.4.0
-        version: 2.4.0
-      vue-no-ssr:
-        specifier: 1.1.1
-        version: 1.1.1
-      vue-router:
-        specifier: 3.6.5
-        version: 3.6.5(vue@2.7.14)
 
 packages:
 
@@ -292,12 +260,10 @@ packages:
   /@babel/helper-string-parser@7.22.5:
     resolution: {integrity: sha512-mM4COjgZox8U+JcXQwPijIZLElkgEpO5rsERVDJTc2qfCDfERyob6k5WegS14SX18IIjv+XD+GrqNumY5JRCDw==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@babel/helper-string-parser/-/helper-string-parser-7.22.5.tgz}
     engines: {node: '>=6.9.0'}
-    dev: false
 
   /@babel/helper-validator-identifier@7.22.5:
     resolution: {integrity: sha512-aJXu+6lErq8ltp+JhkJUfk1MTGyuA4v7f3pA+BJ5HLfNC6nAQ0Cpi9uOquUj8Hehg0aUiHzWQbOVJGao6ztBAQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@babel/helper-validator-identifier/-/helper-validator-identifier-7.22.5.tgz}
     engines: {node: '>=6.9.0'}
-    dev: false
 
   /@babel/helper-validator-option@7.22.5:
     resolution: {integrity: sha512-R3oB6xlIVKUnxNUxbmgq7pKjxpru24zlimpE8WK47fACIlM0II/Hm1RS8IaOI7NgCr6LNS+jl5l75m20npAziw==}
@@ -334,12 +300,11 @@ packages:
     dev: false
 
   /@babel/parser@7.22.7:
-    resolution: {integrity: sha512-7NF8pOkHP5o2vpmGgNGcfAeCvOYhGLyA3Z4eBQkT1RJlWu47n63bCs93QfJ2hIAFCil7L5P2IWhs1oToVgrL0Q==}
+    resolution: {integrity: sha512-7NF8pOkHP5o2vpmGgNGcfAeCvOYhGLyA3Z4eBQkT1RJlWu47n63bCs93QfJ2hIAFCil7L5P2IWhs1oToVgrL0Q==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@babel/parser/-/parser-7.22.7.tgz}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dependencies:
       '@babel/types': 7.22.5
-    dev: false
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression@7.22.5(@babel/core@7.22.9):
     resolution: {integrity: sha512-NP1M5Rf+u2Gw9qfSO4ihjcTGW5zXTi36ITLd4/EoAcEhIZ0yjMqmftDNl3QC19CX7olhrjpyU454g/2W7X0jvQ==}
@@ -1370,7 +1335,6 @@ packages:
       '@babel/helper-string-parser': 7.22.5
       '@babel/helper-validator-identifier': 7.22.5
       to-fast-properties: 2.0.0
-    dev: false
 
   /@cloudflare/kv-asset-handler@0.3.0:
     resolution: {integrity: sha512-9CB/MKf/wdvbfkUdfrj+OkEwZ5b7rws0eogJ4293h+7b6KX5toPwym+VQKmILafNB9YiehqY0DlNrDcDhdWHSQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@cloudflare/kv-asset-handler/-/kv-asset-handler-0.3.0.tgz}
@@ -2221,7 +2185,7 @@ packages:
       semver: 7.5.4
       std-env: 3.3.3
       terser: 5.19.2
-      ufo: 1.1.2
+      ufo: 1.2.0
       unctx: 2.3.1
       unimport: 3.1.0(rollup@3.27.0)
       unplugin: 1.4.0
@@ -2267,7 +2231,7 @@ packages:
       postcss-import-resolver: 2.0.0
       scule: 1.0.0
       std-env: 3.3.3
-      ufo: 1.1.2
+      ufo: 1.2.0
       unbuild: 1.2.1
       unimport: 3.1.0(rollup@3.27.0)
       untyped: 1.4.0
@@ -2422,7 +2386,7 @@ packages:
       lodash: 4.17.21
       rc9: 2.1.1
       std-env: 3.3.3
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /@nuxt/core@2.17.1:
@@ -2470,7 +2434,7 @@ packages:
       fs-extra: 10.1.0
       html-minifier: 4.0.0
       node-html-parser: 6.1.5
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /@nuxt/kit@3.6.5(rollup@3.27.0):
@@ -2548,7 +2512,7 @@ packages:
       pkg-types: 1.0.3
       postcss-import-resolver: 2.0.0
       std-env: 3.3.3
-      ufo: 1.1.2
+      ufo: 1.2.0
       unimport: 3.1.0(rollup@3.27.0)
       untyped: 1.4.0
     transitivePeerDependencies:
@@ -2576,7 +2540,7 @@ packages:
       serve-placeholder: 2.0.1
       serve-static: 1.15.0
       server-destroy: 1.0.1
-      ufo: 1.1.2
+      ufo: 1.2.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -2607,7 +2571,7 @@ packages:
     dev: false
 
   /@nuxt/ui-templates@1.3.1:
-    resolution: {integrity: sha512-5gc02Pu1HycOVUWJ8aYsWeeXcSTPe8iX8+KIrhyEtEoOSkY0eMBuo0ssljB8wALuEmepv31DlYe5gpiRwkjESA==}
+    resolution: {integrity: sha512-5gc02Pu1HycOVUWJ8aYsWeeXcSTPe8iX8+KIrhyEtEoOSkY0eMBuo0ssljB8wALuEmepv31DlYe5gpiRwkjESA==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@nuxt/ui-templates/-/ui-templates-1.3.1.tgz}
     dev: false
 
   /@nuxt/utils@2.17.1:
@@ -2625,7 +2589,7 @@ packages:
       serialize-javascript: 6.0.1
       signal-exit: 4.1.0
       ua-parser-js: 1.0.35
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /@nuxt/vue-app@2.17.1:
@@ -2633,7 +2597,7 @@ packages:
     engines: {node: ^14.18.0 || >=16.10.0}
     dependencies:
       node-fetch-native: 1.2.0
-      ufo: 1.1.2
+      ufo: 1.2.0
       unfetch: 5.0.0
       vue: 2.7.14
       vue-client-only: 2.1.0
@@ -2655,7 +2619,7 @@ packages:
       fs-extra: 10.1.0
       lodash: 4.17.21
       lru-cache: 5.1.1
-      ufo: 1.1.2
+      ufo: 1.2.0
       vue: 2.7.14
       vue-meta: 2.4.0
       vue-server-renderer: 2.7.14
@@ -2699,7 +2663,7 @@ packages:
       terser-webpack-plugin: 4.2.3(webpack@4.46.0)
       thread-loader: 3.0.4(webpack@4.46.0)
       time-fix-plugin: 2.0.7(webpack@4.46.0)
-      ufo: 1.1.2
+      ufo: 1.2.0
       upath: 2.0.1
       url-loader: 4.1.1(file-loader@6.2.0)(webpack@4.46.0)
       vue-loader: 15.10.1(cache-loader@4.1.0)(css-loader@5.2.7)(lodash@4.17.21)(vue-template-compiler@2.7.14)(webpack@4.46.0)
@@ -2985,7 +2949,7 @@ packages:
     dev: false
 
   /@types/node@20.4.5:
-    resolution: {integrity: sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@types/node/-/node-20.4.5.tgz}
+    resolution: {integrity: sha512-rt40Nk13II9JwQBdeYqmbn2Q6IVTA5uPhvSO+JVqdXw/6/4glI6oR9ezty/A9Hg5u7JH4OmYmuQ+XvjKm0Datg==}
     dev: false
 
   /@types/parse-json@4.0.0:
@@ -3030,21 +2994,21 @@ packages:
     dev: false
 
   /@unhead/dom@1.1.35:
-    resolution: {integrity: sha512-/VAwHHiZGHAKS9V0JaYBWxIBc8OpPMfjVk0TRcKoerFCmYRMsuWtpWauWx644j177kCbzCCT1HOA2fB7R07uXQ==}
+    resolution: {integrity: sha512-/VAwHHiZGHAKS9V0JaYBWxIBc8OpPMfjVk0TRcKoerFCmYRMsuWtpWauWx644j177kCbzCCT1HOA2fB7R07uXQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@unhead/dom/-/dom-1.1.35.tgz}
     dependencies:
       '@unhead/schema': 1.1.35
       '@unhead/shared': 1.1.35
     dev: false
 
   /@unhead/schema@1.1.35:
-    resolution: {integrity: sha512-hB1uHbK38+WoZn2PHRl0eJJ2Lip374+eHHxUbHY4rFQeL4mTgxAFL0KltpMZr5Eo7ZMV/zNL7LZ89KBd9L43Zg==}
+    resolution: {integrity: sha512-hB1uHbK38+WoZn2PHRl0eJJ2Lip374+eHHxUbHY4rFQeL4mTgxAFL0KltpMZr5Eo7ZMV/zNL7LZ89KBd9L43Zg==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@unhead/schema/-/schema-1.1.35.tgz}
     dependencies:
       hookable: 5.5.3
       zhead: 2.0.10
     dev: false
 
   /@unhead/shared@1.1.35:
-    resolution: {integrity: sha512-SmR2tyAVYfvN+bPp71Bp4igHpv19X6VAoVP14qq3Yqdw1nWJKknla2QEkpqAgygit9b69Gyu+Wi5WABpZKUA+A==}
+    resolution: {integrity: sha512-SmR2tyAVYfvN+bPp71Bp4igHpv19X6VAoVP14qq3Yqdw1nWJKknla2QEkpqAgygit9b69Gyu+Wi5WABpZKUA+A==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@unhead/shared/-/shared-1.1.35.tgz}
     dependencies:
       '@unhead/schema': 1.1.35
     dev: false
@@ -3057,7 +3021,7 @@ packages:
     dev: false
 
   /@unhead/vue@1.1.35(vue@2.7.14):
-    resolution: {integrity: sha512-U0iM9B8pq06FS1DLK7g25+ddMqDnQkqy+fgQyC0Gv+e4m8XEKsI7JKSbzAjFnsG69orCKd8M6jvcOyst8gvn5g==}
+    resolution: {integrity: sha512-U0iM9B8pq06FS1DLK7g25+ddMqDnQkqy+fgQyC0Gv+e4m8XEKsI7JKSbzAjFnsG69orCKd8M6jvcOyst8gvn5g==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@unhead/vue/-/vue-1.1.35.tgz}
     peerDependencies:
       vue: '>=2.7 || >=3'
     dependencies:
@@ -3221,12 +3185,11 @@ packages:
     dev: false
 
   /@vue/compiler-sfc@2.7.14:
-    resolution: {integrity: sha512-aNmNHyLPsw+sVvlQFQ2/8sjNuLtK54TC6cuKnVzAY93ks4ZBrvwQSnkkIh7bsbNhum5hJBS00wSDipQ937f5DA==}
+    resolution: {integrity: sha512-aNmNHyLPsw+sVvlQFQ2/8sjNuLtK54TC6cuKnVzAY93ks4ZBrvwQSnkkIh7bsbNhum5hJBS00wSDipQ937f5DA==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/@vue/compiler-sfc/-/compiler-sfc-2.7.14.tgz}
     dependencies:
       '@babel/parser': 7.22.7
       postcss: 8.4.27
       source-map: 0.6.1
-    dev: false
 
   /@vue/component-compiler-utils@3.3.0(lodash@4.17.21):
     resolution: {integrity: sha512-97sfH2mYNU+2PzGrmK2haqffDpVASuib9/w2/noxiFi31Z54hW+q3izKQXXQZSNhtiUpAI36uSuYepeBe4wpHQ==}
@@ -4523,7 +4486,7 @@ packages:
     dev: false
 
   /commander@2.20.3:
-    resolution: {integrity: sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/commander/commander-2.20.3.tgz}
+    resolution: {integrity: sha1-/UhehMA+tIgcIHIrpIA16FMa6zM=, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/commander/commander-2.20.3.tgz}
     dev: false
 
   /commander@4.1.1:
@@ -4900,7 +4863,7 @@ packages:
     dev: false
 
   /create-require@1.1.1:
-    resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/create-require/-/create-require-1.1.1.tgz}
+    resolution: {integrity: sha512-dcKFX3jn0MpIaXjisoRvexIJVEKzaq7z2rZKxf+MSr9TkdmHmsU4m2lcLojrj/FHl8mk5VxMmYA+ftRkP/3oKQ==}
     dev: false
 
   /cross-spawn@7.0.3:
@@ -5197,8 +5160,7 @@ packages:
     dev: false
 
   /csstype@3.1.2:
-    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==}
-    dev: false
+    resolution: {integrity: sha512-I7K1Uu0MBPzaFKg4nI5Q7Vs2t+3gWWW648spaF+Rg7pI9ds18Ugn+lvg4SHczUdKlHI5LWBXyqfS8+DufyBsgQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/csstype/-/csstype-3.1.2.tgz}
 
   /cuint@0.2.2:
     resolution: {integrity: sha1-QICG1AlVDCYxFVYZ6fp7ytw7mRs=, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/cuint/cuint-0.2.2.tgz}
@@ -5246,7 +5208,7 @@ packages:
     dev: false
 
   /deepmerge@4.3.1:
-    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==}
+    resolution: {integrity: sha512-3sUqbMEc77XqpdNO7FRyRog+eW3ph+GYCbj+rK+uYyRMuwsVy0rMiVtPn+QJlKFvWP/1PYpapqYn0Me2knFn+A==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/deepmerge/-/deepmerge-4.3.1.tgz}
     engines: {node: '>=0.10.0'}
     dev: false
 
@@ -5294,7 +5256,7 @@ packages:
     dev: false
 
   /defu@6.1.2:
-    resolution: {integrity: sha512-+uO4+qr7msjNNWKYPHqN/3+Dx3NFkmIzayk2L1MyZQlvgZb/J1A0fo410dpKrN2SnqFjt8n4JL8fDJE0wIgjFQ==}
+    resolution: {integrity: sha512-+uO4+qr7msjNNWKYPHqN/3+Dx3NFkmIzayk2L1MyZQlvgZb/J1A0fo410dpKrN2SnqFjt8n4JL8fDJE0wIgjFQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/defu/-/defu-6.1.2.tgz}
     dev: false
 
   /delegates@1.0.0:
@@ -5323,7 +5285,7 @@ packages:
     dev: false
 
   /destr@2.0.0:
-    resolution: {integrity: sha512-FJ9RDpf3GicEBvzI3jxc2XhHzbqD8p4ANw/1kPsFBfTvP1b7Gn/Lg1vO7R9J4IVgoMbyUmFrFGZafJ1hPZpvlg==}
+    resolution: {integrity: sha512-FJ9RDpf3GicEBvzI3jxc2XhHzbqD8p4ANw/1kPsFBfTvP1b7Gn/Lg1vO7R9J4IVgoMbyUmFrFGZafJ1hPZpvlg==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/destr/-/destr-2.0.0.tgz}
     dev: false
 
   /destroy@1.2.0:
@@ -5831,7 +5793,7 @@ packages:
       enhanced-resolve: 5.15.0
       mlly: 1.4.0
       pathe: 1.1.1
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /extglob@2.0.4:
@@ -6248,7 +6210,7 @@ packages:
     optional: true
 
   /glob-parent@5.1.2:
-    resolution: {integrity: sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/glob-parent/glob-parent-5.1.2.tgz}
+    resolution: {integrity: sha1-hpgyxYA0/mikCTwX3BXoNA2EAcQ=, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/glob-parent/glob-parent-5.1.2.tgz}
     engines: {node: '>= 6'}
     dependencies:
       is-glob: 4.0.3
@@ -6347,7 +6309,7 @@ packages:
       destr: 2.0.0
       iron-webcrypto: 0.7.1
       radix3: 1.0.1
-      ufo: 1.1.2
+      ufo: 1.2.0
       uncrypto: 0.1.3
     dev: false
 
@@ -6494,7 +6456,7 @@ packages:
     dev: false
 
   /hookable@5.5.3:
-    resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==}
+    resolution: {integrity: sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/hookable/-/hookable-5.5.3.tgz}
     dev: false
 
   /html-entities@2.4.0:
@@ -6888,7 +6850,7 @@ packages:
     dev: false
 
   /is-glob@3.1.0:
-    resolution: {integrity: sha1-e6WuJCF4BKxwcHuWkiVnSGzD6Eo=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/is-glob/is-glob-3.1.0.tgz}
+    resolution: {integrity: sha1-e6WuJCF4BKxwcHuWkiVnSGzD6Eo=, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/is-glob/is-glob-3.1.0.tgz}
     engines: {node: '>=0.10.0'}
     dependencies:
       is-extglob: 2.1.1
@@ -7069,7 +7031,7 @@ packages:
     dev: false
 
   /jiti@1.19.1:
-    resolution: {integrity: sha512-oVhqoRDaBXf7sjkll95LHVS6Myyyb1zaunVwk4Z0+WPSW4gjS0pl01zYKHScTuyEhQsFxV5L4DR5r+YqSyqyyg==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/jiti/-/jiti-1.19.1.tgz}
+    resolution: {integrity: sha512-oVhqoRDaBXf7sjkll95LHVS6Myyyb1zaunVwk4Z0+WPSW4gjS0pl01zYKHScTuyEhQsFxV5L4DR5r+YqSyqyyg==}
     hasBin: true
     dev: false
 
@@ -7225,7 +7187,7 @@ packages:
       mlly: 1.4.0
       node-forge: 1.3.1
       pathe: 1.1.1
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /loader-runner@2.4.0:
@@ -7688,7 +7650,7 @@ packages:
       acorn: 8.10.0
       pathe: 1.1.1
       pkg-types: 1.0.3
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /move-concurrently@1.0.1:
@@ -7743,7 +7705,6 @@ packages:
     resolution: {integrity: sha512-BGcqMMJuToF7i1rt+2PWSNVnWIkGCU78jBG3RxO/bZlnZPK2Cmi2QaffxGO/2RvWi9sL+FAiRiXMgsyxQ1DIDA==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
-    dev: false
 
   /nanomatch@1.2.13:
     resolution: {integrity: sha1-uHqKpPwN6P5r6IiVs4mD/yZb0Rk=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/nanomatch/nanomatch-1.2.13.tgz}
@@ -7837,7 +7798,7 @@ packages:
       serve-static: 1.15.0
       source-map-support: 0.5.21
       std-env: 3.3.3
-      ufo: 1.1.2
+      ufo: 1.2.0
       uncrypto: 0.1.3
       unenv: 1.5.2
       unimport: 3.1.0(rollup@3.27.0)
@@ -8181,11 +8142,11 @@ packages:
     dev: false
 
   /ofetch@1.1.1:
-    resolution: {integrity: sha512-SSMoktrp9SNLi20BWfB/BnnKcL0RDigXThD/mZBeQxkIRv1xrd9183MtLdsqRYLYSqW0eTr5t8w8MqjNhvoOQQ==}
+    resolution: {integrity: sha512-SSMoktrp9SNLi20BWfB/BnnKcL0RDigXThD/mZBeQxkIRv1xrd9183MtLdsqRYLYSqW0eTr5t8w8MqjNhvoOQQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/ofetch/-/ofetch-1.1.1.tgz}
     dependencies:
       destr: 2.0.0
       node-fetch-native: 1.2.0
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /ohash@1.1.2:
@@ -8470,7 +8431,6 @@ packages:
 
   /picocolors@1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/picocolors/-/picocolors-1.0.0.tgz}
-    dev: false
 
   /picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/picomatch/-/picomatch-2.3.1.tgz}
@@ -9571,7 +9531,6 @@ packages:
       nanoid: 3.3.6
       picocolors: 1.0.0
       source-map-js: 1.0.2
-    dev: false
 
   /prepend-http@1.0.4:
     resolution: {integrity: sha1-1PRWKwzjaW5BrFLQ4ALlemNdxtw=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/prepend-http/prepend-http-1.0.4.tgz}
@@ -9715,7 +9674,7 @@ packages:
     dev: false
 
   /radix3@1.0.1:
-    resolution: {integrity: sha512-y+AcwZ3HcUIGc9zGsNVf5+BY/LxL+z+4h4J3/pp8jxSmy1STaCocPS3qrj4tA5ehUSzqtqK+0Aygvz/r/8vy4g==}
+    resolution: {integrity: sha512-y+AcwZ3HcUIGc9zGsNVf5+BY/LxL+z+4h4J3/pp8jxSmy1STaCocPS3qrj4tA5ehUSzqtqK+0Aygvz/r/8vy4g==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/radix3/-/radix3-1.0.1.tgz}
     dev: false
 
   /randombytes@2.1.0:
@@ -10338,7 +10297,6 @@ packages:
   /source-map-js@1.0.2:
     resolution: {integrity: sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/source-map-js/-/source-map-js-1.0.2.tgz}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /source-map-resolve@0.5.3:
     resolution: {integrity: sha1-GQhmvs51U+H48mei7oLGBrVQmho=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/source-map-resolve/source-map-resolve-0.5.3.tgz}
@@ -10372,9 +10330,8 @@ packages:
     dev: false
 
   /source-map@0.6.1:
-    resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/source-map/source-map-0.6.1.tgz}
+    resolution: {integrity: sha1-dHIq8y6WFOnCh6jQu95IteLxomM=, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/source-map/source-map-0.6.1.tgz}
     engines: {node: '>=0.10.0'}
-    dev: false
 
   /source-map@0.7.4:
     resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/source-map/-/source-map-0.7.4.tgz}
@@ -10820,7 +10777,6 @@ packages:
   /to-fast-properties@2.0.0:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/to-fast-properties/to-fast-properties-2.0.0.tgz}
     engines: {node: '>=4'}
-    dev: false
 
   /to-object-path@0.3.0:
     resolution: {integrity: sha1-KXWIt7Dn4KwI4E5nL4XB9JmeF68=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/to-object-path/to-object-path-0.3.0.tgz}
@@ -10959,8 +10915,8 @@ packages:
     resolution: {integrity: sha512-fKnGuqmTBnIE+/KXSzCn4db8RTigUzw1AN0DmdU6hJovUTbYJKyqj+8Mt1c4VfRDnOVJnENmfYkIPZ946UrSAA==}
     dev: false
 
-  /ufo@1.1.2:
-    resolution: {integrity: sha512-TrY6DsjTQQgyS3E3dBaOXf0TpPD8u9FVrVYmKVegJuFw51n/YB9XPt+U6ydzFG5ZIN7+DIjPbNmXoBj9esYhgQ==}
+  /ufo@1.2.0:
+    resolution: {integrity: sha512-RsPyTbqORDNDxqAdQPQBpgqhWle1VcTSou/FraClYlHf6TZnQcGslpLcAphNR+sQW4q5lLWLbOsRlh9j24baQg==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/ufo/-/ufo-1.2.0.tgz}
     dev: false
 
   /uglify-js@3.17.4:
@@ -11013,7 +10969,7 @@ packages:
     dev: false
 
   /uncrypto@0.1.3:
-    resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==}
+    resolution: {integrity: sha512-Ql87qFHB3s/De2ClA9e0gsnS6zXG27SkTiSJwjCc9MebbfapQfuPzumMIUMi38ezPZVNFcHI9sUIepeQfw8J8Q==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/uncrypto/-/uncrypto-0.1.3.tgz}
     dev: false
 
   /unctx@2.3.1:
@@ -11047,7 +11003,7 @@ packages:
     dev: false
 
   /unhead@1.1.35:
-    resolution: {integrity: sha512-YEHXxJeSM313yPRcJdBQOSCnkcck1uhg7e2ZoEO+X0KVLuhqV1iYXU+tzvLU+ZId6IZOcEVDfsJ0hHfLkM6Itw==}
+    resolution: {integrity: sha512-YEHXxJeSM313yPRcJdBQOSCnkcck1uhg7e2ZoEO+X0KVLuhqV1iYXU+tzvLU+ZId6IZOcEVDfsJ0hHfLkM6Itw==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/unhead/-/unhead-1.1.35.tgz}
     dependencies:
       '@unhead/dom': 1.1.35
       '@unhead/schema': 1.1.35
@@ -11192,7 +11148,7 @@ packages:
       mri: 1.2.0
       node-fetch-native: 1.2.0
       ofetch: 1.1.1
-      ufo: 1.1.2
+      ufo: 1.2.0
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -11379,7 +11335,7 @@ packages:
   /vue-bundle-renderer@1.0.3:
     resolution: {integrity: sha512-EfjX+5TTUl70bki9hPuVp+54JiZOvFIfoWBcfXsSwLzKEiDYyHNi5iX8srnqLIv3YRnvxgbntdcG1WPq0MvffQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/vue-bundle-renderer/-/vue-bundle-renderer-1.0.3.tgz}
     dependencies:
-      ufo: 1.1.2
+      ufo: 1.2.0
     dev: false
 
   /vue-client-only@2.1.0:
@@ -11482,12 +11438,11 @@ packages:
     dev: false
 
   /vue-router@3.6.5(vue@2.7.14):
-    resolution: {integrity: sha512-VYXZQLtjuvKxxcshuRAwjHnciqZVoXAjTjcqBTz4rKc8qih9g9pI3hbDjmqXaHdgL3v8pV6P8Z335XvHzESxLQ==}
+    resolution: {integrity: sha512-VYXZQLtjuvKxxcshuRAwjHnciqZVoXAjTjcqBTz4rKc8qih9g9pI3hbDjmqXaHdgL3v8pV6P8Z335XvHzESxLQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/vue-router/-/vue-router-3.6.5.tgz}
     peerDependencies:
       vue: ^2
     dependencies:
       vue: 2.7.14
-    dev: false
 
   /vue-server-renderer@2.7.14:
     resolution: {integrity: sha512-NlGFn24tnUrj7Sqb8njhIhWREuCJcM3140aMunLNcx951BHG8j3XOrPP7psSCaFA8z6L4IWEjudztdwTp1CBVw==}
@@ -11521,11 +11476,10 @@ packages:
     dev: false
 
   /vue@2.7.14:
-    resolution: {integrity: sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ==}
+    resolution: {integrity: sha512-b2qkFyOM0kwqWFuQmgd4o+uHGU7T+2z3T+WQp8UBjADfEv2n4FEMffzBmCKNP0IGzOEEfYjvtcC62xaSKeQDrQ==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/vue/-/vue-2.7.14.tgz}
     dependencies:
       '@vue/compiler-sfc': 2.7.14
       csstype: 3.1.2
-    dev: false
 
   /vuex@3.6.2(vue@2.7.14):
     resolution: {integrity: sha1-I2vAhqhww655lG8QfxbeWdWJXnE=, tarball: https://depend.iflytek.com/artifactory/api/npm/npm-repo/vuex/vuex-3.6.2.tgz}
@@ -11892,7 +11846,7 @@ packages:
     dev: false
 
   /zhead@2.0.10:
-    resolution: {integrity: sha512-irug8fXNKjqazkA27cFQs7C6/ZD3qNiEzLC56kDyzQART/Z9GMGfg8h2i6fb9c8ZWnIx/QgOgFJxK3A/CYHG0g==}
+    resolution: {integrity: sha512-irug8fXNKjqazkA27cFQs7C6/ZD3qNiEzLC56kDyzQART/Z9GMGfg8h2i6fb9c8ZWnIx/QgOgFJxK3A/CYHG0g==, tarball: https://depend.iflytek.com:443/artifactory/api/npm/npm-repo/zhead/-/zhead-2.0.10.tgz}
     dev: false
 
   /zip-stream@4.1.0:

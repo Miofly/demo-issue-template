@@ -17,5 +17,9 @@
     "clean-all": "pnpm /^clean-all:/ && pnpm clean",
     "clean-all:dist": "pnpm run -r --parallel clean:dist",
     "clean-all:node_modules": "pnpm run -r --parallel clean:node_modules"
+  },
+  "devDependencies": {
+    "vue-router": "3.6.5",
+    "vue": "2.7.14"
   }
 }
