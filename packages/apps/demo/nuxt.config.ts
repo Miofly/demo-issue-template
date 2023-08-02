@@ -1,9 +1,11 @@
 import { defineNuxtConfig } from '@nuxt/bridge'
 
 export default defineNuxtConfig({
-  // modules: [
-  //   '@pinia/nuxt',
-  // ],
+  modules: [
+    // '@pinia/nuxt',
+    '@unocss/nuxt',
+    '@vueuse/nuxt',
+  ],
   // head: {
   //   title: '标题',
   //   htmlAttrs: {

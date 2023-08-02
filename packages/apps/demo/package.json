@@ -16,6 +16,10 @@
   },
   "dependencies": {
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@3.0.0-28177393.984ce7c",
-    "nuxt": "2.17.1"
+    "@unocss/nuxt": "^0.53.5",
+    "nuxt": "2.17.1",
+    "pinia": "^2.1.6",
+    "unocss": "^0.54.1",
+    "@vueuse/nuxt": "^10.2.1"
   }
 }

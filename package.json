@@ -18,8 +18,11 @@
     "clean-all:dist": "pnpm run -r --parallel clean:dist",
     "clean-all:node_modules": "pnpm run -r --parallel clean:node_modules"
   },
-  "devDependencies": {
+  "dependencies": {
     "vue-router": "3.6.5",
     "vue": "2.7.14"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
   }
 }

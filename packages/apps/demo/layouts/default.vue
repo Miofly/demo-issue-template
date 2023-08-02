@@ -2,7 +2,7 @@
 	<div>
 		<!--<img width="100" height="100" src="/pwa-192.png" alt="">-->
 		<!--<img width="100" height="100" src="/img/pwa-512.png" alt="">-->
-		<div>default</div>
+		<div class="text-red-500 flex-center">default</div>
 		<Nuxt />
 	</div>
 </template>

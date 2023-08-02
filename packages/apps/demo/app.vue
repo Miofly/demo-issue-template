@@ -6,8 +6,11 @@ useHead({
 
 <template>
 	<div>
-		我是app.vue
+  
 		<NuxtLayout>
+      <div class="text-red-500">
+        我是app.vue
+      </div>
 			<NuxtPage />
 		</NuxtLayout>
 	</div>
