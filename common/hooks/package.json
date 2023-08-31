@@ -5,6 +5,7 @@
 		"clean": "rimraf node_modules"
 	},
 	"dependencies": {
-    "@vueuse/core": "*"
+    "@vueuse/core": "*",
+		"vue": "2.6.0"
 	}
 }
