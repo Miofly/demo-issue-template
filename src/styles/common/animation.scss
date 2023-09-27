@@ -1,0 +1,43 @@
+@keyframes #{$namespace}-rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes move-up-down {
+  0%,
+  100% {
+    transform: translateY(calc(10 / 1080 * 100) + vw);
+  }
+
+  50% {
+    transform: translateY(calc((1407 - 30) / 1080 * 100) + vw);
+  }
+}
+
+@keyframes opacity-change {
+  0% {
+    opacity: 0.1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes ellipsis {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+}

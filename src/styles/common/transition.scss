@@ -1,0 +1,9 @@
+.#{$namespace}-fade-enter-active,
+.#{$namespace}-fade-leave-active {
+  transition: opacity 0.2s ease-out;
+}
+
+.#{$namespace}-fade-enter,
+.#{$namespace}-fade-leave-to {
+  opacity: 0;
+}

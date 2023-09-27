@@ -1,0 +1,13 @@
+body {
+  background-color: #131820;
+}
+
+img {
+  /* 禁止图片拖动 */
+  -webkit-user-drag: none;
+  -webkit-touch-callout: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

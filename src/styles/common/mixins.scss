@@ -1,0 +1,86 @@
+// stylelint-disable
+// forward mixins
+@forward 'config';
+@use 'config' as *;
+@use 'function' as *;
+
+// set-component-css-var-bak
+// @include b(tab) {} -> ky-tab {}
+@mixin b($block) {
+  $B: $namespace + '-' + $block !global;
+
+  .#{$B} {
+    @content;
+  }
+}
+
+//@include e(header) {} ==> .ky-tabs__header {}
+//@include @include e((nav-next, nav-prev)) {} ==> ,ky-tabs__nav-prev .ky-tabs__nav-next {}
+@mixin e($element) {
+  $E: $element !global;
+  $selector: &;
+  $currentSelector: '';
+
+  @each $unit in $element {
+    $currentSelector: #{$currentSelector +
+      '.' +
+      $B +
+      $element-separator +
+      $unit +
+      ','};
+  }
+
+  @if hitAllSpecialNestRule($selector) {
+    @at-root {
+      #{$selector} {
+        #{$currentSelector} {
+          @content;
+        }
+      }
+    }
+  } @else {
+    @at-root {
+      #{$currentSelector} {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin m($modifier) {
+  $selector: &;
+  $currentSelector: '';
+
+  @each $unit in $modifier {
+    $currentSelector: #{$currentSelector +
+      $selector +
+      $modifier-separator +
+      $unit +
+      ','};
+  }
+
+  @at-root {
+    #{$currentSelector} {
+      @content;
+    }
+  }
+}
+
+@mixin when($state) {
+  @at-root {
+    &.#{$state-prefix + $state} {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center($inline: false) {
+  @if $inline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  align-items: center;
+  justify-content: center;
+}
