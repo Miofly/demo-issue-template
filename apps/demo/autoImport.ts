@@ -4,7 +4,7 @@ export function autoImport(root: string, autoImportOption?: any) {
   const defaultOption = {
     imports: [
       'vue',
-      'vue-router',
+      'vue-router/composables',
       'pinia',
       '@vueuse/core',
       {

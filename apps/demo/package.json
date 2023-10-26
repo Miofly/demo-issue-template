@@ -12,7 +12,7 @@
     "pinia": "^2.1.4",
     "pinia-plugin-persistedstate": "^3.1.0",
     "vant": "^2.12.54",
-    "vue": "^2.7.14",
+    "vue": "2.7.15",
     "vue-request": "^2.0.3",
     "vue-router": "^3.6.5"
   },
