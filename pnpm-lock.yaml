@@ -5,6 +5,9 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@webtoon/psd':
+    specifier: ^0.4.0
+    version: 0.4.0
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
@@ -26,9 +29,6 @@ dependencies:
   vue-router:
     specifier: ^4.1.6
     version: 4.1.6(vue@3.2.47)
-  wfly:
-    specifier: ^0.1.10
-    version: 0.1.10(pinia@2.0.33)(vue-router@4.1.6)(vue@3.2.47)
 
 devDependencies:
   '@types/node':
@@ -537,16 +537,6 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@floating-ui/core@1.2.3:
-    resolution: {integrity: sha512-upVRtrNZuYNsw+EoxkiBFRPROnU8UTy/u/dZ9U0W14BlemPYODwhhxYXSR2Y9xOnvr1XtptJRWx7gL8Te1qaog==}
-    dev: false
-
-  /@floating-ui/dom@1.2.4:
-    resolution: {integrity: sha512-4+k+BLhtWj+peCU60gp0+rHeR8+Ohqx6kjJf/lHMnJ8JD5Qj6jytcq1+SZzRwD7rvHKRhR7TDiWWddrNrfwQLg==}
-    dependencies:
-      '@floating-ui/core': 1.2.3
-    dev: false
-
   /@jridgewell/gen-mapping@0.1.1:
     resolution: {integrity: sha512-sQXCasFk+U8lWYEe66WxRDOE9PjVz4vSM51fTu3Hw+ClTpUSQb718772vH3pyS5pShp6lvQM7SxgIDXXXmOX7w==}
     engines: {node: '>=6.0.0'}
@@ -623,24 +613,12 @@ packages:
       picomatch: 2.3.1
     dev: false
 
-  /@sxzz/popperjs-es@2.11.7:
-    resolution: {integrity: sha512-Ccy0NlLkzr0Ex2FKvh2X+OyERHXJ88XJ1MXtsI9y9fGexlaXaVTPzBCRBwIxFkORuOb+uBqeu+RqnpgYTEZRUQ==}
-    dev: false
-
   /@types/estree@1.0.0:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: false
 
-  /@types/lodash@4.14.191:
-    resolution: {integrity: sha512-BdZ5BCCvho3EIXw6wUCXHe7rS53AIDPLE+JzwgT+OsJk53oBfbSmZZ7CX4VaRoN78N+TJpFi9QPlfIVNmJYWxQ==}
-    dev: false
-
   /@types/node@18.15.0:
     resolution: {integrity: sha512-z6nr0TTEOBGkzLGmbypWOGnpSpSIBorEhC4L+4HeQ2iezKCi4f77kyslRwvHeNitymGQ+oFyIWGP96l/DPSV9w==}
-
-  /@types/web-bluetooth@0.0.16:
-    resolution: {integrity: sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==}
-    dev: false
 
   /@vitejs/plugin-vue-jsx@3.0.0(vite@4.1.4)(vue@3.2.47):
     resolution: {integrity: sha512-vurkuzgac5SYuxd2HUZqAFAWGTF10diKBwJNbCvnWijNZfXd+7jMtqjPFbGt7idOJUn584fP1Ar9j/GN2jQ3Ew==}
@@ -1052,29 +1030,8 @@ packages:
       '@types/node': 18.15.0
     dev: true
 
-  /@vueuse/core@9.13.0(vue@3.2.47):
-    resolution: {integrity: sha512-pujnclbeHWxxPRqXWmdkKV5OX4Wk4YeK7wusHqRwU0Q7EFusHoqNA/aPhB6KCh9hEqJkLAJo7bb0Lh9b+OIVzw==}
-    dependencies:
-      '@types/web-bluetooth': 0.0.16
-      '@vueuse/metadata': 9.13.0
-      '@vueuse/shared': 9.13.0(vue@3.2.47)
-      vue-demi: 0.13.11(vue@3.2.47)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
-    dev: false
-
-  /@vueuse/metadata@9.13.0:
-    resolution: {integrity: sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==}
-    dev: false
-
-  /@vueuse/shared@9.13.0(vue@3.2.47):
-    resolution: {integrity: sha512-UrnhU+Cnufu4S6JLCPZnkWh0WwZGUp72ktOF2DFptMlOs3TOdVv8xJN53zhHGARmVOsz5KqOls09+J1NR6sBKw==}
-    dependencies:
-      vue-demi: 0.13.11(vue@3.2.47)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
-      - vue
+  /@webtoon/psd@0.4.0:
+    resolution: {integrity: sha512-ztriE8oFOamRrV9opBURDy+JMiyhur2//vOXsC5CgdnYCB0L1Lnaag4NzP8N+NFCj7uNz9JRYtPmAbQMSDLIsQ==}
     dev: false
 
   /acorn@8.8.2:
@@ -1216,10 +1173,6 @@ packages:
 
   /csstype@2.6.21:
     resolution: {integrity: sha512-Z1PhmomIfypOpoMjRQB70jfvy/wxT50qW08YXO5lMIJkrdq4yOTR+AW7FqutScmB9NkLwxo+jU+kZLbofZZq/w==}
-
-  /dayjs@1.11.7:
-    resolution: {integrity: sha512-+Yw9U6YO5TQohxLcIkrXBeY73WP3ejHWVvx8XCk3gxvQDCTEmS48ZrSZCKciI7Bhl/uCMyxYtE9UqRILmFphkQ==}
-    dev: false
 
   /de-indent@1.0.2:
     resolution: {integrity: sha512-e/1zu3xH5MQryN2zdVaF0OrdNLUbvWxzMbi+iNA6Bky7l1RoP8a2fIbRocyHclXt/arDrrR6lL3TqFD9pMQTsg==}
@@ -1852,14 +1805,6 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /pinia-plugin-persistedstate@3.1.0(pinia@2.0.33):
-    resolution: {integrity: sha512-8UN+vYMEPBdgNLwceY08mi5olI0wkYaEb8b6hD6xW7SnBRuPydWHlEhZvUWgNb/ibuf4PvufpvtS+dmhYjJQOw==}
-    peerDependencies:
-      pinia: ^2.0.0
-    dependencies:
-      pinia: 2.0.33(typescript@4.8.4)(vue@3.2.47)
-    dev: false
-
   /pinia@2.0.33(typescript@4.8.4)(vue@3.2.47):
     resolution: {integrity: sha512-HOj1yVV2itw6rNIrR2f7+MirGNxhORjrULL8GWgRwXsGSvEqIQ+SE0MYt6cwtpegzCda3i+rVTZM+AM7CG+kRg==}
     peerDependencies:
@@ -1998,10 +1943,6 @@ packages:
       '@polka/url': 1.0.0-next.21
       mrmime: 1.0.1
       totalist: 3.0.0
-    dev: false
-
-  /sortablejs@1.15.0:
-    resolution: {integrity: sha512-bv9qgVMjUMf89wAvM6AxVvS/4MX3sPeN0+agqShejLU5z5GX4C75ow1O2e5k4L6XItUyAK3gH6AxSbXrOM5e8w==}
     dev: false
 
   /source-map-js@1.0.2:
@@ -2339,28 +2280,6 @@ packages:
 
   /webpack-virtual-modules@0.5.0:
     resolution: {integrity: sha512-kyDivFZ7ZM0BVOUteVbDFhlRt7Ah/CSPwJdi8hBpkK7QLumUqdLtVfm/PX/hkcnrvr0i77fO5+TjZ94Pe+C9iw==}
-    dev: false
-
-  /wfly@0.1.10(pinia@2.0.33)(vue-router@4.1.6)(vue@3.2.47):
-    resolution: {integrity: sha512-OA2Ayb2u3uIMwFYR/4Ak9r1VQVZGRHMVp2hi0W/bJ/BkIrmdWBhLE4KUgkLFtst5BjWhg7eKY+AcNxc1RE63fQ==}
-    peerDependencies:
-      pinia: '>=2.0.0'
-      vue: '>=3.2.0'
-      vue-router: '>=4.0.16'
-    dependencies:
-      '@floating-ui/dom': 1.2.4
-      '@popperjs/core': /@sxzz/popperjs-es@2.11.7
-      '@types/lodash': 4.14.191
-      '@vueuse/core': 9.13.0(vue@3.2.47)
-      dayjs: 1.11.7
-      lodash: 4.17.21
-      pinia: 2.0.33(typescript@4.8.4)(vue@3.2.47)
-      pinia-plugin-persistedstate: 3.1.0(pinia@2.0.33)
-      sortablejs: 1.15.0
-      vue: 3.2.47
-      vue-router: 4.1.6(vue@3.2.47)
-    transitivePeerDependencies:
-      - '@vue/composition-api'
     dev: false
 
   /which-boxed-primitive@1.0.2:
