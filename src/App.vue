@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { processPSD2Page } from './index';
+
 function loadJS() {
   const link_element = document.createElement('script');
   link_element.setAttribute('src', '/psd.js');
@@ -80,6 +81,11 @@ const handleChange = async e => {
     for (let i = 0; i < data.clouds.length; i++) {
       const x: any = data.clouds[i];
       const rawData = JSON.parse(JSON.stringify(types[x.type])) || {};
+      rawData.record = {
+        ... rawData.record,
+        width:x.width,
+        height: x.height,
+      }
       delete x.type;
       x.src && (x.imgUrl = x.src) && delete x.src;
       result.value.push(Object.assign(rawData, x));
