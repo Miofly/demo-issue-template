@@ -17,7 +17,8 @@
     "unplugin-vue-macros": "^1.10.0",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6",
-    "@webtoon/psd": "^0.4.0"
+    "@webtoon/psd": "^0.4.0",
+    "nanoid": "^3.1.23"
   },
   "devDependencies": {
     "@types/node": "^18.14.2",

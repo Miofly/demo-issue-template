@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import { processPSD2Page } from './index';
-
+import { customAlphabet } from 'nanoid/non-secure'
+const nanoid = customAlphabet('1234567890abcdef', 12)
 function loadJS() {
   const link_element = document.createElement('script');
   link_element.setAttribute('src', '/psd.js');
@@ -86,9 +87,11 @@ const handleChange = async e => {
         width:x.width,
         height: x.height,
       }
+      rawData.uuid = nanoid()
       delete x.type;
       x.src && (x.imgUrl = x.src) && delete x.src;
-      result.value.push(Object.assign(rawData, x));
+      Object.assign(rawData, x)
+      result.value.push(rawData);
     }
 
     const { width, height, background: bg } = data;
