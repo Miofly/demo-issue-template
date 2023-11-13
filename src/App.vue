@@ -62,7 +62,7 @@ const handleChange = async e => {
         left: 0,
         top: 0,
         zoom: 1,
-        transform: '',
+        transform: " scale(1)",
         radius: 0,
         opacity: 1,
         parent: '-1',
