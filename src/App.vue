@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import { isEqual } from 'lodash-es';
 </script>
 
 <template>
   <div>
+    {{isEqual(NaN, NaN)}}
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
