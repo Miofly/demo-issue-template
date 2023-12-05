@@ -13,6 +13,8 @@ onBeforeRouteLeave((_, from, next) => {
   console.log('onBeforeRouteLeave');
   next()
 })
+
+
 </script>
 
 <template>

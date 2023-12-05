@@ -11,7 +11,7 @@ const {
 </script>
 
 <template>
-  <div :style="{color}">{{ text}}</div>
+  <div :style="{color}">{{ text }}</div>
 </template>
 
 <style lang="scss" scoped>
